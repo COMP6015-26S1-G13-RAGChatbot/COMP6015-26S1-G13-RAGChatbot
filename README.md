@@ -58,20 +58,25 @@ Performance is measured at each iteration using a manually curated **Golden Set*
 
 ### 1. Repository Structure
 ```text
-├── src/
-│   ├── ingestion/   # Parsing & Vectorization scripts
-│   ├── retrieval/   # Search & Re-ranking logic
-│   ├── generation/  # LLM Chains & System Prompts
-│   └── frontend/    # Next.js Application
 ├── data/
-│   ├── raw/         # Source PDF Corpus
-│   └── golden-set/  # Ground Truth Dataset
-└── tests/           # RAGAS & Rule-Sensitivity Tests
+│   ├── raw/                # Source PDFs (IEEE Bylaws, SMCS, etc.)
+│   ├── processed/          # Markdown-converted files 
+│   └── golden-set.json     # 50 Q&A Ground Truth Dataset (Section 4.4.1)
+├── src/
+│   ├── ingestion/          # Layout-aware Parsing & Chunking A/B Tests
+│   ├── retrieval/          # Vector Search & Cross-encoder Re-ranking
+│   ├── generation/         # LangChain, Hierarchy Logic & Citation Tracer
+│   └── frontend/           # Next.js & Tailwind 
+├── tests/
+│   ├── ragas_eval.py       # Automated RAGAS Metrics (Formulas 1-4)
+│   └── rule_sensitivity.py # Rule-Sensitivity & Update Latency Tests (Formulas 5-6)
+├── .gitignore              # Environment keys (.env) and local data exclusions
+└── README.md               # Project overview and HLR target metrics
 ```
 
 ### 2. Installation
 ```bash
-git clone https://github.com/rag-chatbot.git
+git clone https://github.com/COMP6015-26S1-G13-RAGChatbot/COMP6015-26S1-G13-RAGChatbot.git
 cd rag-chatbot
 pip install -r requirements.txt
 npm install --prefix src/frontend
