@@ -60,13 +60,13 @@ Performance is measured at each iteration using a manually curated **Golden Set*
 ```text
 ├── data/
 │   ├── raw/                # Source PDFs (IEEE Bylaws, SMCS, etc.)
-│   ├── processed/          # Markdown-converted files (Member 1)
+│   ├── processed/          # Markdown-converted files (MEET)
 │   └── golden-set.json     # 50 Q&A Ground Truth Dataset (Section 4.4.1)
 ├── src/
-│   ├── ingestion/          # Member 1: Layout-aware Parsing & Chunking A/B Tests
-│   ├── retrieval/          # Member 2: Vector Search & Cross-encoder Re-ranking
-│   ├── generation/         # Member 2: LangChain, Hierarchy Logic & Citation Tracer
-│   └── frontend/           # Member 3: Next.js & Tailwind (Perplexity-style UI)
+│   ├── ingestion/          # MEET : Layout-aware Parsing & Chunking A/B Tests
+│   ├── retrieval/          # DIYA: Vector Search & Cross-encoder Re-ranking
+│   ├── generation/         # DIYA: LangChain, Hierarchy Logic & Citation Tracer
+│   └── frontend/           # JUNE: Next.js & Tailwind (Perplexity-style UI)
 ├── tests/
 │   ├── ragas_eval.py       # Automated RAGAS Metrics (Formulas 1-4)
 │   └── rule_sensitivity.py # Rule-Sensitivity & Update Latency Tests (Formulas 5-6)
