@@ -37,9 +37,9 @@ The pipeline is structured across three functional layers:
 
 | Role | Member | Key Focus |
 | :--- | :--- | :--- |
-| **Data Engineer** | Member 1 | PDF Parsing, Vector DB Management, Chunking A/B Testing |
-| **AI & Backend** | Member 2 | RAG Chain Architecture, Prompt Engineering, RAGAS Evaluation |
-| **Frontend & UI/UX** | June Yoo | Next.js Interface, Citation UI, API Integration |
+| **Data Engineer** | MEET | PDF Parsing, Vector DB Management, Chunking A/B Testing |
+| **AI & Backend** | DIYA | RAG Chain Architecture, Prompt Engineering, RAGAS Evaluation |
+| **Frontend & UI/UX** | June  | Next.js Interface, Citation UI, API Integration |
 
 
 ## Evaluation Framework (The Golden Set)
