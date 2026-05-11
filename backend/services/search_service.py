@@ -38,38 +38,13 @@ class SearchService:
         return reranked_docs
     
     
-    def search(self, query, doc_type=None, k=3):
+    def search(self, query, doc_type=None, k=2):
         """
         Search for relevant 10 documents
-        Rerank the retrieved documents using Flashrank and return the top 3 results.
+        Rerank the retrieved documents using Flashrank and return the top 2 results.
         """
         
         search_filter = {"type": doc_type} if doc_type else None
         raw_docs = self.db.similarity_search(query, k=10, filter=search_filter)
-        ranked_docs = self._rerank_docs(query, raw_docs, top_n=k)
+        return self._rerank_docs(query, raw_docs, top_n=k)
         
-        return {
-            "legal": [d for d in ranked_docs if d.metadata.get("type") == "legal"],
-            "operational": [d for d in ranked_docs if d.metadata.get("type") == "operational"],
-            "general": [d for d in ranked_docs if d.metadata.get("type") not in ["legal", "operational"]]
-        }
-
-
-    def search_for_conflict_analysis(self, query):
-        """
-        Retrieve top documents separately for Legal and Operational types to enable cross-validation (Conflict Analysis).
-        """
-        
-        #  Retrieve Top 2 Legal documents
-        legal_raw = self.db.similarity_search(query, k=10, filter={"type": "legal"})
-        legal_docs = self._rerank_docs(query, legal_raw, top_n=2)
-
-        #  Retrieve Top 2 Operational documents
-        operational_raw = self.db.similarity_search(query, k=10, filter={"type": "operational"})
-        operational_docs = self._rerank_docs(query, operational_raw, top_n=2)
-
-        #  Return combined results for conflict analysis (can be further processed in the LLM to identify conflicts)
-        return {
-            "legal": legal_docs,
-            "operational": operational_docs
-        }   

@@ -6,28 +6,24 @@ class RAGWrapper:
         self.search_service = SearchService()
         self.llm_service = LLMService()
 
-    def ask(self, user_query, mode="conflict"):
-        if mode == "conflict":
-            # dictionary ('legal' : [], 'operational': [], 'general': [])
-            docs = self.search_service.search_for_conflict_analysis(user_query)
-        else:
-            docs = self.search_service.search(user_query)
+    def ask(self, user_query):
+        # Retrieve top 2 documents for each type
+        docs_op = self.search_service.search(user_query, type='operational', k=2)  
+        docs_legal = self.search_service.search(user_query, type='legal', k=2)
 
         # llm generate answer (LLMService)
-        final_answer = self.llm_service.generate_answer(user_query, docs)
-        
+        final_answer = self.llm_service.generate_answer(user_query, {"operational": docs_op, "legal": docs_legal})
+
         detailed_source = []
-        all_docs = []
-        for key in docs:
-            all_docs.extend(docs[key])
-            
+        all_docs = docs_op + docs_legal  # Combine all retrieved documents for source details
+        
         for doc in all_docs:
             source_name = doc.metadata.get("source", "Unknown Source")
             page = doc.metadata.get("page", "?")
-            snippet = doc.page_content[:100].strip().replace("\n", " ")  # Get the first 100 characters of the content as a snippet
+            snippet = (doc.page_content[:100] + "..") if len(doc.page_content) > 100 else doc.page_content.strip().replace("\n", " ") 
             doc_type = doc.metadata.get("type", "general").upper()
-            
-            source_info = f"[{doc_type}] {source_name} (Page: {page}) | Snippet: \"{snippet}...\""
+
+            source_info = f"[{doc_type}] {source_name} (Page: {page}) | Snippet: \"{snippet}\""
             detailed_source.append(source_info)
 
         return {
