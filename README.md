@@ -89,6 +89,21 @@ Create a `.env` file with the following configurations:
 * `DATABASE_URL` (For ChromaDB/Supabase)
 
 ---
+### 4. Running the Application
+
+#### Backend (FastAPI)
+To run the FastAPI backend, you need to add the backend directory to your `PYTHONPATH` so that modules can be resolved correctly. Run the following commands from the project root:
+
+```bash
+# 1. Activate your virtual environment (if not already done)
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# 2. Set PYTHONPATH and start the Uvicorn server
+export PYTHONPATH=$PYTHONPATH:$(pwd)/backend
+uvicorn backend.main:app --reload
+
+```
+
 
 ## Ethics & Governance
 * **Mandatory Citation:** Every claim must be traced back to a specific page and section.
