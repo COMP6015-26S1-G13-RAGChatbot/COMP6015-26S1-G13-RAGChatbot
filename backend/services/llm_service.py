@@ -29,15 +29,19 @@ class LLMService:
         ### CONTEXT: OPERATIONAL MANUAL (Subordinate Rules)
         {op_text if op_text else "No operational records found."}
         
+        ### CONTEXT: ADDITIONAL RETRIEVED DOCUMENTS
+        {gen_text if gen_text else "No additional records found."}
+        
         ### AUDIT INSTRUCTIONS
         1. **Check for Authorization**: Does the LEGAL context explicitly authorize the bodies or rules mentioned in the MANUAL?
         2. **Identify Conflicts**: If the MANUAL describes a body (e.g., SMCS-TAB) or a rule that is NOT found in the LEGAL context, flag it as "Potentially unauthorized or inconsistent."
         3. **Strict Differentiation**: Treat 'IEEE TAB' (General IEEE body) and 'SMCS-TAB' (Specific Society body) as different entities. Check if SMCS-TAB is formally defined in the Constitution.
         4. **Hierarchy of Truth**: If there is a mismatch, the LEGAL context always prevails.
+        5. **Strict Grounding (Anti-Hallucination)**: Answer the question based ONLY on the provided contexts above. If the contexts do not contain specific details (such as exact numbers, years, terms, or percentages) to answer the question completely, state "I cannot find the exact answer in the provided documents." Do NOT extrapolate or guess.
 
         ### QUESTION
         {query}
         
-        ### RESPONSE (Focus on identifying missing legal basis or direct contradictions):"""
+        ### RESPONSE (Be precise, direct, and mention specific numbers/terms if available):"""
         
         return self.llm.invoke(prompt)
