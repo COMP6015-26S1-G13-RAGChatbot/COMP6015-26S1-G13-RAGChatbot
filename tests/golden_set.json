@@ -1,0 +1,552 @@
+[
+  {
+    "id": "Q01",
+    "type": "Single-hop",
+    "question": "What is the minimum number of IEEE SMC Society members required to be listed as founding members when submitting a proposal to create a new specialised committee?",
+    "ground_truth": "A minimum of 15 IEEE SMC Society members must be listed as founding members in a new TC proposal, along with their affiliations, to demonstrate community support and ensure a foundational membership base.",
+    "context": "Section 4.2.2.1: 'Founding Members: the TC consists of at least 15 IEEE SMC members as the initial members of the TC, which needs to be listed in the proposal with their affiliations. This demonstrates community support and ensures a foundational membership base.'",
+    "metadata": {
+      "section": "Section 4.2.2.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q02",
+    "type": "Single-hop",
+    "question": "How many Vice-Chairs is a specialised committee allowed to have at most, and is there any requirement about how they should be distributed?",
+    "ground_truth": "A TC may have a maximum of three Vice-Chairs, and they should represent the IEEE regions broadly.",
+    "context": "Section 4.2.2.1: 'There are a maximum of three Vice-Chairs representing widely the IEEE regions.'",
+    "metadata": {
+      "section": "Section 4.2.2.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q03",
+    "type": "Single-hop",
+    "question": "How long is the standard term of appointment for a TC Chair or Vice-Chair, and can the term be extended?",
+    "ground_truth": "TC Chairs and Vice-Chairs are appointed for a term of four years. At the end of this term, the position may be renewed once, subject to review and approval by the corresponding VP for Technical Activities.",
+    "context": "Section 4.2.4.1: 'TC Chairs and Vice Chairs shall be appointed for a term of four years. At the conclusion of this term, leadership may be renewed once, subject to review and approval by the corresponding VP-TA, ensuring both continuity and opportunities for new leadership.'",
+    "metadata": {
+      "section": "Section 4.2.4.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q04",
+    "type": "Single-hop",
+    "question": "How long is the probationary period for a newly approved specialised committee before it can be considered for full recognition?",
+    "ground_truth": "A newly approved TC must complete a two-year probationary phase during which it must demonstrate its viability and impact within the Society.",
+    "context": "Section 4.2.2.1: 'A newly approved TC shall begin a two-year probationary phase to demonstrate its viability and impact within the Society.'",
+    "metadata": {
+      "section": "Section 4.2.2.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q05",
+    "type": "Single-hop",
+    "question": "What percentage of annual TC meetings must a committee member attend to meet the participation requirement?",
+    "ground_truth": "TC members are expected to attend at least 50% of TC meetings annually.",
+    "context": "Section 4.2.4.2: 'TC members are expected to attend at least 50% of TC meetings annually and contribute to at least one TC activity each year (e.g., organizing a session, publishing in IEEE SMC venues).'",
+    "metadata": {
+      "section": "Section 4.2.4.2",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q06",
+    "type": "Single-hop",
+    "question": "After how many consecutive years of failing to meet participation requirements can a TC member be removed from the roster?",
+    "ground_truth": "Members who fail to meet participation requirements for two consecutive years may be removed from the TC roster.",
+    "context": "Section 4.2.4.2: 'Members who fail to meet participation requirements for two consecutive years may be removed from the TC roster in order to maintain an engaged and active membership.'",
+    "metadata": {
+      "section": "Section 4.2.4.2",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q07",
+    "type": "Single-hop",
+    "question": "For how long must a specialised committee have been inactive before its discontinuation can be considered, and who can also voluntarily request termination?",
+    "ground_truth": "A TC must have been inactive for at least one year with no credible plan for revival before discontinuation can be considered by the corresponding area committee. Alternatively, termination can also be initiated voluntarily by the TC Chair with the support of at least two TC members, by submitting a request to the corresponding area with reasons.",
+    "context": "Section 4.2.1: 'The discontinuation of an existing TC could be made if the TC has been in-active for at least one year and there is no credible plan by the TC to revive it... Alternatively, the discontinuation of an existing TC could also be made by its chair and support of at least two of their TC members by submitting a request to the corresponding area with reason.'",
+    "metadata": {
+      "section": "Section 4.2.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q08",
+    "type": "Single-hop",
+    "question": "What is the maximum total number of years someone can serve as an Associate Editor for an SMCS-sponsored journal, and how many terms does this comprise?",
+    "ground_truth": "An Associate Editor's appointment is for a term of three years and is renewable for up to two terms, meaning the total service shall not exceed six years.",
+    "context": "Section 4.3.3: 'The appointment is for a term of three years, which may begin with an optional one-year probationary period. It is renewable for up to two terms and shall not exceed a total of six years of AE service.'",
+    "metadata": {
+      "section": "Section 4.3.3",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q09",
+    "type": "Single-hop",
+    "question": "Is an Associate Editor allowed to serve on the editorial boards of more than one SMCS-sponsored Transactions journal at the same time?",
+    "ground_truth": "No. A specific constraint is that a given person cannot serve as an Editor on more than one SMCS-sponsored Transactions journal at any given time.",
+    "context": "Section 4.3.3: 'A specific constraint is that a given person cannot serve as Editor on more than one SMCS-sponsored Transactions at a given time.'",
+    "metadata": {
+      "section": "Section 4.3.3",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q10",
+    "type": "Single-hop",
+    "question": "What level of Board of Governors approval is needed to change the annual membership dues?",
+    "ground_truth": "Any change in annual membership dues requires approval by two-thirds of all voting members of the Board of Governors.",
+    "context": "Section 4.4.7.1: 'Any change in dues will require approval by two-thirds of all voting members of the Board of Governors.'",
+    "metadata": {
+      "section": "Section 4.4.7.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q11",
+    "type": "Single-hop",
+    "question": "What is the standard appointment length for a Distinguished Lecturer, and is any extension possible?",
+    "ground_truth": "The standard term of appointment for a Distinguished Lecturer is two years. A possible two-year extension may be approved by the Distinguished Lecturer Committee.",
+    "context": "Section 4.4.9.1: 'The term of appointment for a distinguished lecturer is normally two years, with a possible two-year extension approved by the DPC.'",
+    "metadata": {
+      "section": "Section 4.4.9.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q12",
+    "type": "Single-hop",
+    "question": "How many signatures are required to petition for the formation of a new SMCS Chapter, and what membership conditions must the signatories meet?",
+    "ground_truth": "A petition to establish an SMCS Chapter requires signatures from at least twelve IEEE voting members who are in good standing and are members of both the SMCS and the relevant Section(s).",
+    "context": "Section 4.4.10.1: 'This petition to establish a Chapter requires the following information: ... Signatures of at least twelve (12) IEEE voting members, in good standing, who are members of the SMCS and Section(s) involved...'",
+    "metadata": {
+      "section": "Section 4.4.10.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q13",
+    "type": "Single-hop",
+    "question": "How many signatures are needed to establish a new SMCS Student Branch Chapter, and how must those signatures be distributed?",
+    "ground_truth": "A petition for an SMCS Student Branch Chapter requires at least six signatures in total, with at least three from the Student Branch and at least three from SMCS members.",
+    "context": "Section 4.4.10.1: 'The petition to establish a (Joint) Student Branch Chapter requires at least six (6) signatures, with at least three (3) from the Student Branch and at least three (3) from SMCS members.'",
+    "metadata": {
+      "section": "Section 4.4.10.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q14",
+    "type": "Single-hop",
+    "question": "Under what conditions is an SMCS Chapter considered inactive, and how long must a unit fail to report before it is dissolved?",
+    "ground_truth": "An SMCS Chapter may be considered inactive when it does not hold at least two meetings per year or fails to report its meetings to the IEEE MGA. Units that have not reported for three consecutive years will be dissolved at the next meeting of the IEEE MGA Board.",
+    "context": "Section 4.4.10.2: 'a chapter may be considered inactive when they do not hold at least two meetings a year or fail to report their meetings to the IEEE MGA. Units that have not reported for three years will be dissolved at the next meeting of the IEEE MGA Board.'",
+    "metadata": {
+      "section": "Section 4.4.10.2",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q15",
+    "type": "Single-hop",
+    "question": "Within how many days of completing travel should a Society traveller normally submit their reimbursement request?",
+    "ground_truth": "Travel reimbursement requests should normally be submitted within sixty days of the travel.",
+    "context": "Section 4.5: 'Travel reimbursement needs should normally to be submitted within sixty days of the travel.'",
+    "metadata": {
+      "section": "Section 4.5",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q16",
+    "type": "Single-hop",
+    "question": "What is the geographic rotation schedule for the IEEE SMCS flagship conference, and in what order do the regions take turns hosting it?",
+    "ground_truth": "The flagship conference follows a three-year rotating schedule: one year in the Americas (North or South), the next year in the Asia/Oceania region, and the following year in the Europe/Africa region. After completing this cycle, the rotation repeats in the same order.",
+    "context": "Section 4.7.1.1: 'Each flagship conference shall follow a rotating schedule, with each year taking place in a different global region: One year, it will be held in the Americas (either North or South). The next year, it will be held in the Asia/Oceania region. The following year, it will be held in the Europe/Africa region. After completing this three-year cycle, the rotation repeats in the same order.'",
+    "metadata": {
+      "section": "Section 4.7.1.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q17",
+    "type": "Single-hop",
+    "question": "How far in advance must the bidding and proposal process begin for a financially sponsored or co-sponsored conference (not the flagship)?",
+    "ground_truth": "For financially sponsored or co-sponsored conferences (other than the flagship), the bidding and proposal process should begin 12 to 24 months before the event.",
+    "context": "Section 4.7.1.2: 'The bidding and proposal processes for hosting the conference occur in a 12–24 month cycle, with details provided in Section 4.7.2.'",
+    "metadata": {
+      "section": "Section 4.7.1.2",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q18",
+    "type": "Single-hop",
+    "question": "What financial surplus percentage should a conference budget aim for, and how should this target be calculated?",
+    "ground_truth": "Conference budgets should target a surplus of 20% over projected expenses. This target should be calculated under conservative attendee estimates to ensure financial viability.",
+    "context": "Section 4.7.3.1: 'A detailed budget plan should be developed early in the planning process... aiming for a surplus of 20% over projected expenses. It is crucial to include a contingency fund to cover unexpected expenses.'",
+    "metadata": {
+      "section": "Section 4.7.3.1",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q19",
+    "type": "Single-hop",
+    "question": "What is the deadline for completing the financial closeout of a conference — including submitting final reports and closing bank accounts — after the event has concluded?",
+    "ground_truth": "Conferences are required to complete all financial closure activities — including closing dedicated bank accounts, distributing any surplus, repaying outstanding loans, submitting final financial reports, and completing the required audit — within twelve months of the conference conclusion. Completion within six months is strongly recommended.",
+    "context": "Section 4.7.3.4: 'Conferences are required to close all dedicated bank accounts, distribute any surplus, repay outstanding loans, submit final financial reports to the IEEE Conference Services Department, and complete the required audit within twelve months of the conference conclusion (completion within six months is strongly recommended).'",
+    "metadata": {
+      "section": "Section 4.7.3.4",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q20",
+    "type": "Single-hop",
+    "question": "How many members make up the Fellow Search Committee, and who is responsible for appointing them?",
+    "ground_truth": "The Fellow Search Committee is composed of one Chair and ten members, for a total of eleven people. The Committee Chair is appointed by the President in consultation with the Chair of the Fellow Evaluation Committee. The President, with input from the Fellow Evaluation Committee Chair, also appoints the remaining ten members, with attention to diversity in region, gender, and professional background.",
+    "context": "Section 4.6.2: 'The Fellow Search Committee shall be formed with a Chair and ten members to encourage, identify, and support the nomination of qualified candidates within the SMCS community for IEEE Fellow. The Committee Chair shall be appointed by the President in consultation with the Chair of the Fellow Evaluation Committee. The President, with input from the Fellow Evaluation Committee Chair, shall also appoint the remaining members, with attention to diversity in region, gender, and professional background to reflect the breadth of the Society.'",
+    "metadata": {
+      "section": "Section 4.6.2",
+      "category": "Direct Factual"
+    }
+  },
+  {
+    "id": "Q21",
+    "type": "Multi-hop",
+    "question": "The manual's cover page states one version number, but a reviewer's annotation flags a conflict with the actual filename. What are the two version identifiers involved, and what does this discrepancy imply about the document's version control?",
+    "ground_truth": "The title page of the document declares it as 'Version 2 - 9/17/2025'. However, Professor Tom Gedeon's comment TG2 states: 'The filename says V5?' This creates a direct version discrepancy between the cover page label and the filename used in the file system. The inconsistency implies the document may have gone through significantly more revision cycles than the cover page acknowledges, raising questions about which version is authoritative and whether the document's version history is being properly tracked.",
+    "context": "Title page: 'Version 2 - 9/17/2025' | Commented [TG2]: 'The filename says V5?'",
+    "metadata": {
+      "section": "Title Page / Comment TG2",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q22",
+    "type": "Multi-hop",
+    "question": "What does the manual say about its own authority relative to other IEEE SMCS governance documents, and what unresolved concern does a reviewer raise about whether the manual actually carries formal weight?",
+    "ground_truth": "Section 1 (Introduction) states that the Operational Manual 'is subordinate to the Constitution and Bylaws' and that in cases of conflicting wording, the Constitution and then the Bylaws take precedence. However, Professor Tom Gedeon's comment TG1 raises a deeper structural concern: the manual contains sections that expand on — rather than simply restate — the Constitution, and it is 'unclear what status this Ops Manual actually has.' He asks whether, to carry formal weight, it should be approved by the President, ExCom, or BoG. He also notes he has flagged sections that appear to be 'good practice' but are not grounded in the Constitution, meaning their enforceability is ambiguous. The document's own legal and procedural standing within SMCS governance remains unresolved.",
+    "context": "Section 1: 'This operations manual is subordinate to the Constitution and Bylaws. In the case of conflicting wording or lack of clarity, the Constitution and, if necessary, the Bylaws have precedence.' | Commented [TG1]: 'The Ops Manual inevitably has sections which appear to be good practice and ***expand on*** the words in the Constitution. If it is to have formal weight, should it be approved by the President / ExCom / BoG? Unfortunately it is unclear what status this Ops Manual actually has.'",
+    "metadata": {
+      "section": "Section 1 / Comment TG1",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q23",
+    "type": "Multi-hop",
+    "question": "The manual extensively discusses a category of groups it refers to as 'Technical Committees,' yet a reviewer identifies a fundamental constitutional problem with this label. What is the problem and how has the document attempted to work around it?",
+    "ground_truth": "Professor Tom Gedeon's comment TG7 explicitly states: 'According to the Constitution we do not have Technical Committees. This is a bylaws change I intend to propose.' The SMCS Constitution does not formally recognise or define the term 'Technical Committees.' As a drafting workaround to avoid directly contradicting the Constitution, the document uses the term \"Specialty 'Technical' Committees\" — placing the word 'Technical' inside quotation marks — and defines the abbreviation 'TC' as standing for this full phrase rather than for 'Technical Committee' directly. This linguistic device allows the manual to discuss these groups without formally claiming the Constitution supports the 'Technical Committee' label, while the necessary bylaws amendment is pending.",
+    "context": "Section 4.2.1: \"Specialty 'Technical' Committees (TCs) are the core units of the IEEE SMCS technical activities\" | Commented [TG7]: 'According to the Constitution we do not have Technical Committees. This is a bylaws change I intend to propose. But for now the best we can do is put \"Technical\" in quotes, and use TC as an abbreviation for \"Specialty 'Technical' Committees\".'",
+    "metadata": {
+      "section": "Section 4.2.1 / Comment TG7",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q24",
+    "type": "Multi-hop",
+    "question": "Looking across the Organisational Roles section of the manual, a reviewer notes that officer roles are described in two structurally different ways depending on the position. What is the inconsistency, which roles are treated each way, and what practical problem does the reviewer identify?",
+    "ground_truth": "Professor Tom Gedeon's comment TG4 identifies a structural inconsistency in how officer roles are presented. Sections 3.1 (President) and 3.2 (President-Elect) contain only a cross-reference to the Constitution (e.g., '[See Constitution, Article VI, Section 1]') with no reproduced role description. Sections 3.3 through 3.9 — covering the VPs for Organisation and Planning, Systems Science and Engineering, Human-Machine Systems, Cybernetics, Publications, Conferences and Meetings, and Membership and Student Activities — all reproduce the full text of each role's responsibilities in detail. Sections 3.10 (VP for Finance), 3.11 (Secretary), and 3.12 (Treasurer) then revert to solely referencing the Constitution or Bylaws. TG4 argues that the President and President-Elect roles should be reproduced in full, because this is an Operational Manual that should be usable without needing to consult the Constitution separately.",
+    "context": "Section 3.1: '[See Constitution, Article VI, Section 1]' | Section 3.2: '[See Constitution, Article VI, Section 3]' | Sections 3.3–3.9: [Full text of VP responsibilities reproduced] | Section 3.10: '[See Bylaws, Article III, Section 7]' | Commented [TG4]: 'Surely President and President-Elect roles should be reproduced here as this is an Ops manual which should be usable without referring to the Constitution. See 3.3 onwards ... But 3.10, 3.11, and 3.12 revert to solely referencing the constitution.'",
+    "metadata": {
+      "section": "Sections 3.1, 3.2, 3.10, 3.11, 3.12 / Comment TG4",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q25",
+    "type": "Multi-hop",
+    "question": "The manual outlines steps to follow when any leadership position becomes vacant. A reviewer raises a concern about how this generalised procedure was derived. What is the concern, and does the text in this section also contain any visible drafting errors?",
+    "ground_truth": "Section 4.1.1 states that if a member of Society leadership is unable or unwilling to continue performing their duties, 'the following steps will should be taken to ensure the position is filled normally within 30 days.' Professor Tom Gedeon's comment TG5 observes that this procedure 'seems to be based on the requirements for VPs and \"assumed\" to fit everything,' meaning the process was designed for Vice Presidential vacancies and then generalised to all officer types without explicit constitutional backing for each role. The section also contains a visible drafting error: the phrase 'will should be taken' is an unresolved tracked change, leaving both the original word 'will' and the proposed replacement 'should' in the text simultaneously, indicating the section has not been properly reviewed or finalised.",
+    "context": "Section 4.1.1: 'the following steps will should be taken to ensure the position is filled normally within 30 days.' | Commented [TG5]: 'This seems to be based on the requirements for VPs and \"assumed\" to fit everything'",
+    "metadata": {
+      "section": "Section 4.1.1 / Comment TG5",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q26",
+    "type": "Multi-hop",
+    "question": "When filling a mid-term Vice President vacancy, the manual states that the President must choose from candidates presented in a particular way. What specific presentation requirement goes beyond what the Constitution actually mandates, according to a reviewer, and is there a textual error in this sentence?",
+    "ground_truth": "Section 4.1.1.2 states that within-term VP vacancies shall be filled by the President 'from two candidates with biographies names provided by the Nominations Committee.' Professor Tom Gedeon's comment TG6 notes that 'biographies would be a good idea, but it's not in the constitution' — meaning the requirement to provide candidate biographies is an addition that exceeds what the Constitution mandates and therefore lacks formal grounding. The phrase itself also contains a drafting error: 'biographies names' is an unresolved tracked change that left both words in the text, where 'names' was likely the original word and 'biographies' was proposed as either an addition or replacement, but both were retained. Together, the commentary and the drafting artefact reveal a rule that is both constitutionally unsupported and editorially unfinished.",
+    "context": "Section 4.1.1.2: 'Within-term vacancies of a Vice President shall be filled by the President within 30 days of the vacancy's formal announcement to the BoG, from two candidates with biographies names provided by the Nominations Committee.' | Commented [TG6]: 'biographies would be a good idea, but it's not in the constitution'",
+    "metadata": {
+      "section": "Section 4.1.1.2 / Comment TG6",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q27",
+    "type": "Multi-hop",
+    "question": "The manual introduces a new oversight body for Technical Committee governance and assigns it significant decision-making powers. What is this body called, what authority does the manual give it, and why does a reviewer consider this arrangement a governance problem?",
+    "ground_truth": "The manual introduces the 'SMCS Technical Activities Board (SMCS-TAB)' in Section 4.2.1, to be chaired by the President-Elect with the three VPs for Technical Activities as members. The manual assigns it authority to provide 'formal approval, review, and high-level decisions of all TCs regarding their status,' including approving new TCs, conducting probationary reviews, and overseeing the quadrennial review — functions that traditionally and constitutionally fall under the Board of Governors. Professor Tom Gedeon's comment TG10 directly states: 'This document attempts to replace the BoG's roles by this TAB.' Since the Operational Manual is subordinate to the Constitution, and the SMCS-TAB is not established in the Constitution or Bylaws, assigning it BoG-level authority through the manual alone is a structural governance conflict and likely an unauthorised delegation of power.",
+    "context": "Section 4.2.1: 'The SMCS-TAB shall be established to provide the formal approval, review, and high-level decisions of all TCs regarding their status. The President-Elect shall serve as the appointed Chair of the SMCS-TAB, and the three VPs-TA shall serve as members.' | Commented [TG10]: 'This document attempts to replace the BoG's roles by this TAB.'",
+    "metadata": {
+      "section": "Section 4.2.1 / Comment TG10",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q28",
+    "type": "Multi-hop",
+    "question": "After a newly formed committee completes its initial two-year probationary phase, the manual describes a formal review process to determine whether it should receive full recognition. A reviewer raises a serious concern about this review process — what is it?",
+    "ground_truth": "Section 4.2.2.1 states that at the conclusion of the two-year probationary period, 'the TC will undergo a final review by the VPs-TA and the SMCS-TAB to assess its performance, sustainability, and alignment with the Society's goals.' However, Professor Tom Gedeon's comment TG11 directly states: 'I believe this is made up and not documenting current practice. And the TAB does not exist.' This is a critical problem: the entire probationary review mechanism as described in the manual depends on the SMCS-TAB — a body that, according to TG11, has no established existence in the Constitution, Bylaws, or current SMCS operational practice. If the SMCS-TAB does not exist, the described review process cannot be executed as written, leaving the probationary system without a functioning review body.",
+    "context": "Section 4.2.2.1: 'the TC will undergo a final review by the VPs-TA and the SMCS-TAB to assess its performance, sustainability, and alignment with the Society's goals. Based on this review, a recommendation shall be made regarding the TC's transition from probationary to fully recognized status.' | Commented [TG11]: 'I believe this is made up and not documenting current practice. And the TAB does not exist.'",
+    "metadata": {
+      "section": "Section 4.2.2.1 / Comment TG11",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q29",
+    "type": "Multi-hop",
+    "question": "When a committee is being considered for termination due to inactivity, the manual attributes final decision-making authority to a specific body. A reviewer argues this attribution is wrong. Who does the manual say holds authority, and who does the reviewer believe should hold it instead?",
+    "ground_truth": "Section 4.2.1 (Termination of an Inactive TC) states that the judgment of whether a TC is inactive 'should be largely based on the TC's bi-annual reports and the final decision rests with the corresponding area committee.' Professor Tom Gedeon's comment TG17 directly disputes this, arguing it 'should be \"final decision rests with the VP-TA on the advice of the corresponding area committee\".' The distinction is substantive: the current text places final authority in a committee body (the area committee), whereas TG17 argues final authority should rest with an individual officer — the Vice President for Technical Activities — who takes the area committee's finding as advisory input only. This reflects a broader pattern in the document of area committees being elevated to decision-making roles that TG10 and TG17 argue should be held by individual officers or the BoG.",
+    "context": "Section 4.2.1: 'the final decision rests with the corresponding area committee.' | Commented [TG17]: 'should be \"final decision rests with the VP-TA on the advice of the corresponding area committee\"'",
+    "metadata": {
+      "section": "Section 4.2.1 / Comment TG17",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q30",
+    "type": "Multi-hop",
+    "question": "The manual sets out quite detailed requirements for what must be included when someone proposes a new specialised committee, including minimum membership thresholds and leadership structures. What concern does a reviewer raise about whether this level of procedural detail is legitimate?",
+    "ground_truth": "Section 4.2.2.1 specifies that a new TC proposal must include a title and acronym, a scope description, at least 15 founding IEEE SMC members listed with affiliations, proposed leadership (one Chair and up to three Vice-Chairs) with biographies, and a two-year work plan. Professor Tom Gedeon's comment TG8 states: 'all of this sounds like good practice, maybe even implemented but it's not in the bylaws. I'm happy to keep these as just \"good practice\". But it's unclear how much of this is documenting current practice or making up new stuff.' This means the detailed proposal requirements lack formal Bylaws grounding. They may reflect actual current informal practice, or they may be newly invented requirements, and TG8 explicitly cannot distinguish between these two possibilities. The Operational Manual presents them as requirements, but without Bylaws backing, their enforceability is questionable.",
+    "context": "Section 4.2.2.1: 'Founding Members: the TC consists of at least 15 IEEE SMC members as the initial members of the TC... There are a maximum of three Vice-Chairs representing widely the IEEE regions.' | Commented [TG8]: 'all of this sounds like good practice, maybe even implemented but it's not in the bylaws. I am happy to keep these as just good practice. But it is unclear how much of this is documenting current practice or making up new stuff.'",
+    "metadata": {
+      "section": "Section 4.2.2.1 / Comment TG8",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q31",
+    "type": "Multi-hop",
+    "question": "The manual places a numerical cap on how many deputy leaders a specialised committee may have. Has this limit been consistently observed in practice, and what does a reviewer recommend in response?",
+    "ground_truth": "Section 4.2.2.1 states that TC leadership may include 'a maximum of three Vice-Chairs representing widely the IEEE regions.' However, Professor Tom Gedeon's comment TG13 notes: 'I've noticed one new TC which seemed to have 3 co-chairs and 5 vice-chairs (I may be misremembering the numbers) — this may be a spot where IEEE can advise on sensible limits to create some personal accountability.' This indicates the three-Vice-Chair cap is not being consistently enforced in practice, with at least one TC apparently exceeding this limit through the addition of co-chairs as well as vice-chairs. TG13 recommends seeking IEEE-level guidance to establish sensible structural limits that ensure clear individual accountability within TC leadership, rather than diffusing responsibility across a large leadership team.",
+    "context": "Section 4.2.2.1: 'There are a maximum of three Vice-Chairs representing widely the IEEE regions.' | Commented [TG13]: 'I've noticed one new TC which seemed to have 3 co-chairs and 5 vice-chairs (I may be misremembering the numbers) – this may be a spot where ieee can advise on sensible limits to create some personal accountability.'",
+    "metadata": {
+      "section": "Section 4.2.2.1 / Comment TG13",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q32",
+    "type": "Multi-hop",
+    "question": "The manual requires each specialised committee to go through a formal review every four years. Two separate reviewer comments assess the authority of this requirement and reach different conclusions. What are these two assessments, and what explains the difference between them?",
+    "ground_truth": "Section 4.2.5 requires each TC to 'undergo a comprehensive review every four years by... the appropriate VP-TA.' Professor Tom Gedeon's comment TG15 assesses this as having been 'Discussed but not in the constitution. It seems like good practice that we attempt to do currently,' suggesting it is an informal practice without SMCS constitutional backing. However, comment TG16 takes a more favourable view: 'This is from the 2023 Technical Manual so seems to be official current practice. The 4 years seems more like real current practice.' TG16 thus attributes the requirement to the 2023 IEEE Technical Manual, giving it broader IEEE-level authority. The discrepancy arises because TG15 evaluates the rule against the SMCS Constitution specifically, while TG16 considers the broader IEEE Technical Manual as an authoritative source. Neither comment, however, establishes the requirement as being in the SMCS Bylaws.",
+    "context": "Section 4.2.5: 'Each TC shall undergo a comprehensive review every four years by SMCS-TABthe appropriate VP-TA.' | Commented [TG15]: 'Discussed but not in the constitution. It seems like good practice that we attempt to do currently.' | Commented [TG16]: 'This is from the 2023 Technical Manual so seems to be official current practice. The 4 years seems more like real current practice.'",
+    "metadata": {
+      "section": "Section 4.2.5 / Comments TG15, TG16",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q33",
+    "type": "Multi-hop",
+    "question": "The manual obligates all active specialised committees to submit periodic progress reports to their supervising Vice President. What is the reviewer's assessment of whether this reporting obligation has a formal basis in the governing documents?",
+    "ground_truth": "Section 4.2.7 (TC Duties) requires that 'each TC must submit reports semi-annually to the corresponding VP-TA. These reports shall summarize the committee's activities, member engagement, financials (if applicable), and future plans, serving as a basis for continued evaluation and accountability.' Professor Tom Gedeon's comment TG12 states: 'This seems good practice, and may be implementing what is currently done.' This assessment indicates that the semi-annual reporting requirement is viewed as sound and likely reflects actual current behaviour within SMCS, but — consistent with the broader pattern identified across TC governance sections — it is not explicitly grounded in the Bylaws or Constitution. It therefore sits in the same category as other provisions in the manual that are operationally reasonable but lack formal constitutional authority.",
+    "context": "Section 4.2.7: 'each TC must submit reports semi-annually to the corresponding VP-TA. These reports shall summarize the committee's activities, member engagement, financials (if applicable), and future plans, serving as a basis for continued evaluation and accountability.' | Commented [TG12]: 'This seems good practice, and may be implementing what is currently done.'",
+    "metadata": {
+      "section": "Section 4.2.7 / Comment TG12",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q34",
+    "type": "Multi-hop",
+    "question": "Section 4.1.3 is meant to explain how Executive Committee and Board of Governors meetings are conducted and how voting works. What is actually in that section, and why is this a significant problem for the document?",
+    "ground_truth": "Section 4.1.3, titled 'ExCom/BOG Meetings and Voting', is entirely empty — the heading appears but no content follows. This is a significant gap for several reasons. First, it directly contradicts Section 2, which lists governance-related operations as one of the manual's core coverage areas. Second, meeting conduct and voting are among the most fundamental governance activities any society undertakes, and the absence of any guidance means practitioners cannot use this manual to resolve procedural disputes. Third, the title page explicitly lists 'Meeting, Quorum and Proxy Rules' as one of the topics 'Missing from this document,' confirming the gap is acknowledged. The combination of an empty section body and a missing-topics acknowledgement means this area of governance is entirely unaddressed in the manual.",
+    "context": "Section 4.1.3 heading: 'ExCom/BOG Meetings and Voting' [No content follows the heading] | Section 2: 'This manual covers all operational domains within IEEE SMCS, including: Governance and Compliance...' | Title page: 'Missing from this document: ... Meeting, Quorum and Proxy Rules ...'",
+    "metadata": {
+      "section": "Section 4.1.3 / Title Page / Section 2",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q35",
+    "type": "Multi-hop",
+    "question": "In the section describing how a new committee proposal is reviewed and approved, the text shows signs of unresolved editing where the names of two different governance bodies appear to have been swapped back and forth. What bodies are involved and what does this editorial confusion reveal?",
+    "ground_truth": "Section 4.2.2.8 (TC Proposal Review) contains multiple unresolved tracked-change artefacts where 'SMCS-TAB' and 'corresponding area committee' have been substituted inconsistently, leaving both terms visible in places. For example: 'The SMCS-TABcorresponding area committee may invite relevant existing TCs to provide evaluation scores'; 'the corresponding area committee SMCS-TAB assesses the proposal's merit'; 'the corresponding area committee and VP-TASMCS-TAB determines the proposal is ready.' This editorial chaos reflects a live, unresolved governance dispute about which body — the area committee, the VP-TA, or the SMCS-TAB — should hold authority at each stage. Combined with TG10's concern that the manual is attempting to replace the BoG's roles with the SMCS-TAB, and TG11's statement that the SMCS-TAB does not even exist, these editing artefacts are evidence that a substantive disagreement about TC governance authority is embedded unresolved in the document itself.",
+    "context": "Section 4.2.2.8: 'The SMCS-TABcorresponding area committee may invite relevant existing TCs...' | 'the corresponding area committee SMCS-TAB assesses the proposal's merit, the distinctiveness of its technical scope...' | 'the corresponding area committee and VP-TASMCS-TAB determines the proposal is ready for recommendation to the BoG.' | Commented [TG10]: 'This document attempts to replace the BoG's roles by this TAB.' | Commented [TG11]: 'I believe this is made up and not documenting current practice. And the TAB does not exist.'",
+    "metadata": {
+      "section": "Section 4.2.2.8 / Comments TG10, TG11",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q36",
+    "type": "Multi-hop",
+    "question": "The manual claims financial accountability is one of its core areas of coverage. Yet a critical internal financial control topic is explicitly flagged as absent from the document. What is the missing topic and where does the document acknowledge this gap?",
+    "ground_truth": "The title page of the Operational Manual explicitly lists 'Financial Disbursement Signatories' under the heading 'Missing from this document.' This means the manual contains no guidance on which officers or individuals are authorised to approve and sign off on payments from Society accounts — a fundamental internal control. This gap is directly in tension with Section 2 (Scope and Objectives), which lists 'Financial planning and accountability' as one of the manual's core operational domains. While Section 4.5 (Finance) addresses contract processing, budget management, travel reimbursement, and conference financial coordination at some length, it nowhere specifies who holds disbursement signatory authority. The absence creates a significant accountability gap in financial governance.",
+    "context": "Title page: 'Missing from this document: ... Financial Disbursement Signatories ...' | Section 2: 'This manual covers all operational domains within IEEE SMCS, including: ... Financial planning and accountability ...' | Section 4.5: [Finance content covering contracts, budgeting, reimbursements — no mention of disbursement signatories]",
+    "metadata": {
+      "section": "Title Page / Section 2 / Section 4.5",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q37",
+    "type": "Multi-hop",
+    "question": "The manual sets attendance and activity expectations for individual members of specialised committees, including a threshold below which they could be removed from the roster. A reviewer questions the formal status of these expectations — what does the reviewer say?",
+    "ground_truth": "Section 4.2.4.2 (Membership Guidelines) states that 'TC members are expected to attend at least 50% of TC meetings annually and contribute to at least one TC activity each year,' and that 'Members who fail to meet participation requirements for two consecutive years may be removed from the TC roster in order to maintain an engaged and active membership.' Professor Tom Gedeon's comment TG14 states: 'I recall this being discussed. It is unclear to me whether we just consider this good practice etc?' This indicates that while the 50% attendance floor and the two-year removal rule are framed as mandatory standards in the manual, their formal governance status is uncertain — they may constitute aspirational good practice rather than formally enacted rules backed by the Constitution or Bylaws, which is consistent with the broader pattern of ungrounded provisions across the TC governance sections.",
+    "context": "Section 4.2.4.2: 'TC members are expected to attend at least 50% of TC meetings annually and contribute to at least one TC activity each year... Members who fail to meet participation requirements for two consecutive years may be removed from the TC roster' | Commented [TG14]: 'I recall this being discussed. It is unclear to me whether we just consider this good practice etc?'",
+    "metadata": {
+      "section": "Section 4.2.4.2 / Comment TG14",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q38",
+    "type": "Multi-hop",
+    "question": "The manual describes two distinct ways in which a specialised committee can be discontinued. Who initiates each pathway, and how does a reviewer's objection regarding authority interact with the first pathway?",
+    "ground_truth": "Section 4.2.1 describes two termination pathways. In the first, the corresponding area committee makes a determination of inactivity based on bi-annual reports — the TC must have been inactive for at least one year with no credible revival plan — and 'the final decision rests with the corresponding area committee.' In the second, termination can be initiated by the TC itself: 'by its chair and support of at least two of their TC members by submitting a request to the corresponding area with reason.' A third trigger also exists: termination through the quadrennial review if a TC fails to submit required reports for four consecutive years or shows no measurable activity. Professor Tom Gedeon's comment TG17 directly challenges the first pathway's attribution of final authority, arguing it should rest with 'the VP-TA on the advice of the corresponding area committee' — not with the area committee itself — thereby making the area committee advisory rather than decisive.",
+    "context": "Section 4.2.1: 'the final decision rests with the corresponding area committee.' | 'the discontinuation of an existing TC could also be made by its chair and support of at least two of their TC members by submitting a request to the corresponding area with reason.' | 'A TC may be terminated as part of the quadrennial review conducted by SMCS-TAB if it fails to submit required reports for four consecutive years...' | Commented [TG17]: 'should be \"final decision rests with the VP-TA on the advice of the corresponding area committee\"'",
+    "metadata": {
+      "section": "Section 4.2.1 / Comment TG17",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q39",
+    "type": "Multi-hop",
+    "question": "Who chairs the Technical Activities Board in years when the Society has no President-Elect, and why does a reviewer's comment make this contingency arrangement fundamentally problematic?",
+    "ground_truth": "Section 4.2.1.3 provides a contingency rule: 'In years when there is no President-Elect, the Chair of the SMCS-TAB shall be appointed by the SMCS President. The appointed Chair may be selected from among the current VPs-TA or other qualified members of the Administrative Committee, ensuring continuity of leadership and alignment with the Society's mission.' Normally, the President-Elect serves as SMCS-TAB Chair. However, this entire contingency mechanism is undermined by Professor Tom Gedeon's comment TG11, which states the SMCS-TAB 'does not exist' and that its procedures are 'made up and not documenting current practice.' If the SMCS-TAB has no constitutional or bylaw basis and does not exist as a functional body, then both the normal chairmanship arrangement and this contingency appointment process are equally without formal authority or practical application.",
+    "context": "Section 4.2.1.3: 'The President-Elect shall serve as the appointed Chair of the SMCS-TAB... In years when there is no President-Elect, the Chair of the SMCS-TAB shall be appointed by the SMCS President. The appointed Chair may be selected from among the current VPs-TA or other qualified members of the Administrative Committee.' | Commented [TG11]: 'I believe this is made up and not documenting current practice. And the TAB does not exist.'",
+    "metadata": {
+      "section": "Section 4.2.1.3 / Comment TG11",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q40",
+    "type": "Multi-hop",
+    "question": "Two subsections covering key publications governance roles contain only placeholder text instead of actual content. Which subsections are these, and how does their incompleteness conflict with the manual's stated purpose?",
+    "ground_truth": "Sections 4.3.1 (Publication Committee) and 4.3.2 (Editor-In-Chief Election and Duties) each contain only a cross-reference to Bylaws Article III, Section 4, followed by the placeholder phrase 'Need words here.' Section 4.3.1 reads: '[See Bylaws, Article III, Section 4] Need words here.' Section 4.3.2 reads: '[See Bylaws, Article III, Section 4] Need words here.' These incomplete sections directly contradict Section 2 (Scope and Objectives), which explicitly lists 'Editorial processes and publication ethics' as one of the core operational domains the manual is designed to cover. Two of the most important governance roles in the Society's publications function — the structure and mandate of the Publication Committee and the process for electing and defining the duties of the Editor-in-Chief — are thus entirely absent from the manual, despite being within its stated scope.",
+    "context": "Section 4.3.1: '[See Bylaws, Article III, Section 4] Need words here.' | Section 4.3.2: '[See Bylaws, Article III, Section 4] Need words here.' | Section 2: 'This manual covers all operational domains within IEEE SMCS, including: ... Editorial processes and publication ethics ...'",
+    "metadata": {
+      "section": "Sections 4.3.1, 4.3.2 / Section 2",
+      "category": "Multi-hop Reasoning"
+    }
+  },
+  {
+    "id": "Q41",
+    "type": "Out-of-Scope",
+    "question": "How many people serve on the Board of Governors, and what are the term lengths for each type of position on it?",
+    "ground_truth": "This information is not available in the Operational Manual. The document's title page explicitly lists 'BoG Composition and Terms' as one of the topics missing from this version of the document. For accurate and authoritative details on the number of BoG members and their respective term lengths, please consult the SMCS Constitution and Bylaws directly.",
+    "context": null,
+    "metadata": {
+      "section": "Title Page — Missing from this document",
+      "category": "Out-of-Scope / Abstention"
+    }
+  },
+  {
+    "id": "Q42",
+    "type": "Out-of-Scope",
+    "question": "Are there any rules about how many meetings a Board of Governors member can miss before their seat is declared vacant, and what is the process for removing them due to non-attendance?",
+    "ground_truth": "This information is not available in the Operational Manual. The document's title page explicitly lists 'BoG Attendance and Termination Rules' as one of the topics missing from this version. The manual does not describe any attendance requirements for BoG members or the process by which a seat may be declared vacant due to non-participation. For the applicable rules, please refer directly to the SMCS Constitution and Bylaws.",
+    "context": null,
+    "metadata": {
+      "section": "Title Page — Missing from this document",
+      "category": "Out-of-Scope / Abstention"
+    }
+  },
+  {
+    "id": "Q43",
+    "type": "Out-of-Scope",
+    "question": "How many voting members need to be present for an official Society or Board meeting to be valid, and is it permitted to vote by proxy if someone cannot attend in person?",
+    "ground_truth": "This information is not available in the Operational Manual. The title page explicitly identifies 'Meeting, Quorum and Proxy Rules' as one of the topics missing from this version of the document. Additionally, Section 4.1.3, which is titled 'ExCom/BOG Meetings and Voting,' contains no content at all. For rules governing quorum thresholds and proxy voting procedures, please consult the SMCS Constitution and Bylaws directly.",
+    "context": null,
+    "metadata": {
+      "section": "Title Page — Missing from this document / Section 4.1.3 (empty)",
+      "category": "Out-of-Scope / Abstention"
+    }
+  },
+  {
+    "id": "Q44",
+    "type": "Out-of-Scope",
+    "question": "Which specific officers or roles are authorised to approve and sign off on financial payments made from the Society's funds?",
+    "ground_truth": "This information is not available in the Operational Manual. The document's title page explicitly identifies 'Financial Disbursement Signatories' as one of the topics missing from this version. While Section 4.5 covers various aspects of financial management — including contract processing, budget forecasting, travel reimbursement, and conference financial coordination — it does not identify which officers hold signatory authority for disbursements. For this information, please refer to the SMCS Bylaws or contact the VP for Finance directly.",
+    "context": null,
+    "metadata": {
+      "section": "Title Page — Missing from this document",
+      "category": "Out-of-Scope / Abstention"
+    }
+  },
+  {
+    "id": "Q45",
+    "type": "Out-of-Scope",
+    "question": "What is the formal process used by the Society to collect input from its officers and members when setting the goals and priorities for the upcoming operational year?",
+    "ground_truth": "This information is not available in the Operational Manual. The document's title page explicitly lists 'Annual Plan Objective Gathering' as one of the topics missing from this version. The manual does not describe any process for how annual strategic or operational objectives are solicited, compiled, or approved. For guidance on this process, please consult the relevant Society leadership or any supplementary planning documents that may exist outside this manual.",
+    "context": null,
+    "metadata": {
+      "section": "Title Page — Missing from this document",
+      "category": "Out-of-Scope / Abstention"
+    }
+  },
+  {
+    "id": "Q46",
+    "type": "Out-of-Scope",
+    "question": "If someone wanted to propose a change to the wording or content of this Operational Manual itself, what is the formal procedure they would need to follow to get that change approved?",
+    "ground_truth": "This information is not available in the Operational Manual. The document's title page explicitly lists 'Amendment Procedures' as one of the topics missing from this version. The manual provides no guidance on how proposed modifications to its own content should be submitted, reviewed, or ratified. This gap is further highlighted by Professor Tom Gedeon's comment TG1, which notes that it is unclear whether the manual even has formal weight unless approved by the President, ExCom, or BoG — meaning the amendment process is doubly ambiguous. For information on amendment procedures, please refer to the SMCS Constitution and Bylaws or contact the VP for Organisation and Planning.",
+    "context": null,
+    "metadata": {
+      "section": "Title Page — Missing from this document / Comment TG1",
+      "category": "Out-of-Scope / Abstention"
+    }
+  },
+  {
+    "id": "Q47",
+    "type": "Out-of-Scope",
+    "question": "What is the official definition of the technical subject areas and research topics that fall within the IEEE SMCS's domain of interest?",
+    "ground_truth": "This information is not available in the Operational Manual. The document's title page explicitly identifies \"SMC's formal Field of Interest Definition\" as one of the topics missing from this version. The manual does not contain any formal description of the Society's technical scope or the boundaries of its recognised field of interest. For the official definition, please consult the SMCS Constitution or the relevant IEEE Society documentation available on the IEEE website.",
+    "context": null,
+    "metadata": {
+      "section": "Title Page — Missing from this document",
+      "category": "Out-of-Scope / Abstention"
+    }
+  },
+  {
+    "id": "Q48",
+    "type": "Out-of-Scope",
+    "question": "How much does it currently cost in dollar terms to join the IEEE SMCS Society as a standard member this year?",
+    "ground_truth": "The Operational Manual does not specify a current dollar amount for Society membership dues. Section 4.4.7.1 states only that 'Annual dues for Members shall be set each year as part of the budget cycle' and that any change in dues requires approval by two-thirds of all voting members of the Board of Governors. No specific fee figure is provided anywhere in the document. For current membership fee amounts, please visit the IEEE SMCS website at https://www.ieeesmc.org or the IEEE membership portal.",
+    "context": null,
+    "metadata": {
+      "section": "Section 4.4.7.1",
+      "category": "Out-of-Scope / Abstention"
+    }
+  },
+  {
+    "id": "Q49",
+    "type": "Out-of-Scope",
+    "question": "During an Executive Committee meeting, how are votes actually cast — is it by show of hands, secret ballot, or electronic means — and what happens in the event of a tie?",
+    "ground_truth": "This information is not available in the Operational Manual. Section 4.1.3, titled 'ExCom/BOG Meetings and Voting,' exists in the document as a heading but contains absolutely no content. The title page also lists 'Meeting, Quorum and Proxy Rules' among the topics missing from this version. The manual therefore provides no guidance on voting methods, tie-breaking procedures, or any other aspect of how ExCom or BoG meetings are formally conducted. For this information, please consult the SMCS Constitution and Bylaws.",
+    "context": null,
+    "metadata": {
+      "section": "Section 4.1.3 (empty) / Title Page — Missing from this document",
+      "category": "Out-of-Scope / Abstention"
+    }
+  },
+  {
+    "id": "Q50",
+    "type": "Out-of-Scope",
+    "question": "Could this IEEE SMCS Operational Manual serve as a reliable template or reference guide for other IEEE societies looking to design their own technical committee governance structures?",
+    "ground_truth": "The Operational Manual is not suitable as a reference template for other IEEE societies. It is explicitly scoped to IEEE SMCS alone — Section 1 states it provides operational guidance for 'IEEE SMCS activities' and is 'subordinate to the Constitution and Bylaws' of SMCS specifically. Furthermore, Professor Tom Gedeon's annotations throughout the document reveal that multiple sections either contradict the SMCS Constitution (e.g., the use of 'Technical Committees,' which the Constitution does not recognise), lack Bylaws grounding (e.g., TC creation procedures per TG8), or depend on a governance body that does not exist (the SMCS-TAB, per TG11). Given these unresolved internal consistency issues and the document's acknowledged incompleteness — with seven topics listed as missing on the title page — it would not be appropriate to use this manual as a model for any other society's governance.",
+    "context": null,
+    "metadata": {
+      "section": "Section 1 / General Scope / Multiple Comments",
+      "category": "Out-of-Scope / Abstention"
+    }
+  }
+]

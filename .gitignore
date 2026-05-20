@@ -1,0 +1,29 @@
+# API Keys & Secrets
+.env
+.env.local
+.env.*.local
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Next.js / Frontend
+node_modules/
+.next/
+out/
+build/
+.DS_Store
+
+# Data (Original PDFs)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Vector Database
+chroma_db/
+app.log
+__pycache__/
+.DS_Store
