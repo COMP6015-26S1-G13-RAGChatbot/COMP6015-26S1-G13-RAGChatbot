@@ -8,14 +8,21 @@ class RAGWrapper:
 
     def ask(self, user_query):
         # Retrieve top 2 documents for each type
-        docs_op = self.search_service.search(user_query, doc_type='operational', k=2)  
-        docs_legal = self.search_service.search(user_query, doc_type='legal', k=2)
-
+        docs_op = self.search_service.search(user_query, doc_type='operational', k=4)  
+        docs_legal = self.search_service.search(user_query, doc_type='legal', k=4)        
+        docs_global = self.search_service.search(user_query, doc_type=None, k=2)
+        
+        context_dict = {
+            'operational': docs_op,
+            'legal': docs_legal,
+            'general': docs_global
+        }
+        
         # llm generate answer (LLMService)
-        final_answer = self.llm_service.generate_answer(user_query, {"operational": docs_op, "legal": docs_legal})
+        final_answer = self.llm_service.generate_answer(user_query, context_dict)
 
         detailed_source = []
-        all_docs = docs_op + docs_legal  # Combine all retrieved documents for source details
+        all_docs = docs_op + docs_legal + docs_global  # Combine all retrieved documents for source details
         
         for doc in all_docs:
             source_name = doc.metadata.get("source", "Unknown Source")

@@ -38,13 +38,13 @@ class SearchService:
         return reranked_docs
     
     
-    def search(self, query, doc_type=None, k=2):
+    def search(self, query, doc_type=None, k=4):
         """
         Search for relevant 10 documents
         Rerank the retrieved documents using Flashrank and return the top 2 results.
         """
         
         search_filter = {"type": doc_type} if doc_type else None
-        raw_docs = self.db.similarity_search(query, k=10, filter=search_filter)
+        raw_docs = self.db.similarity_search(query, k=15, filter=search_filter)
         return self._rerank_docs(query, raw_docs, top_n=k)
         
