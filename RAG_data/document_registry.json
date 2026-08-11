@@ -1,0 +1,93 @@
+[
+  {
+    "document_id": "smcs-operations-manual-v2-corrected",
+    "title": "Corrected Operations Manual",
+    "version": "2 (corrected 2025-09-17)",
+    "document_type": "operations_manual",
+    "approval_status": "approved",
+    "authority_level": 100,
+    "effective_date": "2025-09-17",
+    "content_hash": "auto",
+    "source_path": "corpus/manuals/Corrected Operations Manual.pdf",
+    "retrieval_enabled": true,
+    "usage": "production"
+  },
+  {
+    "document_id": "smcs-technical-manual-2023",
+    "title": "SMCS Technical Manual",
+    "version": "2023-08-01",
+    "document_type": "technical_manual",
+    "approval_status": "approved",
+    "authority_level": 70,
+    "effective_date": "2023-08-01",
+    "content_hash": "auto",
+    "source_path": "corpus/manuals/SMCS-Techncal-Manual-2023-08-01.pdf",
+    "retrieval_enabled": true,
+    "usage": "production"
+  },
+  {
+    "document_id": "smcs-constitution-bylaws-2023",
+    "title": "SMCS Constitution and Bylaws",
+    "version": "2023-08-01",
+    "document_type": "constitution_bylaws",
+    "approval_status": "approved",
+    "authority_level": 80,
+    "effective_date": "2023-08-01",
+    "content_hash": "auto",
+    "source_path": "corpus/governing_doc/SMC-Constitution-Bylaws-August-2023-web.pdf",
+    "retrieval_enabled": true,
+    "usage": "production"
+  },
+  {
+    "document_id": "ieee-constitution-bylaws-2024",
+    "title": "IEEE Constitution and Bylaws",
+    "version": "2024-11-25",
+    "document_type": "constitution_bylaws",
+    "approval_status": "approved",
+    "authority_level": 75,
+    "effective_date": "2024-11-25",
+    "content_hash": "auto",
+    "source_path": "corpus/governing_doc/ieee-constitution-and-bylaws.pdf",
+    "retrieval_enabled": true,
+    "usage": "production"
+  },
+  {
+    "document_id": "smcs-operations-manual-v2-old",
+    "title": "Old Operations Manual V5",
+    "version": "2 (superseded)",
+    "document_type": "operations_manual",
+    "approval_status": "superseded",
+    "authority_level": 10,
+    "effective_date": null,
+    "content_hash": "auto",
+    "source_path": "evaluation/input/Old Operational Manual V5.pdf",
+    "retrieval_enabled": false,
+    "usage": "audit_input"
+  },
+  {
+    "document_id": "smcs-operations-manual-draft",
+    "title": "Draft Operations Manual V5",
+    "version": "draft",
+    "document_type": "operations_manual",
+    "approval_status": "pending",
+    "authority_level": 0,
+    "effective_date": null,
+    "content_hash": "auto",
+    "source_path": "pending/draft Operational Manual V5.docx",
+    "retrieval_enabled": false,
+    "usage": "pending"
+  },
+  {
+    "document_id": "operations-golden-set",
+    "title": "COMP6016 Operations Manual Golden Set",
+    "version": "candidate",
+    "document_type": "evaluation_dataset",
+    "approval_status": "evaluation_only",
+    "authority_level": 0,
+    "effective_date": null,
+    "content_hash": "auto",
+    "source_path": "COMP6016_Operations_Manual_Golden_Set.xlsx",
+    "retrieval_enabled": false,
+    "usage": "evaluation_only"
+  }
+]

@@ -2,7 +2,13 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { parseSourceString } from '@/lib/utils';
 
-export function MessageItem({ message }: { message: any }) {
+interface LegacyMessage {
+  role: "user" | "assistant";
+  content: string;
+  sources?: string[];
+}
+
+export function MessageItem({ message }: { message: LegacyMessage }) {
   const isAssistant = message.role === "assistant";
 
   return (

@@ -2,6 +2,7 @@
 .env
 .env.local
 .env.*.local
+.env.txt
 
 # Python
 venv/
@@ -24,6 +25,12 @@ data/processed/*
 
 # Vector Database
 chroma_db/
+backend/section_index.json
+
+# Local source documents (registry metadata remains versioned)
+RAG_data/**/*.pdf
+RAG_data/**/*.docx
+RAG_data/**/*.xlsx
 app.log
 __pycache__/
 .DS_Store

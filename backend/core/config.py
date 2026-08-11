@@ -1,29 +1,13 @@
-import os 
+from pathlib import Path
+import os
+
 
 class Config:
-    # PATH CONFIG
-    # backend/core/config.py  -> backend/core -> backend -> project root
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    
-    CHROMA_PATH = os.path.join(BASE_DIR, "chroma_db")
-    DATA_SOURCE = {
-        "legal": os.path.join(BASE_DIR, "data/legal"),
-        "operational": os.path.join(BASE_DIR, "data/operational")
-    }
-
-    # RAG PARAMETER CONFIG
-    CHUNK_SIZE = 1000
-    CHUNK_OVERLAP = 200
-    MODEL_NAME = "BAAI/bge-small-en-v1.5"
-    FLASHRANK_MODEL_NAME = "ms-marco-Multi-BERT-L-12"
-
-    # singleton pattern for embedding model
-    @staticmethod
-    def get_embedding_model():
-        from langchain_huggingface import HuggingFaceEmbeddings
-        return HuggingFaceEmbeddings(model_name=Config.MODEL_NAME)
-    
-    @staticmethod
-    def get_current_time():
-        import datetime
-        return datetime.datetime.now().isoformat()
+    BASE_DIR = Path(__file__).resolve().parents[2]
+    DATA_DIR = BASE_DIR / "RAG_data"
+    REGISTRY_PATH = DATA_DIR / "document_registry.json"
+    INDEX_PATH = BASE_DIR / "backend" / "section_index.json"
+    GOLDEN_SET_PATH = DATA_DIR / "COMP6016_Operations_Manual_Golden_Set.xlsx"
+    MAX_RESULTS = 6
+    MIN_RETRIEVAL_SCORE = 0.08
+    DEVELOPMENT_MODE = os.getenv("APP_ENV", "development").lower() == "development"
