@@ -46,8 +46,8 @@ class RetrievalAndRAGTests(unittest.TestCase):
     def test_highest_authority_controls_conflicting_answer(self):
         result = RAGService(self.search).answer("Within how many days shall vacancies be filled after announcement?")
         self.assertFalse(result.abstained)
-        self.assertEqual(result.conflict_status, "possible")
-        self.assertIn("Applying the configured authority rule", result.answer)
+        self.assertEqual(result.conflict_status, "confirmed")
+        self.assertIn("Resolved by document hierarchy", result.answer)
         self.assertEqual(result.citations[0].document_id, "smcs-operations-manual-v2-corrected")
 
     def test_missing_evidence_abstains(self):
@@ -115,6 +115,46 @@ class EvaluationIsolationTests(unittest.TestCase):
 
 
 class ApiTests(unittest.TestCase):
+    def test_health_checks_report_initialized_corpus(self):
+        with TestClient(app) as client:
+            self.assertEqual(client.get("/api/health/live").json(), {"status": "ok"})
+            response = client.get("/api/health/ready")
+            self.assertEqual(response.status_code, 200)
+            payload = response.json()
+            self.assertEqual(payload["status"], "ready")
+            self.assertGreater(payload["documents"], 0)
+            self.assertGreater(payload["chunks"], 0)
+            self.assertIn("embedding", payload)
+
+    def test_request_id_is_returned_and_service_graph_is_reused(self):
+        with TestClient(app) as client:
+            search_id = id(app.state.search)
+            first = client.get("/api/health", headers={"X-Request-ID": "test-request-123"})
+            second = client.get("/api/documents")
+            self.assertEqual(first.headers["X-Request-ID"], "test-request-123")
+            self.assertTrue(second.headers["X-Request-ID"])
+            self.assertEqual(id(app.state.search), search_id)
+
+    def test_repeated_chat_question_uses_response_cache(self):
+        with TestClient(app) as client:
+            payload = {"question": "What is the role of the President?", "mode": "deterministic"}
+            first = client.post("/api/chat", json=payload)
+            second = client.post("/api/chat", json=payload)
+            self.assertEqual(first.headers["X-Cache"], "MISS")
+            self.assertEqual(second.headers["X-Cache"], "HIT")
+            self.assertIn("rag;", first.headers["Server-Timing"])
+            self.assertIn("cache;", second.headers["Server-Timing"])
+            self.assertEqual(first.json(), second.json())
+
+    def test_experimental_retrieval_modes_are_accepted(self):
+        with TestClient(app) as client:
+            for mode in ("bm25", "dense", "rrf"):
+                with self.subTest(mode=mode):
+                    response = client.post("/api/chat", json={
+                        "question": "What is the role of the President?", "mode": mode})
+                    self.assertEqual(response.status_code, 200)
+                    self.assertEqual(response.json()["requested_mode"], mode)
+
     def test_structured_chat_output_and_validation(self):
         with TestClient(app) as client:
             response = client.post("/api/chat", json={"question": "What is the role of the President?"})

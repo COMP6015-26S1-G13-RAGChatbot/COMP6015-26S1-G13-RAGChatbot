@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IEEE RAG Assistant",
-  description: "IEEE/SMCS Governance Document QA System",
+  title: "Governance AI · IEEE SMCS",
+  description: "Authority-aware IEEE SMCS governance assistant",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
