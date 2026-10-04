@@ -34,16 +34,35 @@ from pydantic import BaseModel, Field
 # ============================================================
 
 WEB_DIR = Path(__file__).resolve().parent
-PROJECT_DIR = WEB_DIR.parent
-SRC_DIR = PROJECT_DIR / "src"
-DATA_DIR = PROJECT_DIR / "data"
 STATIC_DIR = WEB_DIR / "static"
+
+# The project folder is the one containing web/, unless RAG_PROJECT_DIR
+# points somewhere else.
+PROJECT_DIR = Path(
+    os.environ.get("RAG_PROJECT_DIR", WEB_DIR.parent)
+).expanduser().resolve()
+
+# rag_chat.py may live in src/ or directly in the project folder.
+SRC_DIR = (
+    PROJECT_DIR / "src"
+    if (PROJECT_DIR / "src" / "rag_chat.py").exists()
+    else PROJECT_DIR
+)
+DATA_DIR = PROJECT_DIR / "data"
 
 DEMO_MODE = os.environ.get("RAG_DEMO_MODE", "").lower() in ("1", "true", "yes")
 
 # rag_chat.py uses relative paths ("chroma_db") and sibling imports.
 os.chdir(PROJECT_DIR)
 sys.path.insert(0, str(SRC_DIR))
+
+print(f"Project folder: {PROJECT_DIR}")
+print(f"rag_chat.py:    {SRC_DIR / 'rag_chat.py'}"
+      + ("" if (SRC_DIR / "rag_chat.py").exists() else "  (NOT FOUND)"))
+print(f"chroma_db:      {PROJECT_DIR / 'chroma_db'}"
+      + ("" if (PROJECT_DIR / "chroma_db").exists() else "  (NOT FOUND - run ingest first)"))
+print(f"PDF documents:  {DATA_DIR}"
+      + ("" if DATA_DIR.exists() else "  (NOT FOUND)"))
 
 
 # ============================================================

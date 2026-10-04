@@ -17,6 +17,19 @@ uvicorn web.server:app --port 8000
 
 Open http://localhost:8000.
 
+### Using it in another project folder
+
+Copy the `web/` folder into the folder that holds your RAG files (for
+example `RAG/`) and run the same `uvicorn` command from that folder. The
+server works out the paths itself:
+
+- `rag_chat.py` can be in `src/` or directly in the folder
+- `chroma_db/` and `data/` (the PDFs) are expected in the folder
+
+On start-up it prints the paths it is using and flags anything missing.
+To run it from somewhere else, point it at the folder explicitly:
+`RAG_PROJECT_DIR=/path/to/RAG uvicorn web.server:app --port 8000`.
+
 To preview the interface without Ollama or the vector database, run it in
 demo mode, which returns canned responses:
 
