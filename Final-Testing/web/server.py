@@ -4,9 +4,10 @@ Web server for the IEEE SMCS RAG chatbot.
 Wraps the existing pipeline in src/rag_chat.py (unchanged) with a small
 FastAPI app and serves the browser front end from web/static.
 
-Run from the Final-Testing folder:
+Run from the project folder (Final-Testing, or your own RAG folder),
+using the same Python you use for rag_chat.py:
 
-    uvicorn web.server:app --port 8000
+    python web/server.py
 
 Then open http://localhost:8000
 
@@ -15,6 +16,7 @@ vector database (returns canned responses).
 """
 
 import contextlib
+import importlib.util
 import io
 import os
 import sys
@@ -57,6 +59,7 @@ DEMO_MODE = os.environ.get("RAG_DEMO_MODE", "").lower() in ("1", "true", "yes")
 os.chdir(PROJECT_DIR)
 sys.path.insert(0, str(SRC_DIR))
 
+print(f"Python:         {sys.executable}")
 print(f"Project folder: {PROJECT_DIR}")
 print(f"rag_chat.py:    {SRC_DIR / 'rag_chat.py'}"
       + ("" if (SRC_DIR / "rag_chat.py").exists() else "  (NOT FOUND)"))
@@ -119,6 +122,16 @@ def describe_source(source, page=None, source_type=None):
 # PIPELINE ADAPTER
 # ============================================================
 
+# Import name -> pip package name, for everything rag_chat.py needs.
+REQUIRED_PACKAGES = {
+    "langchain_community": "langchain-community",
+    "langchain_huggingface": "langchain-huggingface",
+    "langchain_core": "langchain-core",
+    "chromadb": "chromadb",
+    "sentence_transformers": "sentence-transformers",
+}
+
+
 class RagPipeline:
     """
     Calls rag_chat.ask_question and captures the citations and conflicts
@@ -134,6 +147,24 @@ class RagPipeline:
         print("\nLoading the RAG pipeline (embedding model + vector database)...")
         print("The first start can take a few minutes while the model downloads.\n")
         started = time.perf_counter()
+
+        missing = [
+            package
+            for module, package in REQUIRED_PACKAGES.items()
+            if importlib.util.find_spec(module) is None
+        ]
+        if missing:
+            command = f'"{sys.executable}" -m pip install ' + " ".join(missing)
+            self.error = (
+                "Missing packages in this Python environment: "
+                + ", ".join(missing)
+                + ". Install them with: " + command
+            )
+            print(f"\n{self.error}\n")
+            print("If rag_chat.py works for you, start this server with that same")
+            print("Python instead, e.g. activate your virtual environment and run:")
+            print("    python web/server.py\n")
+            return
 
         try:
             import rag_chat
@@ -297,17 +328,18 @@ STARTED_AT = time.perf_counter()
 # API
 # ============================================================
 
-app = FastAPI(title="IEEE SMCS Governance Assistant")
+@contextlib.asynccontextmanager
+async def lifespan(app):
+    # Load models in the background so the page is reachable immediately.
+    threading.Thread(target=pipeline.load, daemon=True).start()
+    yield
+
+
+app = FastAPI(title="IEEE SMCS Governance Assistant", lifespan=lifespan)
 
 
 class ChatRequest(BaseModel):
     question: str = Field(..., min_length=1, max_length=2000)
-
-
-@app.on_event("startup")
-def startup():
-    # Load models in the background so the page is reachable immediately.
-    threading.Thread(target=pipeline.load, daemon=True).start()
 
 
 @app.get("/api/health")
@@ -372,3 +404,11 @@ def index():
 
 
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    port = int(os.environ.get("PORT", "8000"))
+    print(f"\nStarting web server on http://localhost:{port}\n")
+    uvicorn.run(app, host="127.0.0.1", port=port)
