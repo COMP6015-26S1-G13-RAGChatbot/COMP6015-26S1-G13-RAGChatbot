@@ -10,12 +10,12 @@
   var MAX_CONVERSATIONS = 30;
 
   var SUGGESTIONS = [
-    { tag: "Voting", text: "Is proxy voting allowed at an SMCS Board of Governors meeting?" },
-    { tag: "Quorum", text: "What constitutes a quorum for the SMCS Board of Governors?" },
-    { tag: "Board", text: "How many voting members can the SMCS Board of Governors have at most?" },
-    { tag: "Terms", text: "What is the term of office for an SMCS Member-at-Large on the Board of Governors?" },
-    { tag: "Committees", text: "What is the minimum number of IEEE SMC Society members required to be listed as founding members of a new technical committee?" },
-    { tag: "Meetings", text: "How often must the SMCS Executive Committee meet?" }
+    { tag: "Voting", icon: "vote", text: "Is proxy voting allowed at an SMCS Board of Governors meeting?" },
+    { tag: "Quorum", icon: "users", text: "What constitutes a quorum for the SMCS Board of Governors?" },
+    { tag: "Board", icon: "building", text: "How many voting members can the SMCS Board of Governors have at most?" },
+    { tag: "Terms", icon: "calendar", text: "What is the term of office for an SMCS Member-at-Large on the Board of Governors?" },
+    { tag: "Committees", icon: "layers", text: "What is the minimum number of IEEE SMC Society members required to be listed as founding members of a new technical committee?" },
+    { tag: "Meetings", icon: "clock", text: "How often must the SMCS Executive Committee meet?" }
   ];
 
   var STAGES = [
@@ -39,6 +39,12 @@
     info: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg>',
     alert: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>',
     trash: '<svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg>',
+    vote: '<svg viewBox="0 0 24 24"><path d="m9 12 2 2 4-4"/><path d="M5 7V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/><rect x="3" y="7" width="18" height="14" rx="2"/></svg>',
+    users: '<svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>',
+    building: '<svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>',
+    calendar: '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>',
+    layers: '<svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></svg>',
+    arrow: '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
     clock: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'
   };
 
@@ -57,7 +63,7 @@
     history: $("history"),
     docList: $("docList"),
     status: $("status"),
-    themeToggle: $("themeToggle"),
+    themeSwitch: $("themeSwitch"),
     title: $("chatTitle"),
     thread: $("thread"),
     welcome: $("welcome"),
@@ -212,9 +218,11 @@
 
   function renderSuggestions() {
     els.suggestions.innerHTML = SUGGESTIONS.map(function (s, i) {
-      return '<button class="suggestion" data-index="' + i + '">' +
-        '<span class="tag">' + escapeHtml(s.tag) + "</span>" +
-        "<span>" + escapeHtml(s.text) + "</span></button>";
+      return '<button class="suggestion" data-index="' + i + '" style="--i:' + i + '">' +
+        '<span class="s-icon">' + ICONS[s.icon] + "</span>" +
+        '<span class="s-body"><span class="tag">' + escapeHtml(s.tag) + "</span>" +
+        '<span class="s-text">' + escapeHtml(s.text) + "</span></span>" +
+        '<span class="s-arrow">' + ICONS.arrow + "</span></button>";
     }).join("");
   }
 
@@ -430,7 +438,8 @@
     }
 
     renderHistory();
-    scrollToBottom();
+    if (conversation && conversation.messages.length) scrollToBottom();
+    else els.thread.scrollTop = 0;
   }
 
   // ============================================================
@@ -561,17 +570,29 @@
   // THEME & LAYOUT
   // ============================================================
 
-  function effectiveTheme() {
-    var set = document.documentElement.getAttribute("data-theme");
-    if (set) return set;
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark" : "light";
+  var systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function themePreference() {
+    try { return localStorage.getItem(THEME_KEY) || "system"; } catch (e) { return "system"; }
   }
 
-  function toggleTheme() {
-    var next = effectiveTheme() === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
-    try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+  function applyTheme(pref) {
+    var theme = pref === "system" ? (systemDark.matches ? "dark" : "light") : pref;
+    var root = document.documentElement;
+
+    root.classList.add("theme-changing");
+    root.setAttribute("data-theme", theme);
+    setTimeout(function () { root.classList.remove("theme-changing"); }, 350);
+
+    els.themeSwitch.setAttribute("data-pref", pref);
+    els.themeSwitch.querySelectorAll("button").forEach(function (b) {
+      b.setAttribute("aria-checked", String(b.dataset.themeValue === pref));
+    });
+  }
+
+  function setTheme(pref) {
+    try { localStorage.setItem(THEME_KEY, pref); } catch (e) {}
+    applyTheme(pref);
   }
 
   function openSidebar(open) {
@@ -634,7 +655,16 @@
     }
   });
 
-  els.themeToggle.addEventListener("click", toggleTheme);
+  els.themeSwitch.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-theme-value]");
+    if (btn) setTheme(btn.dataset.themeValue);
+  });
+
+  var onSystemChange = function () {
+    if (themePreference() === "system") applyTheme("system");
+  };
+  if (systemDark.addEventListener) systemDark.addEventListener("change", onSystemChange);
+  else if (systemDark.addListener) systemDark.addListener(onSystemChange);
   els.menuBtn.addEventListener("click", function () { openSidebar(true); });
   els.sidebarClose.addEventListener("click", function () { openSidebar(false); });
   els.scrim.addEventListener("click", function () { openSidebar(false); });
@@ -647,6 +677,7 @@
   // INIT
   // ============================================================
 
+  applyTheme(themePreference());
   renderSuggestions();
   showConversation(null);
   loadDocuments();
