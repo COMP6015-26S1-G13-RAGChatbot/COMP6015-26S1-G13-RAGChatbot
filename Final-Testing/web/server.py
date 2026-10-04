@@ -20,6 +20,7 @@ import os
 import sys
 import threading
 import time
+import traceback
 from pathlib import Path
 from urllib.parse import quote
 
@@ -130,13 +131,23 @@ class RagPipeline:
         self.error = None
 
     def load(self):
+        print("\nLoading the RAG pipeline (embedding model + vector database)...")
+        print("The first start can take a few minutes while the model downloads.\n")
+        started = time.perf_counter()
+
         try:
             import rag_chat
-        except Exception as exc:  # surfaced through /api/health
+        except BaseException as exc:  # surfaced through /api/health
+            traceback.print_exc()
             self.error = f"{type(exc).__name__}: {exc}"
+            print(f"\nPipeline failed to load: {self.error}\n")
             return
 
         self._module = rag_chat
+        print(
+            f"\nPipeline ready in {time.perf_counter() - started:.0f}s. "
+            "Open http://localhost:8000\n"
+        )
 
     @property
     def ready(self):
@@ -215,11 +226,13 @@ class RagPipeline:
 
 
 class DemoPipeline:
-    ready = True
+    ready = False
     error = None
 
     def load(self):
-        pass
+        # RAG_DEMO_LOAD_DELAY simulates a slow model load for testing.
+        time.sleep(float(os.environ.get("RAG_DEMO_LOAD_DELAY", "0")))
+        self.ready = True
 
     def ask(self, question):
         time.sleep(1.2)
@@ -277,6 +290,7 @@ class DemoPipeline:
 
 
 pipeline = DemoPipeline() if DEMO_MODE else RagPipeline()
+STARTED_AT = time.perf_counter()
 
 
 # ============================================================
@@ -307,6 +321,7 @@ def health():
 
     return {
         "status": status,
+        "loading_seconds": round(time.perf_counter() - STARTED_AT),
         "demo": DEMO_MODE,
         "error": pipeline.error,
         "documents": len(DOCUMENTS),

@@ -474,19 +474,27 @@
     var timer = renderTyping(body);
     scrollToBottom();
 
-    fetch("/api/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question: question })
-    })
-      .then(function (res) {
+    function send() {
+      return fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: question })
+      }).then(function (res) {
         return res.json().catch(function () { return {}; }).then(function (data) {
+          // Still loading: wait for the pipeline, then send again.
+          if (res.status === 503 && /still loading/i.test(data.detail || "")) {
+            return waitUntilReady(body, timer).then(send);
+          }
           if (!res.ok) {
             throw new Error(data.detail || ("Request failed (" + res.status + ")"));
           }
           return data;
         });
-      })
+      });
+    }
+
+    waitUntilReady(body, timer)
+      .then(send)
       .then(function (result) {
         clearInterval(timer);
         conversation.messages.push({ question: question, result: result });
@@ -539,6 +547,43 @@
     els.status.querySelector(".status-text").textContent = text;
   }
 
+  // Resolves once the pipeline has loaded, showing progress in the
+  // typing indicator meanwhile. Rejects if loading failed.
+  function waitUntilReady(body, timer) {
+    return new Promise(function (resolve, reject) {
+      function check() {
+        fetch("/api/health")
+          .then(function (r) { return r.json(); })
+          .then(function (h) {
+            if (h.status === "ready") {
+              setStatus("ready", h.demo ? "Demo mode" : "Ready");
+              var ready = body.querySelector(".stage");
+              if (ready && /Loading the models/.test(ready.textContent)) {
+                ready.textContent = "Models loaded. Generating a grounded answer…";
+              }
+              return resolve();
+            }
+            if (h.status === "error") {
+              setStatus("error", "Pipeline error");
+              return reject(new Error("The pipeline failed to load: " + (h.error || "unknown error") +
+                ". Check the terminal running the server for details."));
+            }
+            clearInterval(timer);
+            var stage = body.querySelector(".stage");
+            if (stage) {
+              stage.textContent = "Loading the models (" + h.loading_seconds +
+                "s). Your question will be sent automatically when ready…";
+            }
+            setTimeout(check, 2000);
+          })
+          .catch(function () {
+            reject(new Error("Could not reach the server. Is the terminal running uvicorn still open?"));
+          });
+      }
+      check();
+    });
+  }
+
   function pollHealth() {
     fetch("/api/health")
       .then(function (r) { return r.json(); })
@@ -549,7 +594,7 @@
           setStatus("error", "Pipeline error");
           els.status.title = h.error || "";
         } else {
-          setStatus("loading", "Loading models…");
+          setStatus("loading", "Loading models… " + h.loading_seconds + "s");
           setTimeout(pollHealth, 2500);
         }
       })
