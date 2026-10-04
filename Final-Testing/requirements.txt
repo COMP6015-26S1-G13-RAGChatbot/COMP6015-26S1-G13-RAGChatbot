@@ -6,3 +6,5 @@ pymupdf
 pymupdf4llm
 python-dotenv
 sentence-transformers
+fastapi
+uvicorn
