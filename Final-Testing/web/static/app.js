@@ -5,6 +5,7 @@
   // CONFIG
   // ============================================================
 
+  // Set per signed-in user in init(), so each user has their own history.
   var STORE_KEY = "smcs-conversations";
   var THEME_KEY = "smcs-theme";
   var MAX_CONVERSATIONS = 30;
@@ -54,14 +55,17 @@
     composer: $("composer"),
     input: $("input"),
     send: $("send"),
-    toast: $("toast")
+    toast: $("toast"),
+    account: $("account"),
+    accountName: $("accountName"),
+    signOut: $("signOut")
   };
 
   // ============================================================
   // STATE
   // ============================================================
 
-  var conversations = loadConversations();
+  var conversations = [];
   var current = null;
   var busy = false;
 
@@ -82,6 +86,17 @@
         JSON.stringify(conversations.slice(0, MAX_CONVERSATIONS))
       );
     } catch (e) { /* storage unavailable: keep in memory only */ }
+  }
+
+  // fetch() wrapper: a 401 means the session ended, so go to the sign-in page.
+  function apiFetch(url, options) {
+    return fetch(url, options).then(function (res) {
+      if (res.status === 401) {
+        window.location.replace("/login");
+        return new Promise(function () {});  // stop the caller's chain
+      }
+      return res;
+    });
   }
 
   function uid() {
@@ -468,7 +483,7 @@
     scrollToBottom();
 
     function send() {
-      return fetch("/api/chat", {
+      return apiFetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: question })
@@ -545,7 +560,7 @@
   function waitUntilReady(body, timer) {
     return new Promise(function (resolve, reject) {
       function check() {
-        fetch("/api/health")
+        apiFetch("/api/health")
           .then(function (r) { return r.json(); })
           .then(function (h) {
             if (h.status === "ready") {
@@ -578,7 +593,7 @@
   }
 
   function pollHealth() {
-    fetch("/api/health")
+    apiFetch("/api/health")
       .then(function (r) { return r.json(); })
       .then(function (h) {
         if (h.status === "ready") {
@@ -598,7 +613,7 @@
   }
 
   function loadDocuments() {
-    fetch("/api/documents")
+    apiFetch("/api/documents")
       .then(function (r) { return r.json(); })
       .then(renderDocuments)
       .catch(function () { renderDocuments([]); });
@@ -715,10 +730,30 @@
   // INIT
   // ============================================================
 
+  els.signOut.addEventListener("click", function () {
+    els.signOut.disabled = true;
+    fetch("/api/logout", { method: "POST" })
+      .catch(function () {})
+      .then(function () { window.location.replace("/login"); });
+  });
+
+  function init(me) {
+    if (me.auth) {
+      STORE_KEY = "smcs-conversations:" + me.username.toLowerCase();
+      els.accountName.textContent = me.username;
+      els.account.hidden = false;
+    }
+    conversations = loadConversations();
+    showConversation(null);
+    loadDocuments();
+    pollHealth();
+    els.input.focus();
+  }
+
   applyTheme(themePreference());
   renderSuggestions();
-  showConversation(null);
-  loadDocuments();
-  pollHealth();
-  els.input.focus();
+  apiFetch("/api/me")
+    .then(function (r) { return r.json(); })
+    .then(init)
+    .catch(function () { setStatus("error", "Offline"); });
 })();

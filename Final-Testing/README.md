@@ -56,6 +56,41 @@ On macOS/Linux, activate with `source venv/bin/activate` instead.
 
 Press **Ctrl + C** in the terminal to stop it.
 
+### Sign-in
+
+![Sign-in page](docs/screenshots/sign-in.png)
+
+The site asks users to sign in. On the sign-in page, choose **Create
+account** to make the first account (username of 3–32 letters, numbers,
+dots, hyphens or underscores; password of at least 8 characters).
+
+- Accounts are stored in `web/users.db`, created automatically. Passwords
+  are saved only as salted PBKDF2 hashes. The file is ignored by git, so
+  never commit it.
+- Each user sees only their own conversation history. History is kept in
+  the browser, so it is per user and per browser.
+- Five wrong passwords in a row lock that username for 60 seconds.
+- Sessions last 7 days, or until the user clicks **Sign out**.
+
+Manage accounts from the command line (run from the project folder, with
+the venv active):
+
+```powershell
+python web\auth.py add alice      # create an account (asks for a password)
+python web\auth.py passwd alice   # reset a forgotten password
+python web\auth.py remove alice
+python web\auth.py list
+```
+
+Settings (set before starting the server, e.g. `$env:RAG_ALLOW_SIGNUP="0"`):
+
+| Variable | Effect |
+| --- | --- |
+| `RAG_ALLOW_SIGNUP=0` | Hide **Create account**; only accounts made with `web\auth.py add` can sign in |
+| `RAG_AUTH=0` | Turn sign-in off completely (anyone who can open the page can use it) |
+| `RAG_COOKIE_SECURE=1` | Mark the session cookie HTTPS-only; use when serving over HTTPS |
+| `RAG_USERS_DB=path` | Keep the accounts database somewhere else |
+
 ### Using it in another project folder
 
 Copy the `web/` folder into the folder that holds your RAG files (for
@@ -83,6 +118,8 @@ $env:RAG_DEMO_MODE="1"; python web\server.py
 
 | Problem | Fix |
 | --- | --- |
+| Forgot a password | `python web\auth.py passwd <username>` sets a new one |
+| "Too many failed attempts" | Wait 60 seconds, then try again |
 | "The assistant is still loading" | The models are still loading. Wait for `Pipeline ready` in the terminal; questions now wait automatically. |
 | "Missing packages in this Python environment" or "Could not import chromadb" | The server is running on a different Python from your project. Activate the venv and start it with `python web\server.py`, not `uvicorn`. The message prints the exact `pip install` command for the Python in use. |
 | `cannot import name '_ExtendedAttributes' from 'opentelemetry.util.types'` | OpenTelemetry packages are on mismatched versions. Run `python -m pip install -r requirements-lock.txt`, or upgrade them together: `python -m pip install --upgrade opentelemetry-api opentelemetry-sdk opentelemetry-proto opentelemetry-exporter-otlp-proto-grpc opentelemetry-exporter-otlp-proto-common` |
@@ -97,7 +134,9 @@ Check for other package conflicts with `python -m pip check`.
 
 | File | Purpose |
 | --- | --- |
-| `web/server.py` | FastAPI app: `/api/chat`, `/api/health`, `/api/documents`, serves PDFs under `/files/` |
+| `web/server.py` | FastAPI app: `/api/chat`, `/api/health`, `/api/documents`, sign-in routes, serves PDFs under `/files/` to signed-in users |
+| `web/auth.py` | Accounts and sessions (SQLite, PBKDF2 password hashes); also the account command-line tool |
+| `web/static/login.html`, `login.js` | Sign-in and create-account page |
 | `web/static/index.html` | Page layout |
 | `web/static/styles.css` | Styling, light/dark themes, mobile layout |
 | `web/static/app.js` | Chat logic, conversation history (saved in the browser), source and conflict cards |

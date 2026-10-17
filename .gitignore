@@ -29,3 +29,5 @@ chroma_db/
 app.log
 __pycache__/
 .DS_Store
+# Web front end accounts database
+users.db

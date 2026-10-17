@@ -13,6 +13,11 @@ Then open http://localhost:8000
 
 Set RAG_DEMO_MODE=1 to preview the interface without Ollama or the
 vector database (returns canned responses).
+
+Sign-in is required by default (accounts are stored in web/users.db).
+RAG_ALLOW_SIGNUP=0 hides the "Create account" option, so only accounts
+made with `python web/auth.py add <name>` can sign in. RAG_AUTH=0 turns
+sign-in off entirely.
 """
 
 import contextlib
@@ -26,8 +31,8 @@ import traceback
 from pathlib import Path
 from urllib.parse import quote
 
-from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse
+from fastapi import Depends, FastAPI, HTTPException, Request, Response
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -53,11 +58,29 @@ SRC_DIR = (
 )
 DATA_DIR = PROJECT_DIR / "data"
 
-DEMO_MODE = os.environ.get("RAG_DEMO_MODE", "").lower() in ("1", "true", "yes")
+def env_flag(name, default):
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return value.strip().lower() in ("1", "true", "yes", "on")
+
+
+DEMO_MODE = env_flag("RAG_DEMO_MODE", False)
+AUTH_ENABLED = env_flag("RAG_AUTH", True)
+ALLOW_SIGNUP = env_flag("RAG_ALLOW_SIGNUP", True)
+COOKIE_SECURE = env_flag("RAG_COOKIE_SECURE", False)  # set to 1 when served over HTTPS
+USERS_DB = Path(os.environ.get("RAG_USERS_DB", WEB_DIR / "users.db"))
+SESSION_COOKIE = "smcs_session"
 
 # rag_chat.py uses relative paths ("chroma_db") and sibling imports.
 os.chdir(PROJECT_DIR)
 sys.path.insert(0, str(SRC_DIR))
+
+# Load web/auth.py by path so a same-named module in the project can't shadow it.
+_auth_spec = importlib.util.spec_from_file_location("smcs_web_auth", WEB_DIR / "auth.py")
+_auth = importlib.util.module_from_spec(_auth_spec)
+_auth_spec.loader.exec_module(_auth)
+SESSION_SECONDS, AuthError, UserStore = _auth.SESSION_SECONDS, _auth.AuthError, _auth.UserStore
 
 print(f"Python:         {sys.executable}")
 print(f"Project folder: {PROJECT_DIR}")
@@ -67,6 +90,10 @@ print(f"chroma_db:      {PROJECT_DIR / 'chroma_db'}"
       + ("" if (PROJECT_DIR / "chroma_db").exists() else "  (NOT FOUND - run ingest first)"))
 print(f"PDF documents:  {DATA_DIR}"
       + ("" if DATA_DIR.exists() else "  (NOT FOUND)"))
+print("Sign-in:        "
+      + ((f"on ({USERS_DB.name}"
+          + (", sign-up open)" if ALLOW_SIGNUP else ", sign-up closed)"))
+         if AUTH_ENABLED else "off (RAG_AUTH=0)"))
 
 
 # ============================================================
@@ -342,8 +369,87 @@ class ChatRequest(BaseModel):
     question: str = Field(..., min_length=1, max_length=2000)
 
 
+# ============================================================
+# SIGN-IN
+# ============================================================
+
+users = UserStore(USERS_DB)
+
+
+class Credentials(BaseModel):
+    username: str = Field(..., max_length=64)
+    password: str = Field(..., max_length=256)
+
+
+def session_user(request: Request):
+    """Username for the request's session cookie, or None."""
+    if not AUTH_ENABLED:
+        return "guest"
+    return users.user_for_session(request.cookies.get(SESSION_COOKIE))
+
+
+def require_user(request: Request):
+    user = session_user(request)
+    if user is None:
+        raise HTTPException(401, "Sign in required.")
+    return user
+
+
+def start_session(response: Response, user_id, username):
+    token = users.create_session(user_id)
+    response.set_cookie(
+        SESSION_COOKIE,
+        token,
+        max_age=SESSION_SECONDS,
+        httponly=True,
+        samesite="lax",
+        secure=COOKIE_SECURE,
+        path="/",
+    )
+    return {"username": username}
+
+
+@app.get("/api/auth/config")
+def auth_config():
+    return {"auth": AUTH_ENABLED, "signup": AUTH_ENABLED and ALLOW_SIGNUP}
+
+
+@app.post("/api/login")
+def login(credentials: Credentials, response: Response):
+    if not AUTH_ENABLED:
+        raise HTTPException(400, "Sign-in is turned off on this server.")
+    try:
+        user_id, username = users.authenticate(credentials.username, credentials.password)
+    except AuthError as exc:
+        raise HTTPException(exc.status, exc.message)
+    return start_session(response, user_id, username)
+
+
+@app.post("/api/signup")
+def signup(credentials: Credentials, response: Response):
+    if not (AUTH_ENABLED and ALLOW_SIGNUP):
+        raise HTTPException(403, "Creating accounts is turned off. Ask the administrator for an account.")
+    try:
+        user_id = users.create_user(credentials.username, credentials.password)
+    except AuthError as exc:
+        raise HTTPException(exc.status, exc.message)
+    return start_session(response, user_id, credentials.username.strip())
+
+
+@app.post("/api/logout")
+def logout(request: Request, response: Response):
+    users.delete_session(request.cookies.get(SESSION_COOKIE))
+    response.delete_cookie(SESSION_COOKIE, path="/")
+    return {"ok": True}
+
+
+@app.get("/api/me")
+def me(user: str = Depends(require_user)):
+    return {"username": user, "auth": AUTH_ENABLED}
+
+
 @app.get("/api/health")
-def health():
+def health(user: str = Depends(require_user)):
     if pipeline.error:
         status = "error"
     elif pipeline.ready:
@@ -361,7 +467,7 @@ def health():
 
 
 @app.get("/api/documents")
-def documents():
+def documents(user: str = Depends(require_user)):
     return sorted(
         DOCUMENTS.values(),
         key=lambda d: (
@@ -373,7 +479,7 @@ def documents():
 
 
 @app.post("/api/chat")
-def chat(request: ChatRequest):
+def chat(request: ChatRequest, user: str = Depends(require_user)):
     question = request.question.strip()
     if not question:
         raise HTTPException(400, "Question must not be empty.")
@@ -394,13 +500,37 @@ def chat(request: ChatRequest):
     return result
 
 
-if DATA_DIR.exists():
-    app.mount("/files", StaticFiles(directory=DATA_DIR), name="files")
+@app.get("/files/{file_path:path}")
+def source_file(file_path: str, user: str = Depends(require_user)):
+    # Only serve PDFs that live inside the data folder.
+    data_root = DATA_DIR.resolve()
+    target = (data_root / file_path).resolve()
+    if (
+        not target.is_relative_to(data_root)
+        or target.suffix.lower() != ".pdf"
+        or not target.is_file()
+    ):
+        raise HTTPException(404, "File not found.")
+    return FileResponse(target, media_type="application/pdf")
+
+
+# The app and sign-in pages depend on the session, so browsers must not
+# reuse a cached copy (e.g. showing the app via Back after signing out).
+NO_STORE = {"Cache-Control": "no-store"}
 
 
 @app.get("/")
-def index():
-    return FileResponse(STATIC_DIR / "index.html")
+def index(request: Request):
+    if session_user(request) is None:
+        return RedirectResponse("/login", status_code=303, headers=NO_STORE)
+    return FileResponse(STATIC_DIR / "index.html", headers=NO_STORE)
+
+
+@app.get("/login")
+def login_page(request: Request):
+    if not AUTH_ENABLED or session_user(request) is not None:
+        return RedirectResponse("/", status_code=303, headers=NO_STORE)
+    return FileResponse(STATIC_DIR / "login.html", headers=NO_STORE)
 
 
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
