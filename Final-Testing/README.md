@@ -8,8 +8,9 @@ evaluation (`evaluation/`), and a web interface (`web/`).
 A browser front end for the chatbot. It calls the same pipeline as
 `src/rag_chat.py` (unchanged) and shows each answer with its cited source,
 a link to the exact PDF page, any detected rule conflicts with the
-controlling source, and the full pipeline trace. It has light, dark and
-system themes, saves conversations in the browser, and works on phones.
+document that takes precedence, and the full pipeline log. It has light,
+dark and automatic themes, saves conversations in the browser, and works
+on phones. The page loads nothing from the internet (fonts are bundled).
 
 | Light | Dark |
 | --- | --- |
@@ -100,6 +101,7 @@ Check for other package conflicts with `python -m pip check`.
 | `web/static/index.html` | Page layout |
 | `web/static/styles.css` | Styling, light/dark themes, mobile layout |
 | `web/static/app.js` | Chat logic, conversation history (saved in the browser), source and conflict cards |
+| `web/static/fonts/` | IBM Plex fonts (SIL Open Font License), bundled so the page works offline |
 
 ## Secrets
 

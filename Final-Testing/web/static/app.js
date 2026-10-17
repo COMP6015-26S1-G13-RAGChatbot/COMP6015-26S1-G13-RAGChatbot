@@ -10,12 +10,12 @@
   var MAX_CONVERSATIONS = 30;
 
   var SUGGESTIONS = [
-    { tag: "Voting", icon: "vote", text: "Is proxy voting allowed at an SMCS Board of Governors meeting?" },
-    { tag: "Quorum", icon: "users", text: "What constitutes a quorum for the SMCS Board of Governors?" },
-    { tag: "Board", icon: "building", text: "How many voting members can the SMCS Board of Governors have at most?" },
-    { tag: "Terms", icon: "calendar", text: "What is the term of office for an SMCS Member-at-Large on the Board of Governors?" },
-    { tag: "Committees", icon: "layers", text: "What is the minimum number of IEEE SMC Society members required to be listed as founding members of a new technical committee?" },
-    { tag: "Meetings", icon: "clock", text: "How often must the SMCS Executive Committee meet?" }
+    { tag: "Voting", text: "Is proxy voting allowed at an SMCS Board of Governors meeting?" },
+    { tag: "Quorum", text: "What constitutes a quorum for the SMCS Board of Governors?" },
+    { tag: "Board", text: "How many voting members can the SMCS Board of Governors have at most?" },
+    { tag: "Terms", text: "What is the term of office for an SMCS Member-at-Large on the Board of Governors?" },
+    { tag: "Committees", text: "What is the minimum number of IEEE SMC Society members required to be listed as founding members of a new technical committee?" },
+    { tag: "Meetings", text: "How often must the SMCS Executive Committee meet?" }
   ];
 
   var STAGES = [
@@ -26,26 +26,9 @@
   ];
 
   var ICONS = {
-    bot: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6.5v5c0 4.6 3.3 8.4 8 9.5 4.7-1.1 8-4.9 8-9.5v-5L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    file: '<svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></svg>',
-    book: '<svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>',
     external: '<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
     chevron: '<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>',
-    warn: '<svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>',
-    check: '<svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>',
-    copy: '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>',
-    terminal: '<svg viewBox="0 0 24 24"><path d="m5 8 4 4-4 4M12 16h7"/></svg>',
-    retry: '<svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>',
-    info: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg>',
-    alert: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>',
-    trash: '<svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg>',
-    vote: '<svg viewBox="0 0 24 24"><path d="m9 12 2 2 4-4"/><path d="M5 7V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/><rect x="3" y="7" width="18" height="14" rx="2"/></svg>',
-    users: '<svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>',
-    building: '<svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>',
-    calendar: '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>',
-    layers: '<svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></svg>',
-    arrow: '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-    clock: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'
+    trash: '<svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg>'
   };
 
   // ============================================================
@@ -183,7 +166,7 @@
   }
 
   function humanTopic(topic) {
-    return String(topic || "rule").replace(/_/g, " ");
+    return String(topic || "rule").replace(/_/g, " ").replace(/\bbog\b/gi, "BoG");
   }
 
   function toast(message) {
@@ -218,11 +201,9 @@
 
   function renderSuggestions() {
     els.suggestions.innerHTML = SUGGESTIONS.map(function (s, i) {
-      return '<button class="suggestion" data-index="' + i + '" style="--i:' + i + '">' +
-        '<span class="s-icon">' + ICONS[s.icon] + "</span>" +
-        '<span class="s-body"><span class="tag">' + escapeHtml(s.tag) + "</span>" +
-        '<span class="s-text">' + escapeHtml(s.text) + "</span></span>" +
-        '<span class="s-arrow">' + ICONS.arrow + "</span></button>";
+      return '<button class="suggestion" data-index="' + i + '">' +
+        '<span class="tag">' + escapeHtml(s.tag) + "</span>" +
+        '<span class="s-text">' + escapeHtml(s.text) + "</span></button>";
     }).join("");
   }
 
@@ -250,10 +231,19 @@
 
     els.docList.innerHTML = docs.map(function (d) {
       return '<li><a href="' + escapeHtml(d.url) + '" target="_blank" rel="noopener" title="' +
-        escapeHtml(d.label + " · " + d.name) + '">' +
+        escapeHtml(d.label + ": " + d.name) + '">' +
         '<span class="dot ' + escapeHtml(d.category) + '"></span>' +
         '<span class="doc-name">' + escapeHtml(prettyName(d.name)) + "</span></a></li>";
     }).join("");
+
+    var corpus = $("corpus");
+    if (corpus) {
+      var counts = {};
+      docs.forEach(function (d) { counts[d.category] = (counts[d.category] || 0) + 1; });
+      corpus.textContent = docs.length + " documents indexed: " + Object.keys(counts).map(function (k) {
+        return counts[k] + " " + k;
+      }).join(", ") + ".";
+    }
   }
 
   function userMessage(text) {
@@ -266,40 +256,41 @@
   function botShell() {
     var el = document.createElement("div");
     el.className = "msg bot";
-    el.innerHTML = '<div class="avatar">' + ICONS.bot + '</div><div class="body"></div>';
+    el.innerHTML = '<div class="body"></div>';
     return el;
   }
 
-  function sourceCard(c) {
-    var page = c.page != null && c.page !== "" ? "Page " + escapeHtml(c.page) : "";
+  function sourceCard(c, i) {
+    var page = c.page != null && c.page !== "" ? "p. " + escapeHtml(c.page) : "";
     var open = c.url
       ? '<a class="ghost-btn primary" href="' + escapeHtml(c.url) + '" target="_blank" rel="noopener">' +
-        ICONS.external + '<span class="label">Open</span></a>'
+        '<span class="label">Open PDF</span>' + ICONS.external + "</a>"
       : "";
     var toggle = c.excerpt
       ? '<button class="ghost-btn excerpt-toggle" aria-expanded="false">' +
-        '<span class="label">Excerpt</span>' + ICONS.chevron + "</button>"
+        '<span class="label">Quoted text</span>' + ICONS.chevron + "</button>"
       : "";
 
-    return '<div class="source">' +
+    return '<li class="source">' +
       '<div class="source-head">' +
-      '<div class="source-icon">' + ICONS.file + "</div>" +
+      '<span class="source-num">[' + ((i || 0) + 1) + "]</span>" +
       '<div class="source-main">' +
-      '<div class="source-name" title="' + escapeHtml(c.source) + '">' + escapeHtml(prettyName(c.source)) + "</div>" +
+      '<div class="source-name" title="' + escapeHtml(c.source) + '">' + escapeHtml(prettyName(c.source)) +
+      (page ? '<span class="source-page">, ' + page + "</span>" : "") + "</div>" +
       '<div class="source-meta"><span class="badge ' + escapeHtml(c.category) + '">' +
-      escapeHtml(categoryLabel(c.category)) + "</span>" + (page ? "<span>" + page + "</span>" : "") + "</div>" +
+      escapeHtml(categoryLabel(c.category)) + "</span></div>" +
       "</div>" +
       '<div class="source-actions">' + toggle + open + "</div>" +
       "</div>" +
-      (c.excerpt ? '<div class="excerpt">' + escapeHtml(c.excerpt) + "</div>" : "") +
-      "</div>";
+      (c.excerpt ? '<blockquote class="excerpt">' + escapeHtml(c.excerpt) + "</blockquote>" : "") +
+      "</li>";
   }
 
   function claimCard(side, controlling) {
     var controls = controlling &&
       String(side.source || "").toLowerCase() === String(controlling).toLowerCase();
     var label = escapeHtml(prettyName(side.source)) +
-      (side.page != null && side.page !== "" ? " · p." + escapeHtml(side.page) : "");
+      (side.page != null && side.page !== "" ? ", p. " + escapeHtml(side.page) : "");
     var src = side.url
       ? '<a href="' + escapeHtml(side.url) + '" target="_blank" rel="noopener">' + label + "</a>"
       : label;
@@ -307,15 +298,16 @@
     return '<div class="claim' + (controls ? " controls" : "") + '">' +
       '<div class="claim-src" title="' + escapeHtml(side.source) + '">' + src + "</div>" +
       '<div class="claim-text">' + escapeHtml(side.claim || "—") + "</div>" +
-      (controls ? '<div class="claim-flag">' + ICONS.check + "Controlling source</div>" : "") +
+      '<div class="claim-flag">' + (controls ? "Takes precedence" : "") + "</div>" +
       "</div>";
   }
 
   function conflictCard(c) {
     return '<div class="conflict">' +
-      '<div class="conflict-head">' + ICONS.warn +
-      "Conflicting rule on " + escapeHtml(humanTopic(c.topic)) + "</div>" +
+      '<div class="conflict-head">The documents disagree on: <strong>' +
+      escapeHtml(humanTopic(c.topic)) + "</strong></div>" +
       '<div class="conflict-grid">' +
+      '<div class="conflict-cols"><span>Document</span><span>States</span><span></span></div>' +
       claimCard(c.a || {}, c.controlling_source) +
       claimCard(c.b || {}, c.controlling_source) +
       "</div></div>";
@@ -325,8 +317,8 @@
     var html = "";
 
     if (result.abstained) {
-      html += '<div class="card"><div class="abstain">' + ICONS.info +
-        "<div><strong>Not covered by the documents</strong>" +
+      html += '<div class="card"><div class="abstain">' +
+        "<div><strong>Not found in the documents</strong>" +
         "<span>" + escapeHtml(result.answer) +
         " Try rephrasing, or ask about SMCS governance, bylaws or operating procedures.</span></div></div></div>";
     } else {
@@ -334,25 +326,25 @@
     }
 
     if (result.citations && result.citations.length) {
-      html += '<div class="block-label">' + ICONS.book + "Sources</div>" +
-        '<div class="sources">' + result.citations.map(sourceCard).join("") + "</div>";
+      html += '<div class="block-label">Sources</div>' +
+        '<ol class="sources">' + result.citations.map(sourceCard).join("") + "</ol>";
     }
 
     if (result.conflicts && result.conflicts.length) {
-      html += '<div class="block-label">' + ICONS.warn + "Conflicts detected</div>" +
+      html += '<div class="block-label">Conflicting documents</div>' +
         result.conflicts.map(conflictCard).join("");
     }
 
     html += '<div class="msg-foot">';
     if (!result.abstained) {
-      html += '<button class="ghost-btn copy-btn">' + ICONS.copy + "Copy</button>";
+      html += '<button class="ghost-btn copy-btn">Copy answer</button>';
     }
     if (result.trace) {
-      html += '<button class="ghost-btn trace-btn">' + ICONS.terminal + "Pipeline trace</button>";
+      html += '<button class="ghost-btn trace-btn">Show pipeline log</button>';
     }
     html += '<span class="spacer"></span>';
     if (result.latency_ms != null) {
-      html += '<span title="Response time">' + (result.latency_ms / 1000).toFixed(1) + "s</span>";
+      html += '<span class="latency" title="Response time">' + (result.latency_ms / 1000).toFixed(1) + " s</span>";
     }
     html += "</div>";
 
@@ -378,7 +370,8 @@
     var traceBtn = body.querySelector(".trace-btn");
     if (traceBtn) {
       traceBtn.addEventListener("click", function () {
-        body.querySelector(".trace").classList.toggle("open");
+        var open = body.querySelector(".trace").classList.toggle("open");
+        traceBtn.textContent = open ? "Hide pipeline log" : "Show pipeline log";
       });
     }
 
@@ -392,9 +385,9 @@
   }
 
   function renderError(body, question, message) {
-    body.innerHTML = '<div class="card error-card"><div class="abstain">' + ICONS.alert +
+    body.innerHTML = '<div class="card error-card"><div class="abstain">' +
       "<div><strong>Something went wrong</strong><span>" + escapeHtml(message) + "</span></div></div></div>" +
-      '<div class="msg-foot"><button class="ghost-btn retry-btn">' + ICONS.retry + "Retry</button></div>";
+      '<div class="msg-foot"><button class="ghost-btn retry-btn">Try again</button></div>';
 
     body.querySelector(".retry-btn").addEventListener("click", function () {
       body.closest(".msg").remove();
@@ -407,7 +400,7 @@
 
   function renderTyping(body) {
     body.innerHTML = '<div class="card"><div class="typing">' +
-      '<div class="dots"><i></i><i></i><i></i></div>' +
+      '<div class="progress"><i></i></div>' +
       '<span class="stage">' + STAGES[0] + "</span></div></div>";
 
     var stage = body.querySelector(".stage");
