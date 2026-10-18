@@ -1,0 +1,10 @@
+chunk_size_words,retrieval_method,cases,retrieval_recall_at_5,average_retrieval_latency_ms,chunks,embedding_model
+300,keyword,12,0.8333333333333334,59.132840332798274,862,nomic-embed-text:latest
+300,dense,12,0.8333333333333334,49.24998958449578,862,nomic-embed-text:latest
+300,hybrid,12,0.8333333333333334,60.328083334146264,862,nomic-embed-text:latest
+600,keyword,12,0.8333333333333334,61.322868168038745,821,nomic-embed-text:latest
+600,dense,12,0.8333333333333334,49.181461665890915,821,nomic-embed-text:latest
+600,hybrid,12,0.8333333333333334,59.536833499199325,821,nomic-embed-text:latest
+1000,keyword,12,0.8333333333333334,60.18944791624866,821,nomic-embed-text:latest
+1000,dense,12,0.8333333333333334,47.144614666346264,821,nomic-embed-text:latest
+1000,hybrid,12,0.8333333333333334,55.29734025003563,821,nomic-embed-text:latest

@@ -1,4 +1,4 @@
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+export const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
 export type RAGMode = "deterministic" | "bm25" | "dense" | "rrf" | "hybrid" | "hybrid_llm";
 
 export type Citation = { document_id: string; document_title: string; section: string | null; page: number | null; evidence_text: string; authority_score: number | null; approval_status: string | null; version: string | null };
@@ -23,7 +23,8 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${API_BASE_URL}${path}`, init);
   if (!response.ok) {
     const body = await response.json().catch(() => ({}));
-    throw new Error(body.detail || `Request failed (${response.status})`);
+    const detail = typeof body.detail === "string" ? body.detail : Array.isArray(body.detail) ? body.detail.map((item: { msg?: string }) => item.msg || "Invalid request").join("; ") : `Request failed (${response.status})`;
+    throw new Error(detail);
   }
   return response.json();
 }

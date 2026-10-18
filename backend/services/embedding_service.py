@@ -16,10 +16,11 @@ class EmbeddingService:
     """Offline-first semantic embeddings using local LSA or an explicitly configured transformer."""
 
     _cache: dict[tuple[str, str, str], tuple] = {}
-    _query_cache: OrderedDict[tuple[str, str, str], list[float]] = OrderedDict()
+    _query_cache: OrderedDict[tuple[str, str, str, str], list[float]] = OrderedDict()
 
     def __init__(self, texts: list[str], backend: str | None = None):
         self.backend = backend or Config.EMBEDDING_BACKEND
+        self._corpus_digest = hashlib.sha256("\0".join(texts).encode("utf-8")).hexdigest()
         self.model_name = Config.EMBEDDING_MODEL
         self._model = None
         self._vectorizer = None
@@ -80,7 +81,8 @@ class EmbeddingService:
         return {"backend": self.backend, "model": self.model_name}
 
     def similarities(self, query: str) -> list[float]:
-        query_key = (self.backend, self.model_name, hashlib.sha256(query.encode("utf-8")).hexdigest())
+        query_key = (self.backend, self.model_name, self._corpus_digest,
+                     hashlib.sha256(query.encode("utf-8")).hexdigest())
         cached = self._query_cache.get(query_key)
         if cached is not None:
             self._query_cache.move_to_end(query_key)
@@ -110,7 +112,7 @@ class EmbeddingService:
         return scores
 
     @classmethod
-    def _remember_query(cls, key: tuple[str, str, str], scores: list[float]) -> None:
+    def _remember_query(cls, key: tuple[str, str, str, str], scores: list[float]) -> None:
         cls._query_cache[key] = list(scores)
         cls._query_cache.move_to_end(key)
         while len(cls._query_cache) > 128:

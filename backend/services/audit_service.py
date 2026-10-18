@@ -269,9 +269,9 @@ class AuditService:
                 conflict_scope="within_document", issue_type="ambiguous",
                 issue_subtype="ambiguous_internal_conflict", audited_text=text,
                 authoritative_evidence=citations, citation=citations[0] if citations else None,
-                explanation=("These provisions use different levels of obligation for closely related scenarios. "
+                explanation=("These provisions contain potentially inconsistent requirements for closely related scenarios. "
                              "Because they appear in the same authoritative document, the hierarchy cannot resolve the ambiguity. "
-                             "The applicable interpretation may depend on the vacancy type and factual circumstances."),
+                             "The applicable interpretation may depend on the subject, conditions and exceptions."),
                 suggested_correction=None, confidence=0.55,
                 abstention_reason="No definitive rule is presented because equal-authority clauses remain ambiguous.",
                 higher_authority_evidence=None, conflicting_evidence=citations,

@@ -1,0 +1,21 @@
+[
+  {
+    "file": "SMCS_RAG_Synthetic_Conflict_Stress_Test_Corpus.pdf",
+    "sha256": "bbbf557d8327478d8d9e30e7ccf11375ffc2d14dc9995e757bedef95c01aedc4",
+    "pages": 23,
+    "extracted_characters": 35581
+  },
+  {
+    "file": "SMCS_RAG_Derived_Governance_Test_Corpus.pdf",
+    "sha256": "0f02a68add06e61b6ff1e48416a3adaa6a1446f2649e5a3349838d0b13eda7d4",
+    "pages": 47,
+    "extracted_characters": 173573
+  },
+  {
+    "file": "financial-ops-manual.pdf",
+    "sha256": "79fc7c3e8fe1992602c637816e0983a37993575123a2980617e35e4e3cec65ae",
+    "pages": 27,
+    "extracted_characters": 0,
+    "ocr_characters": 67198
+  }
+]

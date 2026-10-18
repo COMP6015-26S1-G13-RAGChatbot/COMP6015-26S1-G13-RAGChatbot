@@ -5,6 +5,7 @@ from backend.core.config import Config
 from backend.models import ChatResponse, Citation, Conflict, RAGMode
 from backend.services.llm_service import GroundedLLMService
 from backend.services.search_service import SearchService, normative_terms, semantic_similarity, tokens
+from backend.services.policy_claim_service import candidate_conflict, candidate_subjects, roles
 
 
 SENTENCE_RE = re.compile(r"(?<=[.!?])\s+")
@@ -31,6 +32,10 @@ class RAGService:
             return cls._best_sentence(text, question)
         query_tokens = set(tokens(question))
         best_index = max(range(len(sentences)), key=lambda i: (len(query_tokens & set(tokens(sentences[i]))), semantic_similarity(question, sentences[i])))
+        if re.search(r'\b(?:conflict|contradict|inconsisten)\w*\b',question,re.I):
+            # A leading summary sentence may omit the condition or requirement
+            # in the next sentence. Preserve local context for comparison.
+            return ' '.join(sentences[max(0,best_index-1):best_index+3])[:1200]
         selected = [sentences[best_index]]
         if question.lower().startswith("how") or "process" in question.lower():
             for index in range(best_index + 1, min(len(sentences), best_index + 3)):
@@ -97,15 +102,21 @@ class RAGService:
             for right_chunk, _, right_ev in rows[index + 1:]:
                 left_citation, right_citation = self._citation(left_chunk, left_ev), self._citation(right_chunk, right_ev)
                 terms = sorted(normative_terms(left_ev) | normative_terms(right_ev))
+                candidate_reason = candidate_conflict(left_ev, right_ev)
+                requested_roles = roles(question.lower())
+                if candidate_reason and requested_roles:
+                    subjects = candidate_subjects(left_ev) | candidate_subjects(right_ev)
+                    if subjects and requested_roles.isdisjoint(subjects):
+                        continue
                 if left_chunk.document_id == right_chunk.document_id:
                     # Do not surface a same-document modal ambiguity merely
                     # because broad retrieval found separate "shall" and "may"
                     # clauses. The audited/query text must itself ask about that
                     # opposition; otherwise this produces unrelated false alarms.
                     query_norms = normative_terms(question)
-                    if not ({"shall", "must"} & query_norms and "may" in query_norms):
+                    if not candidate_reason and not ({"shall", "must"} & query_norms and "may" in query_norms):
                         continue
-                    if (semantic_similarity(question, left_ev) < 0.18 or
+                    if not candidate_reason and (semantic_similarity(question, left_ev) < 0.18 or
                             semantic_similarity(question, right_ev) < 0.18):
                         continue
                     left_terms, right_terms = normative_terms(left_ev), normative_terms(right_ev)
@@ -117,11 +128,11 @@ class RAGService:
                     }
                     shared_modal_action = modal_actions(left_ev) & modal_actions(right_ev)
                     shared_event_terms = (set(tokens(left_ev)) & set(tokens(right_ev))) - {"shall", "must", "may"}
-                    if (not modal_opposition or not shared_modal_action or semantic_similarity(left_ev, right_ev) < 0.22 or
+                    if not candidate_reason and (not modal_opposition or not shared_modal_action or semantic_similarity(left_ev, right_ev) < 0.22 or
                             len(shared_event_terms) < 3):
                         continue
                     conflicts.append(Conflict(topic=question, conflict_scope="within_document",
-                        applied_rule="The document hierarchy cannot resolve clauses from the same authoritative document.",
+                        applied_rule=(candidate_reason or "The document hierarchy cannot resolve clauses from the same authoritative document."),
                         conflicting_evidence=[left_citation, right_citation],
                         authority_scores={left_chunk.document_title: left_chunk.authority_level},
                         conflicting_normative_terms=terms,
@@ -131,14 +142,23 @@ class RAGService:
                     continue
                 left_claim = f"{left_chunk.section or ''} {left_ev}"
                 right_claim = f"{right_chunk.section or ''} {right_ev}"
-                if not self._genuine_conflict(left_claim, right_claim):
+                legacy_conflict = self._genuine_conflict(left_claim, right_claim)
+                if not legacy_conflict and not candidate_reason:
                     continue
                 high_chunk, high_ev, high_citation = left_chunk, left_ev, left_citation
                 low_chunk, low_ev, low_citation = right_chunk, right_ev, right_citation
                 if right_chunk.authority_level > left_chunk.authority_level:
                     high_chunk, high_ev, high_citation, low_chunk, low_ev, low_citation = (
                         right_chunk, right_ev, right_citation, left_chunk, left_ev, left_citation)
-                if high_chunk.authority_level == low_chunk.authority_level:
+                status_uncertain = any(
+                    c.approval_status != 'approved' or
+                    re.search(r'\b(?:draft|synthetic|source-derived)\b', f'{c.version} {c.document_title} {ev}', re.I)
+                    for c, ev in ((left_chunk,left_ev),(right_chunk,right_ev)))
+                candidate_only = bool(candidate_reason and not legacy_conflict)
+                if high_chunk.authority_level == low_chunk.authority_level or status_uncertain or candidate_only:
+                    reason = ('Not resolved: document approval/status requires verification.' if status_uncertain else
+                              f'Potential conflict ({candidate_reason}); scope and exceptions require human review.' if candidate_only else
+                              'Not resolved by hierarchy: the conflicting documents have equal authority scores.')
                     conflicts.append(Conflict(topic=question, conflict_scope="cross_document",
                         lower_authority_document=left_chunk.document_title,
                         higher_authority_document=None,
@@ -149,8 +169,8 @@ class RAGService:
                         conflicting_normative_terms=terms,
                         interpretations=[f"{left_chunk.document_title} states: {left_ev}",
                                          f"{right_chunk.document_title} states: {right_ev}"],
-                        applied_rule="Equal-authority documents cannot be resolved by the configured hierarchy.",
-                        resolution_basis="Not resolved by hierarchy: the conflicting documents have equal authority scores.",
+                        applied_rule=reason,
+                        resolution_basis=reason,
                         human_review_required=True))
                     continue
                 conflicts.append(Conflict(topic=question, conflict_scope="cross_document",
@@ -203,6 +223,20 @@ class RAGService:
             return ChatResponse(answer="I cannot answer this from the approved production documents.", citations=[],
                 conflict_status="none", conflicts=[], confidence=0.0, abstained=True,
                 abstention_reason="No sufficiently relevant approved production evidence was retrieved.")
+
+        # Explicit comparison questions benefit from searching for counterparts
+        # using concrete retrieved claims. Keep the original ranking and bound
+        # expansion to two queries/ten extra chunks; registry filters still apply.
+        if re.search(r'\b(?:conflict|contradict|inconsisten)\w*\b', question, re.I):
+            seen = {c.chunk_id for c, _ in retrieved}
+            additions = []
+            for seed, _ in retrieved[:2]:
+                probe = self._best_passage(seed.text, question)
+                for c, score in self.search.search(probe, k=5, mode=retrieval_mode):
+                    if c.chunk_id not in seen:
+                        seen.add(c.chunk_id)
+                        additions.append((c, score))
+            retrieved = retrieved + additions
 
         evidence_rows = [(chunk, score, self._best_passage(chunk.text, question)) for chunk, score in retrieved
                          if len(tokens(chunk.text)) >= 8]
@@ -266,14 +300,15 @@ class RAGService:
             terms = sorted({term for item in internal_conflicts for term in item.conflicting_normative_terms})
             interpretations = list(dict.fromkeys(
                 interpretation for item in internal_conflicts for interpretation in item.interpretations))
-            answer = ("These provisions use different levels of obligation for closely related scenarios. "
-                      f"The conflicting normative terms are {', '.join(terms)}. "
+            terms_note = f"The normative terms include {', '.join(terms)}. " if terms else ''
+            answer = ("These provisions contain potentially inconsistent requirements for closely related scenarios. "
+                      + terms_note +
                       "Because the provisions appear in the same authoritative document, the document hierarchy cannot resolve the inconsistency. "
                       "The final application may depend on the specific role and factual circumstances; an authorised reviewer must confirm the intended interpretation.")
             return ChatResponse(answer=answer, citations=citations,
                 conflict_status="ambiguous_internal_conflict", conflict_scope="within_document",
                 conflicts=conflicts, confidence=0.55, abstained=True,
-                abstention_reason="The same authoritative document contains unresolved normative wording.",
+                abstention_reason="The same document contains potentially inconsistent requirements.",
                 higher_authority_evidence=None, conflicting_evidence=citations,
                 authority_scores=internal.authority_scores,
                 conflicting_normative_terms=terms,
@@ -281,13 +316,13 @@ class RAGService:
                 human_review_required=True)
         if unresolved_cross:
             citations = self.validate_citations(unresolved_cross.conflicting_evidence, retrieved)
-            answer = ("The retrieved documents contain conflicting rules with equal configured authority. "
-                      "The hierarchy cannot select a controlling source. Both references are retained for comparison, "
+            answer = ("The retrieved documents contain a potential conflict requiring review. "
+                      f"{unresolved_cross.resolution_basis} Both references are retained for comparison, "
                       "and an authorised governance reviewer must determine which rule applies in context.")
             return ChatResponse(answer=answer, citations=citations,
                 conflict_status="possible", conflict_scope="cross_document", conflicts=conflicts,
                 confidence=0.5, abstained=True,
-                abstention_reason="Equal-authority documents contain an unresolved conflict.",
+                abstention_reason=unresolved_cross.resolution_basis,
                 higher_authority_evidence=None, conflicting_evidence=citations,
                 authority_scores=unresolved_cross.authority_scores,
                 conflicting_normative_terms=unresolved_cross.conflicting_normative_terms,

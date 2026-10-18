@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="305" viewBox="0 0 820 305">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="30" font-family="Arial" font-size="19">Financial OCR evidence hit@5 (10 questions; 250-word chunks)</text>
+<text x="24" y="76" font-family="Arial" font-size="14">deterministic</text>
+<rect x="265" y="57" width="450" height="27" fill="#e8eef4"/>
+<rect x="265" y="57" width="450.0" height="27" fill="#276b9f"/>
+<text x="730" y="76" font-family="Arial" font-size="14">100.0%</text>
+<text x="24" y="118" font-family="Arial" font-size="14">bm25</text>
+<rect x="265" y="99" width="450" height="27" fill="#e8eef4"/>
+<rect x="265" y="99" width="450.0" height="27" fill="#276b9f"/>
+<text x="730" y="118" font-family="Arial" font-size="14">100.0%</text>
+<text x="24" y="160" font-family="Arial" font-size="14">dense</text>
+<rect x="265" y="141" width="450" height="27" fill="#e8eef4"/>
+<rect x="265" y="141" width="450.0" height="27" fill="#276b9f"/>
+<text x="730" y="160" font-family="Arial" font-size="14">100.0%</text>
+<text x="24" y="202" font-family="Arial" font-size="14">rrf</text>
+<rect x="265" y="183" width="450" height="27" fill="#e8eef4"/>
+<rect x="265" y="183" width="450.0" height="27" fill="#276b9f"/>
+<text x="730" y="202" font-family="Arial" font-size="14">100.0%</text>
+<text x="24" y="244" font-family="Arial" font-size="14">hybrid</text>
+<rect x="265" y="225" width="450" height="27" fill="#e8eef4"/>
+<rect x="265" y="225" width="450.0" height="27" fill="#276b9f"/>
+<text x="730" y="244" font-family="Arial" font-size="14">100.0%</text>
+</svg>

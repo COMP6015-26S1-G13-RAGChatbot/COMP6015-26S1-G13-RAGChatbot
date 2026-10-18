@@ -1,0 +1,55 @@
+Supplier Management System. When considering a transaction with any third party not
+already in or not being submitted via the Supplier Management System, vetting will
+continue to be required. Volunteers and staff should follow the process outlined on the
+Vetting page of the L&C website at https://legal.ieee.org/compliance/ofac/vetting.
+
+G. Competitive Bidding
+
+To ensure that IEEE receives the best value, a minimum of three written bids should be
+obtained for all purchases valued at or above USD50,000 in total. For purchases totaling
+USD250,000 or more, a formal competitive bidding process is required, unless a
+documented compelling business justification for proceeding without competition is
+provided and approved by the Management Council Representative of the relevant
+Organizational Unit. Examples of compelling business justifications include situations
+where a supplier is the only provider of a specific product or service (sole source), or
+where the costs associated with changing suppliers would be prohibitively high.
+
+Contracts for conference hotels, catering, and convention centers are exempt from this
+requirement.
+
+The Procurement Operations Department, along with authorized staff and volunteer
+subject matter experts will jointly manage and document the formal bidding process.
+Supplier selection will be based on various criteria, including but not limited to
+professional qualifications, experience, reliability, prior performance, and price. The
+Organizational Unit Management Council Representative must approve the selected
+supplier. All correspondence related to this process shall be electronically filed in the CMS
+for central record retention.
+
+H. Contract Approval
+
+1. Any contractual arrangement equal to or greater than USD10,000,000 shall be
+approved by the IEEE Board of Directors prior to execution.
+
+2. “Execution” is the signing of the contract by IEEE’s authorized volunteer/staff as
+noted in the chart below following approval in the IEEE CMS, legal review, and
+approval.
+
+3. Contracts shall be executed (i.e., physically or electronically signed) only by
+authorized IEEE staff and volunteers as follows:
+
+Approval and Execution
+Volunteer or Staff Function Authority
+Contract Value in USD
+
+Director, Procurement Operations
+and designees of members of the <5,000
+IEEE Management Council
+
+Conference Chairs or VP of
+
+Conferences and designees of <25,000
+
+members of the IEEE Management
+Council
+
+25

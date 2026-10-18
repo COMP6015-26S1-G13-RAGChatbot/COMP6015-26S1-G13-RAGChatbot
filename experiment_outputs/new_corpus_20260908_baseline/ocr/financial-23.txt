@@ -1,0 +1,54 @@
+finance-management related technology; mobile app; security; subscriptions;
+telecommunications; virtual platform; or website creation, hosting and maintenance.
+
+5) Memorandum of Understanding (MOU) - An agreement between two or more parties
+outlined in a formal document. It is not legally binding but signals the willingness of
+the parties to move forward with a contract. For purposes of these procedures,
+contracts do not include Memoranda of Understandings between two or more IEEE
+units related to conferences, as described in IEEE Policies, Sections 10.1.4 and 10.1.5
+that are handled through IEEE Conference-Services.
+
+6) High Risk - Transactions involving data privacy, government-affiliated entities,
+working with minors, high financial exposure or obligations, contracts where the initial
+term is greater than 5 years, etc.
+
+. IEEE Contract Management System
+
+All contracts, agreements and MOUs [excludes MOU’s housed in IEEE Conference
+
+Exchange (ICX)], regardless of dollar value, shall be processed via the IEEE Contract
+
+Management System (IEEE CMS).
+
+. Contract Templates
+
+IEEE contract and MOU templates are available on the Legal & Compliance web site and
+shall be used to protect IEEE.
+
+https://legal.ieee.org/contracts/contract-templates
+
+Contracts that are not prepared using IEEE approved templates are known as “Third
+Party Agreements” or “Third Party Paper.” These include but are not limited to; clickwrap
+acknowledgements, website terms & conditions whether referenced on a website or in an
+invoice, order form, quote, etc.
+
+. Contracts That Require Legal Review
+
+Contracts meeting any of the following require legal review
+
+1. total value greater than USD25,000
+
+2. involve personally identifiable information (“PII”), e.g., individuals’ names, emails,
+phone numbers, addresses, or other related information
+
+3. High Risk
+
+4. not on an IEEE contract template, or
+
+5. any counterparty revisions to IEEE's standard language in the contract template
+
+6. Agreements and MOUs that create liability for IEEE and/or include binding
+
+contractual terms.
+
+23

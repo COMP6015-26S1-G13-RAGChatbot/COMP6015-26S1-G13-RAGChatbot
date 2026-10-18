@@ -1,0 +1,144 @@
+[
+  {
+    "case_id": "01",
+    "similarity": 0.4017879948914432,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "02",
+    "similarity": 0.15167597765363128,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "03",
+    "similarity": 0.21280332056194123,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "04",
+    "similarity": 0.15175438596491228,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "05",
+    "similarity": 0.184499469937907,
+    "left_normative_terms": [
+      "must"
+    ],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "06",
+    "similarity": 0.3213333333333333,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "07",
+    "similarity": 0.41088815789473687,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "08",
+    "similarity": 0.22415611814345993,
+    "left_normative_terms": [],
+    "right_normative_terms": [
+      "may"
+    ]
+  },
+  {
+    "case_id": "09",
+    "similarity": 0.17312111801242236,
+    "left_normative_terms": [
+      "must"
+    ],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "10",
+    "similarity": 0.18246031746031743,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "11",
+    "similarity": 0.30339789330615013,
+    "left_normative_terms": [
+      "must"
+    ],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "12",
+    "similarity": 0.1706597222222222,
+    "left_normative_terms": [
+      "must"
+    ],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "13",
+    "similarity": 0.17838725985844284,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "14",
+    "similarity": 0.16135394456289978,
+    "left_normative_terms": [
+      "may"
+    ],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "15",
+    "similarity": 0.29814814814814816,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "16",
+    "similarity": 0.19545454545454544,
+    "left_normative_terms": [
+      "shall"
+    ],
+    "right_normative_terms": [
+      "may"
+    ]
+  },
+  {
+    "case_id": "17",
+    "similarity": 0.22276663993584606,
+    "left_normative_terms": [],
+    "right_normative_terms": [
+      "may"
+    ]
+  },
+  {
+    "case_id": "18",
+    "similarity": 0.16368212873067242,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "19",
+    "similarity": 0.3580275229357798,
+    "left_normative_terms": [],
+    "right_normative_terms": []
+  },
+  {
+    "case_id": "20",
+    "similarity": 0.16252869397124559,
+    "left_normative_terms": [
+      "must"
+    ],
+    "right_normative_terms": [
+      "may"
+    ]
+  }
+]

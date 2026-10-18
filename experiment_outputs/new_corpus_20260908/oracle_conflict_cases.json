@@ -1,0 +1,3729 @@
+[
+  {
+    "case_id": "01",
+    "topic": "Board of Governors quorum",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+    "right": "Synthetic Governance Procedure GP-07 (2025) states that one-third of voting BoG members constitutes a quorum and that submitted proxies count toward quorum.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about board of governors quorum?",
+        "lower_authority_document": "TEST record BASE-01",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-01",
+          "document_title": "TEST record BASE-01",
+          "section": null,
+          "page": 2,
+          "evidence_text": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-01",
+            "document_title": "TEST record BASE-01",
+            "section": null,
+            "page": 2,
+            "evidence_text": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-01",
+            "document_title": "TEST record SYN-CONFLICT-01",
+            "section": null,
+            "page": 2,
+            "evidence_text": "Synthetic Governance Procedure GP-07 (2025) states that one-third of voting BoG members constitutes a quorum and that submitted proxies count toward quorum.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-01": 90,
+          "TEST record SYN-CONFLICT-01": 50
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-01 states: SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+          "TEST record SYN-CONFLICT-01 states: Synthetic Governance Procedure GP-07 (2025) states that one-third of voting BoG members constitutes a quorum and that submitted proxies count toward quorum."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "01",
+    "topic": "Board of Governors quorum",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+    "right": "Synthetic Governance Procedure GP-07 (2025) states that one-third of voting BoG members constitutes a quorum and that submitted proxies count toward quorum.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about board of governors quorum?",
+        "lower_authority_document": "TEST record BASE-01",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-01",
+          "document_title": "TEST record BASE-01",
+          "section": null,
+          "page": 2,
+          "evidence_text": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-01",
+            "document_title": "TEST record BASE-01",
+            "section": null,
+            "page": 2,
+            "evidence_text": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-01",
+            "document_title": "TEST record SYN-CONFLICT-01",
+            "section": null,
+            "page": 2,
+            "evidence_text": "Synthetic Governance Procedure GP-07 (2025) states that one-third of voting BoG members constitutes a quorum and that submitted proxies count toward quorum.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-01": 90,
+          "TEST record SYN-CONFLICT-01": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-01 states: SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+          "TEST record SYN-CONFLICT-01 states: Synthetic Governance Procedure GP-07 (2025) states that one-third of voting BoG members constitutes a quorum and that submitted proxies count toward quorum."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "01",
+    "topic": "Board of Governors quorum",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+    "right": "Synthetic Governance Procedure GP-07 (2025) states that one-third of voting BoG members constitutes a quorum and that submitted proxies count toward quorum.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about board of governors quorum?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_voting_threshold_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-01",
+            "document_title": "TEST record BASE-01",
+            "section": null,
+            "page": 2,
+            "evidence_text": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-01",
+            "document_title": "TEST record SYN-CONFLICT-01",
+            "section": null,
+            "page": 2,
+            "evidence_text": "Synthetic Governance Procedure GP-07 (2025) states that one-third of voting BoG members constitutes a quorum and that submitted proxies count toward quorum.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-01": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "01",
+    "topic": "Board of Governors quorum",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+    "right": "A committee briefing note discusses board of governors quorum in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "01",
+    "topic": "Board of Governors quorum",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+    "right": "SMCS Constitution Article VII states that a majority of voting BoG members constitutes a quorum and proxy is not counted in determining quorum.",
+    "conflicts": []
+  },
+  {
+    "case_id": "02",
+    "topic": "Proxy voting",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+    "right": "Synthetic Remote Meeting Guide RMG-02 (2026) permits each absent BoG member to appoint one voting proxy for ordinary business.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about proxy voting?",
+        "lower_authority_document": "TEST record BASE-02",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-02",
+          "document_title": "TEST record BASE-02",
+          "section": null,
+          "page": 3,
+          "evidence_text": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-02",
+            "document_title": "TEST record BASE-02",
+            "section": null,
+            "page": 3,
+            "evidence_text": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-02",
+            "document_title": "TEST record SYN-CONFLICT-02",
+            "section": null,
+            "page": 3,
+            "evidence_text": "Synthetic Remote Meeting Guide RMG-02 (2026) permits each absent BoG member to appoint one voting proxy for ordinary business.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-02": 90,
+          "TEST record SYN-CONFLICT-02": 50
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-02 states: SMCS Constitution Article VII states that proxy voting is not allowed.",
+          "TEST record SYN-CONFLICT-02 states: Synthetic Remote Meeting Guide RMG-02 (2026) permits each absent BoG member to appoint one voting proxy for ordinary business."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "02",
+    "topic": "Proxy voting",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+    "right": "Synthetic Remote Meeting Guide RMG-02 (2026) permits each absent BoG member to appoint one voting proxy for ordinary business.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about proxy voting?",
+        "lower_authority_document": "TEST record BASE-02",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-02",
+          "document_title": "TEST record BASE-02",
+          "section": null,
+          "page": 3,
+          "evidence_text": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-02",
+            "document_title": "TEST record BASE-02",
+            "section": null,
+            "page": 3,
+            "evidence_text": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-02",
+            "document_title": "TEST record SYN-CONFLICT-02",
+            "section": null,
+            "page": 3,
+            "evidence_text": "Synthetic Remote Meeting Guide RMG-02 (2026) permits each absent BoG member to appoint one voting proxy for ordinary business.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-02": 90,
+          "TEST record SYN-CONFLICT-02": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-02 states: SMCS Constitution Article VII states that proxy voting is not allowed.",
+          "TEST record SYN-CONFLICT-02 states: Synthetic Remote Meeting Guide RMG-02 (2026) permits each absent BoG member to appoint one voting proxy for ordinary business."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "02",
+    "topic": "Proxy voting",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+    "right": "Synthetic Remote Meeting Guide RMG-02 (2026) permits each absent BoG member to appoint one voting proxy for ordinary business.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about proxy voting?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_permission_prohibition_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-02",
+            "document_title": "TEST record BASE-02",
+            "section": null,
+            "page": 3,
+            "evidence_text": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-02",
+            "document_title": "TEST record SYN-CONFLICT-02",
+            "section": null,
+            "page": 3,
+            "evidence_text": "Synthetic Remote Meeting Guide RMG-02 (2026) permits each absent BoG member to appoint one voting proxy for ordinary business.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-02": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "02",
+    "topic": "Proxy voting",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+    "right": "A committee briefing note discusses proxy voting in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "02",
+    "topic": "Proxy voting",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+    "right": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+    "conflicts": []
+  },
+  {
+    "case_id": "03",
+    "topic": "BoG meeting notice",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+    "right": "Synthetic Secretariat Checklist SC-11 (2025) says routine BoG meetings require only 10 calendar days of notice.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about bog meeting notice?",
+        "lower_authority_document": "TEST record BASE-03",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-03",
+          "document_title": "TEST record BASE-03",
+          "section": null,
+          "page": 4,
+          "evidence_text": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-03",
+            "document_title": "TEST record BASE-03",
+            "section": null,
+            "page": 4,
+            "evidence_text": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-03",
+            "document_title": "TEST record SYN-CONFLICT-03",
+            "section": null,
+            "page": 4,
+            "evidence_text": "Synthetic Secretariat Checklist SC-11 (2025) says routine BoG meetings require only 10 calendar days of notice.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-03": 90,
+          "TEST record SYN-CONFLICT-03": 50
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-03 states: SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+          "TEST record SYN-CONFLICT-03 states: Synthetic Secretariat Checklist SC-11 (2025) says routine BoG meetings require only 10 calendar days of notice."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "03",
+    "topic": "BoG meeting notice",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+    "right": "Synthetic Secretariat Checklist SC-11 (2025) says routine BoG meetings require only 10 calendar days of notice.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about bog meeting notice?",
+        "lower_authority_document": "TEST record BASE-03",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-03",
+          "document_title": "TEST record BASE-03",
+          "section": null,
+          "page": 4,
+          "evidence_text": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-03",
+            "document_title": "TEST record BASE-03",
+            "section": null,
+            "page": 4,
+            "evidence_text": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-03",
+            "document_title": "TEST record SYN-CONFLICT-03",
+            "section": null,
+            "page": 4,
+            "evidence_text": "Synthetic Secretariat Checklist SC-11 (2025) says routine BoG meetings require only 10 calendar days of notice.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-03": 90,
+          "TEST record SYN-CONFLICT-03": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-03 states: SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+          "TEST record SYN-CONFLICT-03 states: Synthetic Secretariat Checklist SC-11 (2025) says routine BoG meetings require only 10 calendar days of notice."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "03",
+    "topic": "BoG meeting notice",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+    "right": "Synthetic Secretariat Checklist SC-11 (2025) says routine BoG meetings require only 10 calendar days of notice.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about bog meeting notice?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_day_requirement_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-03",
+            "document_title": "TEST record BASE-03",
+            "section": null,
+            "page": 4,
+            "evidence_text": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-03",
+            "document_title": "TEST record SYN-CONFLICT-03",
+            "section": null,
+            "page": 4,
+            "evidence_text": "Synthetic Secretariat Checklist SC-11 (2025) says routine BoG meetings require only 10 calendar days of notice.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-03": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "03",
+    "topic": "BoG meeting notice",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+    "right": "A committee briefing note discusses bog meeting notice in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "03",
+    "topic": "BoG meeting notice",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+    "right": "SMCS Bylaws Article II requires each member to be notified of the time and place of a BoG meeting at least 20 days before the scheduled meeting.",
+    "conflicts": []
+  },
+  {
+    "case_id": "04",
+    "topic": "Constitution amendment initiation",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+    "right": "Synthetic Amendment Quick Guide AQG-1 (2026) says a petition from 3 percent of members is sufficient to initiate a constitutional amendment.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about constitution amendment initiation?",
+        "lower_authority_document": "TEST record BASE-04",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-04",
+          "document_title": "TEST record BASE-04",
+          "section": null,
+          "page": 5,
+          "evidence_text": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-04",
+            "document_title": "TEST record BASE-04",
+            "section": null,
+            "page": 5,
+            "evidence_text": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-04",
+            "document_title": "TEST record SYN-CONFLICT-04",
+            "section": null,
+            "page": 5,
+            "evidence_text": "Synthetic Amendment Quick Guide AQG-1 (2026) says a petition from 3 percent of members is sufficient to initiate a constitutional amendment.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-04": 90,
+          "TEST record SYN-CONFLICT-04": 50
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-04 states: SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+          "TEST record SYN-CONFLICT-04 states: Synthetic Amendment Quick Guide AQG-1 (2026) says a petition from 3 percent of members is sufficient to initiate a constitutional amendment."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "04",
+    "topic": "Constitution amendment initiation",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+    "right": "Synthetic Amendment Quick Guide AQG-1 (2026) says a petition from 3 percent of members is sufficient to initiate a constitutional amendment.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about constitution amendment initiation?",
+        "lower_authority_document": "TEST record BASE-04",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-04",
+          "document_title": "TEST record BASE-04",
+          "section": null,
+          "page": 5,
+          "evidence_text": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-04",
+            "document_title": "TEST record BASE-04",
+            "section": null,
+            "page": 5,
+            "evidence_text": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-04",
+            "document_title": "TEST record SYN-CONFLICT-04",
+            "section": null,
+            "page": 5,
+            "evidence_text": "Synthetic Amendment Quick Guide AQG-1 (2026) says a petition from 3 percent of members is sufficient to initiate a constitutional amendment.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-04": 90,
+          "TEST record SYN-CONFLICT-04": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-04 states: SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+          "TEST record SYN-CONFLICT-04 states: Synthetic Amendment Quick Guide AQG-1 (2026) says a petition from 3 percent of members is sufficient to initiate a constitutional amendment."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "04",
+    "topic": "Constitution amendment initiation",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+    "right": "Synthetic Amendment Quick Guide AQG-1 (2026) says a petition from 3 percent of members is sufficient to initiate a constitutional amendment.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about constitution amendment initiation?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_percent_requirement_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-04",
+            "document_title": "TEST record BASE-04",
+            "section": null,
+            "page": 5,
+            "evidence_text": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-04",
+            "document_title": "TEST record SYN-CONFLICT-04",
+            "section": null,
+            "page": 5,
+            "evidence_text": "Synthetic Amendment Quick Guide AQG-1 (2026) says a petition from 3 percent of members is sufficient to initiate a constitutional amendment.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-04": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "04",
+    "topic": "Constitution amendment initiation",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+    "right": "A committee briefing note discusses constitution amendment initiation in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "04",
+    "topic": "Constitution amendment initiation",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+    "right": "SMCS Constitution Article XI allows initiation by a petition signed by 5 percent of SMCS members or by a two-thirds vote of the entire voting BoG.",
+    "conflicts": []
+  },
+  {
+    "case_id": "05",
+    "topic": "Bylaw amendment notice",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+    "right": "Synthetic Governance FAQ GF-04 (2025) says seven days of advance notice is sufficient for a Bylaw change.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about bylaw amendment notice?",
+        "lower_authority_document": "TEST record BASE-05",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-05",
+          "document_title": "TEST record BASE-05",
+          "section": null,
+          "page": 6,
+          "evidence_text": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-05",
+            "document_title": "TEST record BASE-05",
+            "section": null,
+            "page": 6,
+            "evidence_text": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-05",
+            "document_title": "TEST record SYN-CONFLICT-05",
+            "section": null,
+            "page": 6,
+            "evidence_text": "Synthetic Governance FAQ GF-04 (2025) says seven days of advance notice is sufficient for a Bylaw change.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-05": 90,
+          "TEST record SYN-CONFLICT-05": 50
+        },
+        "conflicting_normative_terms": [
+          "must"
+        ],
+        "interpretations": [
+          "TEST record BASE-05 states: SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+          "TEST record SYN-CONFLICT-05 states: Synthetic Governance FAQ GF-04 (2025) says seven days of advance notice is sufficient for a Bylaw change."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "05",
+    "topic": "Bylaw amendment notice",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+    "right": "Synthetic Governance FAQ GF-04 (2025) says seven days of advance notice is sufficient for a Bylaw change.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about bylaw amendment notice?",
+        "lower_authority_document": "TEST record BASE-05",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-05",
+          "document_title": "TEST record BASE-05",
+          "section": null,
+          "page": 6,
+          "evidence_text": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-05",
+            "document_title": "TEST record BASE-05",
+            "section": null,
+            "page": 6,
+            "evidence_text": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-05",
+            "document_title": "TEST record SYN-CONFLICT-05",
+            "section": null,
+            "page": 6,
+            "evidence_text": "Synthetic Governance FAQ GF-04 (2025) says seven days of advance notice is sufficient for a Bylaw change.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-05": 90,
+          "TEST record SYN-CONFLICT-05": 90
+        },
+        "conflicting_normative_terms": [
+          "must"
+        ],
+        "interpretations": [
+          "TEST record BASE-05 states: SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+          "TEST record SYN-CONFLICT-05 states: Synthetic Governance FAQ GF-04 (2025) says seven days of advance notice is sufficient for a Bylaw change."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "05",
+    "topic": "Bylaw amendment notice",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+    "right": "Synthetic Governance FAQ GF-04 (2025) says seven days of advance notice is sufficient for a Bylaw change.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about bylaw amendment notice?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_day_requirement_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-05",
+            "document_title": "TEST record BASE-05",
+            "section": null,
+            "page": 6,
+            "evidence_text": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-05",
+            "document_title": "TEST record SYN-CONFLICT-05",
+            "section": null,
+            "page": 6,
+            "evidence_text": "Synthetic Governance FAQ GF-04 (2025) says seven days of advance notice is sufficient for a Bylaw change.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-05": 90
+        },
+        "conflicting_normative_terms": [
+          "must"
+        ],
+        "interpretations": [
+          "One provision can be read as requiring the stated action because it uses mandatory wording.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "05",
+    "topic": "Bylaw amendment notice",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+    "right": "A committee briefing note discusses bylaw amendment notice in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "05",
+    "topic": "Bylaw amendment notice",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+    "right": "SMCS Constitution Article XI states that notice of a proposed Bylaw change must be sent to each BoG member at least two weeks before action.",
+    "conflicts": []
+  },
+  {
+    "case_id": "06",
+    "topic": "Member-at-Large term",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+    "right": "Synthetic Board Handbook BH-09 (2026) describes Members-at-Large as serving two-year terms.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about member-at-large term?",
+        "lower_authority_document": "TEST record BASE-06",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-06",
+          "document_title": "TEST record BASE-06",
+          "section": null,
+          "page": 7,
+          "evidence_text": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-06",
+            "document_title": "TEST record BASE-06",
+            "section": null,
+            "page": 7,
+            "evidence_text": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-06",
+            "document_title": "TEST record SYN-CONFLICT-06",
+            "section": null,
+            "page": 7,
+            "evidence_text": "Synthetic Board Handbook BH-09 (2026) describes Members-at-Large as serving two-year terms.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-06": 90,
+          "TEST record SYN-CONFLICT-06": 50
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-06 states: SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+          "TEST record SYN-CONFLICT-06 states: Synthetic Board Handbook BH-09 (2026) describes Members-at-Large as serving two-year terms."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "06",
+    "topic": "Member-at-Large term",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+    "right": "Synthetic Board Handbook BH-09 (2026) describes Members-at-Large as serving two-year terms.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about member-at-large term?",
+        "lower_authority_document": "TEST record BASE-06",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-06",
+          "document_title": "TEST record BASE-06",
+          "section": null,
+          "page": 7,
+          "evidence_text": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-06",
+            "document_title": "TEST record BASE-06",
+            "section": null,
+            "page": 7,
+            "evidence_text": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-06",
+            "document_title": "TEST record SYN-CONFLICT-06",
+            "section": null,
+            "page": 7,
+            "evidence_text": "Synthetic Board Handbook BH-09 (2026) describes Members-at-Large as serving two-year terms.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-06": 90,
+          "TEST record SYN-CONFLICT-06": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-06 states: SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+          "TEST record SYN-CONFLICT-06 states: Synthetic Board Handbook BH-09 (2026) describes Members-at-Large as serving two-year terms."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "06",
+    "topic": "Member-at-Large term",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+    "right": "Synthetic Board Handbook BH-09 (2026) describes Members-at-Large as serving two-year terms.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about member-at-large term?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_month_requirement_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-06",
+            "document_title": "TEST record BASE-06",
+            "section": null,
+            "page": 7,
+            "evidence_text": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-06",
+            "document_title": "TEST record SYN-CONFLICT-06",
+            "section": null,
+            "page": 7,
+            "evidence_text": "Synthetic Board Handbook BH-09 (2026) describes Members-at-Large as serving two-year terms.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-06": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "06",
+    "topic": "Member-at-Large term",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+    "right": "A committee briefing note discusses member-at-large term in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "06",
+    "topic": "Member-at-Large term",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+    "right": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+    "conflicts": []
+  },
+  {
+    "case_id": "07",
+    "topic": "President term",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+    "right": "Synthetic Officer Transition Memo OTM-3 (2026) states that the President serves a single three-year term.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about president term?",
+        "lower_authority_document": "TEST record BASE-07",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-07",
+          "document_title": "TEST record BASE-07",
+          "section": null,
+          "page": 8,
+          "evidence_text": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-07",
+            "document_title": "TEST record BASE-07",
+            "section": null,
+            "page": 8,
+            "evidence_text": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-07",
+            "document_title": "TEST record SYN-CONFLICT-07",
+            "section": null,
+            "page": 8,
+            "evidence_text": "Synthetic Officer Transition Memo OTM-3 (2026) states that the President serves a single three-year term.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-07": 90,
+          "TEST record SYN-CONFLICT-07": 50
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-07 states: SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+          "TEST record SYN-CONFLICT-07 states: Synthetic Officer Transition Memo OTM-3 (2026) states that the President serves a single three-year term."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "07",
+    "topic": "President term",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+    "right": "Synthetic Officer Transition Memo OTM-3 (2026) states that the President serves a single three-year term.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about president term?",
+        "lower_authority_document": "TEST record BASE-07",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-07",
+          "document_title": "TEST record BASE-07",
+          "section": null,
+          "page": 8,
+          "evidence_text": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-07",
+            "document_title": "TEST record BASE-07",
+            "section": null,
+            "page": 8,
+            "evidence_text": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-07",
+            "document_title": "TEST record SYN-CONFLICT-07",
+            "section": null,
+            "page": 8,
+            "evidence_text": "Synthetic Officer Transition Memo OTM-3 (2026) states that the President serves a single three-year term.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-07": 90,
+          "TEST record SYN-CONFLICT-07": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-07 states: SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+          "TEST record SYN-CONFLICT-07 states: Synthetic Officer Transition Memo OTM-3 (2026) states that the President serves a single three-year term."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "07",
+    "topic": "President term",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+    "right": "Synthetic Officer Transition Memo OTM-3 (2026) states that the President serves a single three-year term.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about president term?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_month_requirement_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-07",
+            "document_title": "TEST record BASE-07",
+            "section": null,
+            "page": 8,
+            "evidence_text": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-07",
+            "document_title": "TEST record SYN-CONFLICT-07",
+            "section": null,
+            "page": 8,
+            "evidence_text": "Synthetic Officer Transition Memo OTM-3 (2026) states that the President serves a single three-year term.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-07": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "07",
+    "topic": "President term",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+    "right": "A committee briefing note discusses president term in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "07",
+    "topic": "President term",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+    "right": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+    "conflicts": []
+  },
+  {
+    "case_id": "08",
+    "topic": "Vice President eligibility",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+    "right": "Synthetic Election FAQ EF-8 (2025) says any Senior Member of SMCS with five years of Society membership may stand for Vice President without prior BoG service.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about vice president eligibility?",
+        "lower_authority_document": "TEST record BASE-08",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-08",
+          "document_title": "TEST record BASE-08",
+          "section": null,
+          "page": 9,
+          "evidence_text": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-08",
+            "document_title": "TEST record BASE-08",
+            "section": null,
+            "page": 9,
+            "evidence_text": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-08",
+            "document_title": "TEST record SYN-CONFLICT-08",
+            "section": null,
+            "page": 9,
+            "evidence_text": "Synthetic Election FAQ EF-8 (2025) says any Senior Member of SMCS with five years of Society membership may stand for Vice President without prior BoG service.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-08": 90,
+          "TEST record SYN-CONFLICT-08": 50
+        },
+        "conflicting_normative_terms": [
+          "may"
+        ],
+        "interpretations": [
+          "TEST record BASE-08 states: SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+          "TEST record SYN-CONFLICT-08 states: Synthetic Election FAQ EF-8 (2025) says any Senior Member of SMCS with five years of Society membership may stand for Vice President without prior BoG service."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "08",
+    "topic": "Vice President eligibility",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+    "right": "Synthetic Election FAQ EF-8 (2025) says any Senior Member of SMCS with five years of Society membership may stand for Vice President without prior BoG service.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about vice president eligibility?",
+        "lower_authority_document": "TEST record BASE-08",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-08",
+          "document_title": "TEST record BASE-08",
+          "section": null,
+          "page": 9,
+          "evidence_text": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-08",
+            "document_title": "TEST record BASE-08",
+            "section": null,
+            "page": 9,
+            "evidence_text": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-08",
+            "document_title": "TEST record SYN-CONFLICT-08",
+            "section": null,
+            "page": 9,
+            "evidence_text": "Synthetic Election FAQ EF-8 (2025) says any Senior Member of SMCS with five years of Society membership may stand for Vice President without prior BoG service.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-08": 90,
+          "TEST record SYN-CONFLICT-08": 90
+        },
+        "conflicting_normative_terms": [
+          "may"
+        ],
+        "interpretations": [
+          "TEST record BASE-08 states: SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+          "TEST record SYN-CONFLICT-08 states: Synthetic Election FAQ EF-8 (2025) says any Senior Member of SMCS with five years of Society membership may stand for Vice President without prior BoG service."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "08",
+    "topic": "Vice President eligibility",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+    "right": "Synthetic Election FAQ EF-8 (2025) says any Senior Member of SMCS with five years of Society membership may stand for Vice President without prior BoG service.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about vice president eligibility?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_prior_service_exception",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-08",
+            "document_title": "TEST record BASE-08",
+            "section": null,
+            "page": 9,
+            "evidence_text": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-08",
+            "document_title": "TEST record SYN-CONFLICT-08",
+            "section": null,
+            "page": 9,
+            "evidence_text": "Synthetic Election FAQ EF-8 (2025) says any Senior Member of SMCS with five years of Society membership may stand for Vice President without prior BoG service.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-08": 90
+        },
+        "conflicting_normative_terms": [
+          "may"
+        ],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision can be read as permitting, but not requiring, the stated action because it uses discretionary wording."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "08",
+    "topic": "Vice President eligibility",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+    "right": "A committee briefing note discusses vice president eligibility in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "08",
+    "topic": "Vice President eligibility",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+    "right": "SMCS Bylaws Article I requires Vice President candidates to have been voting BoG members elected by the membership-at-large during the past five calendar years and to have served at least one full year by nomination.",
+    "conflicts": []
+  },
+  {
+    "case_id": "09",
+    "topic": "President-Elect eligibility",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I states that candidates for President and President-Elect must have served at least one year as a Vice President.",
+    "right": "Synthetic Leadership Succession Guide LSG-2 (2026) says two years as a Member-at-Large is an acceptable substitute for Vice President service.",
+    "conflicts": []
+  },
+  {
+    "case_id": "09",
+    "topic": "President-Elect eligibility",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I states that candidates for President and President-Elect must have served at least one year as a Vice President.",
+    "right": "Synthetic Leadership Succession Guide LSG-2 (2026) says two years as a Member-at-Large is an acceptable substitute for Vice President service.",
+    "conflicts": []
+  },
+  {
+    "case_id": "09",
+    "topic": "President-Elect eligibility",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I states that candidates for President and President-Elect must have served at least one year as a Vice President.",
+    "right": "Synthetic Leadership Succession Guide LSG-2 (2026) says two years as a Member-at-Large is an acceptable substitute for Vice President service.",
+    "conflicts": []
+  },
+  {
+    "case_id": "09",
+    "topic": "President-Elect eligibility",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I states that candidates for President and President-Elect must have served at least one year as a Vice President.",
+    "right": "A committee briefing note discusses president-elect eligibility in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "09",
+    "topic": "President-Elect eligibility",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I states that candidates for President and President-Elect must have served at least one year as a Vice President.",
+    "right": "SMCS Bylaws Article I states that candidates for President and President-Elect must have served at least one year as a Vice President.",
+    "conflicts": []
+  },
+  {
+    "case_id": "10",
+    "topic": "Petition nomination threshold",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+    "right": "Synthetic Election Operations Note EON-12 (2025) sets the petition threshold at 1 percent.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about petition nomination threshold?",
+        "lower_authority_document": "TEST record BASE-10",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-10",
+          "document_title": "TEST record BASE-10",
+          "section": null,
+          "page": 11,
+          "evidence_text": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-10",
+            "document_title": "TEST record BASE-10",
+            "section": null,
+            "page": 11,
+            "evidence_text": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-10",
+            "document_title": "TEST record SYN-CONFLICT-10",
+            "section": null,
+            "page": 11,
+            "evidence_text": "Synthetic Election Operations Note EON-12 (2025) sets the petition threshold at 1 percent.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-10": 90,
+          "TEST record SYN-CONFLICT-10": 50
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-10 states: SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+          "TEST record SYN-CONFLICT-10 states: Synthetic Election Operations Note EON-12 (2025) sets the petition threshold at 1 percent."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "10",
+    "topic": "Petition nomination threshold",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+    "right": "Synthetic Election Operations Note EON-12 (2025) sets the petition threshold at 1 percent.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about petition nomination threshold?",
+        "lower_authority_document": "TEST record BASE-10",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-10",
+          "document_title": "TEST record BASE-10",
+          "section": null,
+          "page": 11,
+          "evidence_text": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-10",
+            "document_title": "TEST record BASE-10",
+            "section": null,
+            "page": 11,
+            "evidence_text": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-10",
+            "document_title": "TEST record SYN-CONFLICT-10",
+            "section": null,
+            "page": 11,
+            "evidence_text": "Synthetic Election Operations Note EON-12 (2025) sets the petition threshold at 1 percent.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-10": 90,
+          "TEST record SYN-CONFLICT-10": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-10 states: SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+          "TEST record SYN-CONFLICT-10 states: Synthetic Election Operations Note EON-12 (2025) sets the petition threshold at 1 percent."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "10",
+    "topic": "Petition nomination threshold",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+    "right": "Synthetic Election Operations Note EON-12 (2025) sets the petition threshold at 1 percent.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about petition nomination threshold?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_percent_requirement_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-10",
+            "document_title": "TEST record BASE-10",
+            "section": null,
+            "page": 11,
+            "evidence_text": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-10",
+            "document_title": "TEST record SYN-CONFLICT-10",
+            "section": null,
+            "page": 11,
+            "evidence_text": "Synthetic Election Operations Note EON-12 (2025) sets the petition threshold at 1 percent.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-10": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "10",
+    "topic": "Petition nomination threshold",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+    "right": "A committee briefing note discusses petition nomination threshold in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "10",
+    "topic": "Petition nomination threshold",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+    "right": "SMCS Bylaws Article I requires a petition signed by at least 2 percent of SMCS members for additional Member-at-Large nominations.",
+    "conflicts": []
+  },
+  {
+    "case_id": "11",
+    "topic": "Technical Committee special session",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+    "right": "Synthetic TC Flexibility Memo TCF-6 (2026) states that proposing a special session is optional if the TC organizes a webinar.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about technical committee special session?",
+        "lower_authority_document": "TEST record BASE-11",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-11",
+          "document_title": "TEST record BASE-11",
+          "section": null,
+          "page": 12,
+          "evidence_text": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-11",
+            "document_title": "TEST record BASE-11",
+            "section": null,
+            "page": 12,
+            "evidence_text": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-11",
+            "document_title": "TEST record SYN-CONFLICT-11",
+            "section": null,
+            "page": 12,
+            "evidence_text": "Synthetic TC Flexibility Memo TCF-6 (2026) states that proposing a special session is optional if the TC organizes a webinar.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-11": 90,
+          "TEST record SYN-CONFLICT-11": 50
+        },
+        "conflicting_normative_terms": [
+          "must"
+        ],
+        "interpretations": [
+          "TEST record BASE-11 states: SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+          "TEST record SYN-CONFLICT-11 states: Synthetic TC Flexibility Memo TCF-6 (2026) states that proposing a special session is optional if the TC organizes a webinar."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "11",
+    "topic": "Technical Committee special session",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+    "right": "Synthetic TC Flexibility Memo TCF-6 (2026) states that proposing a special session is optional if the TC organizes a webinar.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about technical committee special session?",
+        "lower_authority_document": "TEST record BASE-11",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-11",
+          "document_title": "TEST record BASE-11",
+          "section": null,
+          "page": 12,
+          "evidence_text": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-11",
+            "document_title": "TEST record BASE-11",
+            "section": null,
+            "page": 12,
+            "evidence_text": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-11",
+            "document_title": "TEST record SYN-CONFLICT-11",
+            "section": null,
+            "page": 12,
+            "evidence_text": "Synthetic TC Flexibility Memo TCF-6 (2026) states that proposing a special session is optional if the TC organizes a webinar.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-11": 90,
+          "TEST record SYN-CONFLICT-11": 90
+        },
+        "conflicting_normative_terms": [
+          "must"
+        ],
+        "interpretations": [
+          "TEST record BASE-11 states: SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+          "TEST record SYN-CONFLICT-11 states: Synthetic TC Flexibility Memo TCF-6 (2026) states that proposing a special session is optional if the TC organizes a webinar."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "11",
+    "topic": "Technical Committee special session",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+    "right": "Synthetic TC Flexibility Memo TCF-6 (2026) states that proposing a special session is optional if the TC organizes a webinar.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about technical committee special session?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_obligation_exception_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-11",
+            "document_title": "TEST record BASE-11",
+            "section": null,
+            "page": 12,
+            "evidence_text": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-11",
+            "document_title": "TEST record SYN-CONFLICT-11",
+            "section": null,
+            "page": 12,
+            "evidence_text": "Synthetic TC Flexibility Memo TCF-6 (2026) states that proposing a special session is optional if the TC organizes a webinar.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-11": 90
+        },
+        "conflicting_normative_terms": [
+          "must"
+        ],
+        "interpretations": [
+          "One provision can be read as requiring the stated action because it uses mandatory wording.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "11",
+    "topic": "Technical Committee special session",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+    "right": "A committee briefing note discusses technical committee special session in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "11",
+    "topic": "Technical Committee special session",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+    "right": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+    "conflicts": []
+  },
+  {
+    "case_id": "12",
+    "topic": "TC Chair membership",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+    "right": "Synthetic External Collaboration Guide ECG-4 (2025) permits a non-SMCS industry expert to serve as sole TC Chair for up to two years.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about tc chair membership?",
+        "lower_authority_document": "TEST record BASE-12",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-12",
+          "document_title": "TEST record BASE-12",
+          "section": null,
+          "page": 13,
+          "evidence_text": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-12",
+            "document_title": "TEST record BASE-12",
+            "section": null,
+            "page": 13,
+            "evidence_text": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-12",
+            "document_title": "TEST record SYN-CONFLICT-12",
+            "section": null,
+            "page": 13,
+            "evidence_text": "Synthetic External Collaboration Guide ECG-4 (2025) permits a non-SMCS industry expert to serve as sole TC Chair for up to two years.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-12": 90,
+          "TEST record SYN-CONFLICT-12": 50
+        },
+        "conflicting_normative_terms": [
+          "must"
+        ],
+        "interpretations": [
+          "TEST record BASE-12 states: SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+          "TEST record SYN-CONFLICT-12 states: Synthetic External Collaboration Guide ECG-4 (2025) permits a non-SMCS industry expert to serve as sole TC Chair for up to two years."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "12",
+    "topic": "TC Chair membership",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+    "right": "Synthetic External Collaboration Guide ECG-4 (2025) permits a non-SMCS industry expert to serve as sole TC Chair for up to two years.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about tc chair membership?",
+        "lower_authority_document": "TEST record BASE-12",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-12",
+          "document_title": "TEST record BASE-12",
+          "section": null,
+          "page": 13,
+          "evidence_text": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-12",
+            "document_title": "TEST record BASE-12",
+            "section": null,
+            "page": 13,
+            "evidence_text": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-12",
+            "document_title": "TEST record SYN-CONFLICT-12",
+            "section": null,
+            "page": 13,
+            "evidence_text": "Synthetic External Collaboration Guide ECG-4 (2025) permits a non-SMCS industry expert to serve as sole TC Chair for up to two years.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-12": 90,
+          "TEST record SYN-CONFLICT-12": 90
+        },
+        "conflicting_normative_terms": [
+          "must"
+        ],
+        "interpretations": [
+          "TEST record BASE-12 states: SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+          "TEST record SYN-CONFLICT-12 states: Synthetic External Collaboration Guide ECG-4 (2025) permits a non-SMCS industry expert to serve as sole TC Chair for up to two years."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "12",
+    "topic": "TC Chair membership",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+    "right": "Synthetic External Collaboration Guide ECG-4 (2025) permits a non-SMCS industry expert to serve as sole TC Chair for up to two years.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about tc chair membership?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_membership_exception_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-12",
+            "document_title": "TEST record BASE-12",
+            "section": null,
+            "page": 13,
+            "evidence_text": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-12",
+            "document_title": "TEST record SYN-CONFLICT-12",
+            "section": null,
+            "page": 13,
+            "evidence_text": "Synthetic External Collaboration Guide ECG-4 (2025) permits a non-SMCS industry expert to serve as sole TC Chair for up to two years.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-12": 90
+        },
+        "conflicting_normative_terms": [
+          "must"
+        ],
+        "interpretations": [
+          "One provision can be read as requiring the stated action because it uses mandatory wording.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "12",
+    "topic": "TC Chair membership",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+    "right": "A committee briefing note discusses tc chair membership in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "12",
+    "topic": "TC Chair membership",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+    "right": "SMCS Technical Committee Manual states that all TC Chairs and Co-Chairs must be SMCS members.",
+    "conflicts": []
+  },
+  {
+    "case_id": "13",
+    "topic": "TC activity reporting",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+    "right": "Synthetic TC Reporting Standard TRS-10 (2026) requires only one annual report.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about tc activity reporting?",
+        "lower_authority_document": "TEST record BASE-13",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-13",
+          "document_title": "TEST record BASE-13",
+          "section": null,
+          "page": 14,
+          "evidence_text": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-13",
+            "document_title": "TEST record BASE-13",
+            "section": null,
+            "page": 14,
+            "evidence_text": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-13",
+            "document_title": "TEST record SYN-CONFLICT-13",
+            "section": null,
+            "page": 14,
+            "evidence_text": "Synthetic TC Reporting Standard TRS-10 (2026) requires only one annual report.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-13": 90,
+          "TEST record SYN-CONFLICT-13": 50
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-13 states: SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+          "TEST record SYN-CONFLICT-13 states: Synthetic TC Reporting Standard TRS-10 (2026) requires only one annual report."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "13",
+    "topic": "TC activity reporting",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+    "right": "Synthetic TC Reporting Standard TRS-10 (2026) requires only one annual report.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about tc activity reporting?",
+        "lower_authority_document": "TEST record BASE-13",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-13",
+          "document_title": "TEST record BASE-13",
+          "section": null,
+          "page": 14,
+          "evidence_text": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-13",
+            "document_title": "TEST record BASE-13",
+            "section": null,
+            "page": 14,
+            "evidence_text": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-13",
+            "document_title": "TEST record SYN-CONFLICT-13",
+            "section": null,
+            "page": 14,
+            "evidence_text": "Synthetic TC Reporting Standard TRS-10 (2026) requires only one annual report.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-13": 90,
+          "TEST record SYN-CONFLICT-13": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-13 states: SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+          "TEST record SYN-CONFLICT-13 states: Synthetic TC Reporting Standard TRS-10 (2026) requires only one annual report."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "13",
+    "topic": "TC activity reporting",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+    "right": "Synthetic TC Reporting Standard TRS-10 (2026) requires only one annual report.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about tc activity reporting?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_reporting_frequency_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-13",
+            "document_title": "TEST record BASE-13",
+            "section": null,
+            "page": 14,
+            "evidence_text": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-13",
+            "document_title": "TEST record SYN-CONFLICT-13",
+            "section": null,
+            "page": 14,
+            "evidence_text": "Synthetic TC Reporting Standard TRS-10 (2026) requires only one annual report.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-13": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "13",
+    "topic": "TC activity reporting",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+    "right": "A committee briefing note discusses tc activity reporting in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "13",
+    "topic": "TC activity reporting",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+    "right": "SMCS Technical Committee Manual requires TC Chairs to report activities bi-annually to the corresponding Area VP.",
+    "conflicts": []
+  },
+  {
+    "case_id": "14",
+    "topic": "TC dissolution inactivity period",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+    "right": "Synthetic TC Lifecycle Procedure TCLP-3 (2025) permits automatic dissolution after six months of inactivity.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about tc dissolution inactivity period?",
+        "lower_authority_document": "TEST record BASE-14",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-14",
+          "document_title": "TEST record BASE-14",
+          "section": null,
+          "page": 15,
+          "evidence_text": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-14",
+            "document_title": "TEST record BASE-14",
+            "section": null,
+            "page": 15,
+            "evidence_text": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-14",
+            "document_title": "TEST record SYN-CONFLICT-14",
+            "section": null,
+            "page": 15,
+            "evidence_text": "Synthetic TC Lifecycle Procedure TCLP-3 (2025) permits automatic dissolution after six months of inactivity.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-14": 90,
+          "TEST record SYN-CONFLICT-14": 50
+        },
+        "conflicting_normative_terms": [
+          "may"
+        ],
+        "interpretations": [
+          "TEST record BASE-14 states: SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+          "TEST record SYN-CONFLICT-14 states: Synthetic TC Lifecycle Procedure TCLP-3 (2025) permits automatic dissolution after six months of inactivity."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "14",
+    "topic": "TC dissolution inactivity period",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+    "right": "Synthetic TC Lifecycle Procedure TCLP-3 (2025) permits automatic dissolution after six months of inactivity.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about tc dissolution inactivity period?",
+        "lower_authority_document": "TEST record BASE-14",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-14",
+          "document_title": "TEST record BASE-14",
+          "section": null,
+          "page": 15,
+          "evidence_text": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-14",
+            "document_title": "TEST record BASE-14",
+            "section": null,
+            "page": 15,
+            "evidence_text": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-14",
+            "document_title": "TEST record SYN-CONFLICT-14",
+            "section": null,
+            "page": 15,
+            "evidence_text": "Synthetic TC Lifecycle Procedure TCLP-3 (2025) permits automatic dissolution after six months of inactivity.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-14": 90,
+          "TEST record SYN-CONFLICT-14": 90
+        },
+        "conflicting_normative_terms": [
+          "may"
+        ],
+        "interpretations": [
+          "TEST record BASE-14 states: SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+          "TEST record SYN-CONFLICT-14 states: Synthetic TC Lifecycle Procedure TCLP-3 (2025) permits automatic dissolution after six months of inactivity."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "14",
+    "topic": "TC dissolution inactivity period",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+    "right": "Synthetic TC Lifecycle Procedure TCLP-3 (2025) permits automatic dissolution after six months of inactivity.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about tc dissolution inactivity period?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_month_requirement_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-14",
+            "document_title": "TEST record BASE-14",
+            "section": null,
+            "page": 15,
+            "evidence_text": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-14",
+            "document_title": "TEST record SYN-CONFLICT-14",
+            "section": null,
+            "page": 15,
+            "evidence_text": "Synthetic TC Lifecycle Procedure TCLP-3 (2025) permits automatic dissolution after six months of inactivity.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-14": 90
+        },
+        "conflicting_normative_terms": [
+          "may"
+        ],
+        "interpretations": [
+          "One provision can be read as permitting, but not requiring, the stated action because it uses discretionary wording.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "14",
+    "topic": "TC dissolution inactivity period",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+    "right": "A committee briefing note discusses tc dissolution inactivity period in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "14",
+    "topic": "TC dissolution inactivity period",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+    "right": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+    "conflicts": []
+  },
+  {
+    "case_id": "15",
+    "topic": "New TC approval",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual requires a request to the Area VP, Area Committee review for activity plan and overlap, and Area VP approval before activity begins.",
+    "right": "Synthetic Innovation Fast-Track IFT-1 (2026) allows a proposed TC to begin immediately after submitting a request, before Area Committee review.",
+    "conflicts": []
+  },
+  {
+    "case_id": "15",
+    "topic": "New TC approval",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual requires a request to the Area VP, Area Committee review for activity plan and overlap, and Area VP approval before activity begins.",
+    "right": "Synthetic Innovation Fast-Track IFT-1 (2026) allows a proposed TC to begin immediately after submitting a request, before Area Committee review.",
+    "conflicts": []
+  },
+  {
+    "case_id": "15",
+    "topic": "New TC approval",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual requires a request to the Area VP, Area Committee review for activity plan and overlap, and Area VP approval before activity begins.",
+    "right": "Synthetic Innovation Fast-Track IFT-1 (2026) allows a proposed TC to begin immediately after submitting a request, before Area Committee review.",
+    "conflicts": []
+  },
+  {
+    "case_id": "15",
+    "topic": "New TC approval",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual requires a request to the Area VP, Area Committee review for activity plan and overlap, and Area VP approval before activity begins.",
+    "right": "A committee briefing note discusses new tc approval in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "15",
+    "topic": "New TC approval",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Technical Committee Manual requires a request to the Area VP, Area Committee review for activity plan and overlap, and Area VP approval before activity begins.",
+    "right": "SMCS Technical Committee Manual requires a request to the Area VP, Area Committee review for activity plan and overlap, and Area VP approval before activity begins.",
+    "conflicts": []
+  },
+  {
+    "case_id": "16",
+    "topic": "Annual conference sponsorship",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VIII states that SMCS shall sponsor or cosponsor at least one major technical conference each year.",
+    "right": "Synthetic Cost-Control Directive CCD-5 (2026) says the Society may skip all major conference sponsorship for a year whenever reserves fall below an internal target.",
+    "conflicts": []
+  },
+  {
+    "case_id": "16",
+    "topic": "Annual conference sponsorship",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VIII states that SMCS shall sponsor or cosponsor at least one major technical conference each year.",
+    "right": "Synthetic Cost-Control Directive CCD-5 (2026) says the Society may skip all major conference sponsorship for a year whenever reserves fall below an internal target.",
+    "conflicts": []
+  },
+  {
+    "case_id": "16",
+    "topic": "Annual conference sponsorship",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VIII states that SMCS shall sponsor or cosponsor at least one major technical conference each year.",
+    "right": "Synthetic Cost-Control Directive CCD-5 (2026) says the Society may skip all major conference sponsorship for a year whenever reserves fall below an internal target.",
+    "conflicts": []
+  },
+  {
+    "case_id": "16",
+    "topic": "Annual conference sponsorship",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VIII states that SMCS shall sponsor or cosponsor at least one major technical conference each year.",
+    "right": "A committee briefing note discusses annual conference sponsorship in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "16",
+    "topic": "Annual conference sponsorship",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "SMCS Constitution Article VIII states that SMCS shall sponsor or cosponsor at least one major technical conference each year.",
+    "right": "SMCS Constitution Article VIII states that SMCS shall sponsor or cosponsor at least one major technical conference each year.",
+    "conflicts": []
+  },
+  {
+    "case_id": "17",
+    "topic": "SMCS dues approval",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": true,
+    "left": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+    "right": "Synthetic Finance Desk Guide FDG-7 (2026) says a simple majority of voting members present may approve a dues change.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about smcs dues approval?",
+        "lower_authority_document": "TEST record BASE-17",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-17",
+          "document_title": "TEST record BASE-17",
+          "section": null,
+          "page": 18,
+          "evidence_text": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-17",
+            "document_title": "TEST record BASE-17",
+            "section": null,
+            "page": 18,
+            "evidence_text": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-17",
+            "document_title": "TEST record SYN-CONFLICT-17",
+            "section": null,
+            "page": 18,
+            "evidence_text": "Synthetic Finance Desk Guide FDG-7 (2026) says a simple majority of voting members present may approve a dues change.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-17": 90,
+          "TEST record SYN-CONFLICT-17": 50
+        },
+        "conflicting_normative_terms": [
+          "may"
+        ],
+        "interpretations": [
+          "TEST record BASE-17 states: Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+          "TEST record SYN-CONFLICT-17 states: Synthetic Finance Desk Guide FDG-7 (2026) says a simple majority of voting members present may approve a dues change."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "17",
+    "topic": "SMCS dues approval",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": true,
+    "left": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+    "right": "Synthetic Finance Desk Guide FDG-7 (2026) says a simple majority of voting members present may approve a dues change.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about smcs dues approval?",
+        "lower_authority_document": "TEST record BASE-17",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-17",
+          "document_title": "TEST record BASE-17",
+          "section": null,
+          "page": 18,
+          "evidence_text": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-17",
+            "document_title": "TEST record BASE-17",
+            "section": null,
+            "page": 18,
+            "evidence_text": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-17",
+            "document_title": "TEST record SYN-CONFLICT-17",
+            "section": null,
+            "page": 18,
+            "evidence_text": "Synthetic Finance Desk Guide FDG-7 (2026) says a simple majority of voting members present may approve a dues change.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-17": 90,
+          "TEST record SYN-CONFLICT-17": 90
+        },
+        "conflicting_normative_terms": [
+          "may"
+        ],
+        "interpretations": [
+          "TEST record BASE-17 states: Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+          "TEST record SYN-CONFLICT-17 states: Synthetic Finance Desk Guide FDG-7 (2026) says a simple majority of voting members present may approve a dues change."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "17",
+    "topic": "SMCS dues approval",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": true,
+    "left": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+    "right": "Synthetic Finance Desk Guide FDG-7 (2026) says a simple majority of voting members present may approve a dues change.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about smcs dues approval?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_voting_threshold_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-17",
+            "document_title": "TEST record BASE-17",
+            "section": null,
+            "page": 18,
+            "evidence_text": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-17",
+            "document_title": "TEST record SYN-CONFLICT-17",
+            "section": null,
+            "page": 18,
+            "evidence_text": "Synthetic Finance Desk Guide FDG-7 (2026) says a simple majority of voting members present may approve a dues change.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-17": 90
+        },
+        "conflicting_normative_terms": [
+          "may"
+        ],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision can be read as permitting, but not requiring, the stated action because it uses discretionary wording."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "17",
+    "topic": "SMCS dues approval",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": true,
+    "left": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+    "right": "A committee briefing note discusses smcs dues approval in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "17",
+    "topic": "SMCS dues approval",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": true,
+    "left": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+    "right": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+    "conflicts": []
+  },
+  {
+    "case_id": "18",
+    "topic": "Flagship conference rotation",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": true,
+    "left": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+    "right": "Synthetic Conference Strategy 2026-2029 states a four-year rotation adding a separate Middle East region.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about flagship conference rotation?",
+        "lower_authority_document": "TEST record BASE-18",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-18",
+          "document_title": "TEST record BASE-18",
+          "section": null,
+          "page": 19,
+          "evidence_text": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-18",
+            "document_title": "TEST record BASE-18",
+            "section": null,
+            "page": 19,
+            "evidence_text": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-18",
+            "document_title": "TEST record SYN-CONFLICT-18",
+            "section": null,
+            "page": 19,
+            "evidence_text": "Synthetic Conference Strategy 2026-2029 states a four-year rotation adding a separate Middle East region.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-18": 90,
+          "TEST record SYN-CONFLICT-18": 50
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-18 states: Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+          "TEST record SYN-CONFLICT-18 states: Synthetic Conference Strategy 2026-2029 states a four-year rotation adding a separate Middle East region."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "18",
+    "topic": "Flagship conference rotation",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": true,
+    "left": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+    "right": "Synthetic Conference Strategy 2026-2029 states a four-year rotation adding a separate Middle East region.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about flagship conference rotation?",
+        "lower_authority_document": "TEST record BASE-18",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-18",
+          "document_title": "TEST record BASE-18",
+          "section": null,
+          "page": 19,
+          "evidence_text": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-18",
+            "document_title": "TEST record BASE-18",
+            "section": null,
+            "page": 19,
+            "evidence_text": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-18",
+            "document_title": "TEST record SYN-CONFLICT-18",
+            "section": null,
+            "page": 19,
+            "evidence_text": "Synthetic Conference Strategy 2026-2029 states a four-year rotation adding a separate Middle East region.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-18": 90,
+          "TEST record SYN-CONFLICT-18": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-18 states: Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+          "TEST record SYN-CONFLICT-18 states: Synthetic Conference Strategy 2026-2029 states a four-year rotation adding a separate Middle East region."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "18",
+    "topic": "Flagship conference rotation",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": true,
+    "left": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+    "right": "Synthetic Conference Strategy 2026-2029 states a four-year rotation adding a separate Middle East region.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about flagship conference rotation?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_month_requirement_mismatch",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-18",
+            "document_title": "TEST record BASE-18",
+            "section": null,
+            "page": 19,
+            "evidence_text": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-18",
+            "document_title": "TEST record SYN-CONFLICT-18",
+            "section": null,
+            "page": 19,
+            "evidence_text": "Synthetic Conference Strategy 2026-2029 states a four-year rotation adding a separate Middle East region.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-18": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "18",
+    "topic": "Flagship conference rotation",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": true,
+    "left": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+    "right": "A committee briefing note discusses flagship conference rotation in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "18",
+    "topic": "Flagship conference rotation",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": true,
+    "left": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+    "right": "Draft SMCS Operational Manual V5 describes a three-year geographic rotation: Americas, Asia/Oceania, Europe/Africa.",
+    "conflicts": []
+  },
+  {
+    "case_id": "19",
+    "topic": "IEEE Life Member eligibility",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+    "right": "Synthetic Membership FAQ MF-22 (2026) says Life Member status begins automatically at age 65 regardless of years of membership.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about ieee life member eligibility?",
+        "lower_authority_document": "TEST record BASE-19",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-19",
+          "document_title": "TEST record BASE-19",
+          "section": null,
+          "page": 20,
+          "evidence_text": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-19",
+            "document_title": "TEST record BASE-19",
+            "section": null,
+            "page": 20,
+            "evidence_text": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-19",
+            "document_title": "TEST record SYN-CONFLICT-19",
+            "section": null,
+            "page": 20,
+            "evidence_text": "Synthetic Membership FAQ MF-22 (2026) says Life Member status begins automatically at age 65 regardless of years of membership.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-19": 90,
+          "TEST record SYN-CONFLICT-19": 50
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-19 states: IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+          "TEST record SYN-CONFLICT-19 states: Synthetic Membership FAQ MF-22 (2026) says Life Member status begins automatically at age 65 regardless of years of membership."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "19",
+    "topic": "IEEE Life Member eligibility",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+    "right": "Synthetic Membership FAQ MF-22 (2026) says Life Member status begins automatically at age 65 regardless of years of membership.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about ieee life member eligibility?",
+        "lower_authority_document": "TEST record BASE-19",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-19",
+          "document_title": "TEST record BASE-19",
+          "section": null,
+          "page": 20,
+          "evidence_text": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-19",
+            "document_title": "TEST record BASE-19",
+            "section": null,
+            "page": 20,
+            "evidence_text": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-19",
+            "document_title": "TEST record SYN-CONFLICT-19",
+            "section": null,
+            "page": 20,
+            "evidence_text": "Synthetic Membership FAQ MF-22 (2026) says Life Member status begins automatically at age 65 regardless of years of membership.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-19": 90,
+          "TEST record SYN-CONFLICT-19": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "TEST record BASE-19 states: IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+          "TEST record SYN-CONFLICT-19 states: Synthetic Membership FAQ MF-22 (2026) says Life Member status begins automatically at age 65 regardless of years of membership."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "19",
+    "topic": "IEEE Life Member eligibility",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+    "right": "Synthetic Membership FAQ MF-22 (2026) says Life Member status begins automatically at age 65 regardless of years of membership.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about ieee life member eligibility?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_eligibility_formula_exception",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-19",
+            "document_title": "TEST record BASE-19",
+            "section": null,
+            "page": 20,
+            "evidence_text": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-19",
+            "document_title": "TEST record SYN-CONFLICT-19",
+            "section": null,
+            "page": 20,
+            "evidence_text": "Synthetic Membership FAQ MF-22 (2026) says Life Member status begins automatically at age 65 regardless of years of membership.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-19": 90
+        },
+        "conflicting_normative_terms": [],
+        "interpretations": [
+          "One provision states a potentially different rule for the related circumstances.",
+          "The other provision states a potentially different rule for the related circumstances."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "19",
+    "topic": "IEEE Life Member eligibility",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+    "right": "A committee briefing note discusses ieee life member eligibility in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "19",
+    "topic": "IEEE Life Member eligibility",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+    "right": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+    "conflicts": []
+  },
+  {
+    "case_id": "20",
+    "topic": "Governance hierarchy",
+    "variant": "cross_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+    "right": "Synthetic Local Autonomy Policy LAP-1 (2026) claims an SMCS operational manual may override an IEEE Bylaw when approved unanimously by the SMCS BoG.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about governance hierarchy?",
+        "lower_authority_document": "TEST record BASE-20",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-20",
+          "document_title": "TEST record BASE-20",
+          "section": null,
+          "page": 21,
+          "evidence_text": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-20",
+            "document_title": "TEST record BASE-20",
+            "section": null,
+            "page": 21,
+            "evidence_text": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-20",
+            "document_title": "TEST record SYN-CONFLICT-20",
+            "section": null,
+            "page": 21,
+            "evidence_text": "Synthetic Local Autonomy Policy LAP-1 (2026) claims an SMCS operational manual may override an IEEE Bylaw when approved unanimously by the SMCS BoG.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-20": 90,
+          "TEST record SYN-CONFLICT-20": 50
+        },
+        "conflicting_normative_terms": [
+          "may",
+          "must"
+        ],
+        "interpretations": [
+          "TEST record BASE-20 states: IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+          "TEST record SYN-CONFLICT-20 states: Synthetic Local Autonomy Policy LAP-1 (2026) claims an SMCS operational manual may override an IEEE Bylaw when approved unanimously by the SMCS BoG."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "20",
+    "topic": "Governance hierarchy",
+    "variant": "equal_authority",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+    "right": "Synthetic Local Autonomy Policy LAP-1 (2026) claims an SMCS operational manual may override an IEEE Bylaw when approved unanimously by the SMCS BoG.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about governance hierarchy?",
+        "lower_authority_document": "TEST record BASE-20",
+        "higher_authority_document": null,
+        "lower_authority_evidence": {
+          "document_id": "BASE-20",
+          "document_title": "TEST record BASE-20",
+          "section": null,
+          "page": 21,
+          "evidence_text": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        "higher_authority_evidence": null,
+        "applied_rule": "Not resolved: document approval/status requires verification.",
+        "conflict_scope": "cross_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-20",
+            "document_title": "TEST record BASE-20",
+            "section": null,
+            "page": 21,
+            "evidence_text": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "SYN-CONFLICT-20",
+            "document_title": "TEST record SYN-CONFLICT-20",
+            "section": null,
+            "page": 21,
+            "evidence_text": "Synthetic Local Autonomy Policy LAP-1 (2026) claims an SMCS operational manual may override an IEEE Bylaw when approved unanimously by the SMCS BoG.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-20": 90,
+          "TEST record SYN-CONFLICT-20": 90
+        },
+        "conflicting_normative_terms": [
+          "may",
+          "must"
+        ],
+        "interpretations": [
+          "TEST record BASE-20 states: IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+          "TEST record SYN-CONFLICT-20 states: Synthetic Local Autonomy Policy LAP-1 (2026) claims an SMCS operational manual may override an IEEE Bylaw when approved unanimously by the SMCS BoG."
+        ],
+        "resolution_basis": "Not resolved: document approval/status requires verification.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "20",
+    "topic": "Governance hierarchy",
+    "variant": "within_document",
+    "expected_conflict": true,
+    "detected": true,
+    "human_review": true,
+    "draft_baseline": false,
+    "left": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+    "right": "Synthetic Local Autonomy Policy LAP-1 (2026) claims an SMCS operational manual may override an IEEE Bylaw when approved unanimously by the SMCS BoG.",
+    "conflicts": [
+      {
+        "topic": "Do the available documents conflict about governance hierarchy?",
+        "lower_authority_document": null,
+        "higher_authority_document": null,
+        "lower_authority_evidence": null,
+        "higher_authority_evidence": null,
+        "applied_rule": "potential_authority_override",
+        "conflict_scope": "within_document",
+        "conflicting_evidence": [
+          {
+            "document_id": "BASE-20",
+            "document_title": "TEST record BASE-20",
+            "section": null,
+            "page": 21,
+            "evidence_text": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          {
+            "document_id": "BASE-20",
+            "document_title": "TEST record SYN-CONFLICT-20",
+            "section": null,
+            "page": 21,
+            "evidence_text": "Synthetic Local Autonomy Policy LAP-1 (2026) claims an SMCS operational manual may override an IEEE Bylaw when approved unanimously by the SMCS BoG.",
+            "authority_score": 50,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          }
+        ],
+        "authority_scores": {
+          "TEST record BASE-20": 90
+        },
+        "conflicting_normative_terms": [
+          "may",
+          "must"
+        ],
+        "interpretations": [
+          "One provision can be read as requiring the stated action because it uses mandatory wording.",
+          "The other provision can be read as permitting, but not requiring, the stated action because it uses discretionary wording."
+        ],
+        "resolution_basis": "Not resolved by hierarchy: both passages have the same document identity and authority score.",
+        "human_review_required": true
+      }
+    ]
+  },
+  {
+    "case_id": "20",
+    "topic": "Governance hierarchy",
+    "variant": "no_issue_distractor",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+    "right": "A committee briefing note discusses governance hierarchy in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. It directs readers to consult the applicable governing documents.",
+    "conflicts": []
+  },
+  {
+    "case_id": "20",
+    "topic": "Governance hierarchy",
+    "variant": "no_issue_identical",
+    "expected_conflict": false,
+    "detected": false,
+    "human_review": false,
+    "draft_baseline": false,
+    "left": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+    "right": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+    "conflicts": []
+  }
+]

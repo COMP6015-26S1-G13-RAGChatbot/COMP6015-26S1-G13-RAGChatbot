@@ -1,0 +1,25 @@
+{
+  "embedding_backend": "local_lsa",
+  "modes": [
+    "deterministic",
+    "bm25",
+    "dense",
+    "rrf",
+    "hybrid"
+  ],
+  "chunk_sizes": [
+    100,
+    250,
+    500
+  ],
+  "overlap_fraction": 0.2,
+  "development_only": true,
+  "production_registry_modified": false,
+  "code_sha256": {
+    "experiments/new_corpus_stress_test.py": "c5fd64f01ff48eda611373ad303382373741a016f1ffb4d141e5fd27bbea626f",
+    "backend/services/rag_service.py": "aec10394b4323fa81b1b4bdbb2460cadffa857606ff37635f649555902240dcf",
+    "backend/services/policy_claim_service.py": "c25ec0d138f1378618c49e3334205185ac3f71151760be4d11e65b7ee9cc1b2d",
+    "backend/services/search_service.py": "bd3e7214adb9ba9152013ef55a14c117d8451936a159d8a89446399dacb9dd13",
+    "backend/services/embedding_service.py": "a69e7e124c4f1b93044929fd575a986b5e2131aa11355cc19c2d0051173a7d0c"
+  }
+}

@@ -12,6 +12,7 @@ __pycache__/
 
 # Next.js / Frontend
 node_modules/
+node_modules
 .next/
 out/
 build/
@@ -32,5 +33,6 @@ RAG_data/**/*.pdf
 RAG_data/**/*.docx
 RAG_data/**/*.xlsx
 app.log
+.admin_data/
 __pycache__/
 .DS_Store

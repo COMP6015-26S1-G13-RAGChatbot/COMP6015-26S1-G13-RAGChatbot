@@ -1,0 +1,2 @@
+gold_id,model,chunk_size_words,retrieval_method,expected_issue,predicted_issue,expected_positive,predicted_positive,retrieval_hit,citation_valid,correction_correct,abstained,llm_called,fallback_used,fallback_reason,latency_ms,prompt_tokens,completion_tokens,citation_ids,answer
+G002,llama3:latest,600,dense,missing_requirement,conflict,True,True,True,True,False,False,True,False,,23704.83,1696,245,ieee-constitution-bylaws-2024:u616:c1|ieee-constitution-bylaws-2024:u441:c1,conflict

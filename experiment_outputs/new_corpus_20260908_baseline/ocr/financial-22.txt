@@ -1,0 +1,51 @@
+In the case of a contribution to an organization or individual to be selected after
+permission is granted (as in the case of scholarships, fellowships, grants-in-aid, etc.)
+the qualifications to be met by the grantee, when selected, shall be stated.
+
+Permission to make contributions on a recurring or continuing basis (such as
+educational awards and scholarships) requires approval by the Board of Directors, or by
+a designated Major Board authorized by the Board of Directors.
+
+Also reference IEEE Policies, Section 11.8 - IEEE Contributions to Disaster Relief
+Policy.
+
+B. Donating to the IEEE Foundation
+
+In order for an IEEE OU to make a donation to the IEEE Foundation to set a fund for a
+specific award, a minimum of a 50% matching contribution from an outside entity shall
+be received by the OU prior to the OU donation being sent to the IEEE Foundation
+(50% matching contribution means an amount equal to or greater than the IEEE OU
+donation).
+
+The award fund in the IEEE Foundation that consists of both the OU and external donor
+contributions shall be initially funded at a value of at least 25 times the intended award to
+ensure award continuity.
+
+FOM.9 — CONTRACT APPROVAL
+
+Procedures related to procurement and contract negotiations, approval and
+execution shall be contained in the IEEE Finance Operations Manual (IEEE Policies,
+Section 11.2.F.1(a)).
+
+A. Definitions
+
+The definitions below are intended to provide a common vocabulary to use in relation to
+contracts.
+
+1) Contract - An agreement enforceable by law between two or more parties that creates
+an obligation to perform (or not perform) a particular action.
+
+2) Contract Value - Approvals and execution processes are dependent on the contract’s
+total value. IEEE contracts are often complex so the monetary value may not be
+apparent. Clarification of contract valuation is located in the Contract section of the
+Legal & Compliance website.
+
+3) Aggregate Purchase Value - The total supplier’s cost of a product or service based on
+the full contracted term.
+
+4) Technology Related Goods and Services - includes, but is not limited to, annual
+technology support and maintenance; SaaS (software as a service) agreements; click
+through services; storage and technical services; cloud services; computer hardware,
+software and supplies (including computer/server buy-outs); tech-related consulting;
+
+22

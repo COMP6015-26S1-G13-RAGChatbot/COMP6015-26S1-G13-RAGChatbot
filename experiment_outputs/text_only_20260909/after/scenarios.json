@@ -1,0 +1,262 @@
+[
+  {
+    "id": "01",
+    "topic": "Board of Governors quorum",
+    "page": 2,
+    "relevant_ids": [
+      "BASE-01",
+      "SYN-CONFLICT-01"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-01",
+    "query": "Do the available documents conflict about board of governors quorum?",
+    "draft_baseline": false,
+    "expected_note": "Direct numeric conflict; higher-authority constitutional rule should prevail. The system should cite both conflicting records\nwhen retrieved, identify the contradiction explicitly, prefer the higher-authority/current authoritative source where authority\ncan be established, and state uncertainty where document status is ambiguous."
+  },
+  {
+    "id": "02",
+    "topic": "Proxy voting",
+    "page": 3,
+    "relevant_ids": [
+      "BASE-02",
+      "SYN-CONFLICT-02"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-02",
+    "query": "Do the available documents conflict about proxy voting?",
+    "draft_baseline": false,
+    "expected_note": "Explicit prohibition versus synthetic permission. The system should cite both conflicting records when retrieved, identify\nthe contradiction explicitly, prefer the higher-authority/current authoritative source where authority can be established,\nand state uncertainty where document status is ambiguous."
+  },
+  {
+    "id": "03",
+    "topic": "BoG meeting notice",
+    "page": 4,
+    "relevant_ids": [
+      "BASE-03",
+      "SYN-CONFLICT-03"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-03",
+    "query": "Do the available documents conflict about bog meeting notice?",
+    "draft_baseline": false,
+    "expected_note": "Different minimum notice periods. The system should cite both conflicting records when retrieved, identify the\ncontradiction explicitly, prefer the higher-authority/current authoritative source where authority can be established, and\nstate uncertainty where document status is ambiguous."
+  },
+  {
+    "id": "04",
+    "topic": "Constitution amendment initiation",
+    "page": 5,
+    "relevant_ids": [
+      "BASE-04",
+      "SYN-CONFLICT-04"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-04",
+    "query": "Do the available documents conflict about constitution amendment initiation?",
+    "draft_baseline": false,
+    "expected_note": "Threshold conflict. The system should cite both conflicting records when retrieved, identify the contradiction explicitly,\nprefer the higher-authority/current authoritative source where authority can be established, and state uncertainty where\ndocument status is ambiguous."
+  },
+  {
+    "id": "05",
+    "topic": "Bylaw amendment notice",
+    "page": 6,
+    "relevant_ids": [
+      "BASE-05",
+      "SYN-CONFLICT-05"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-05",
+    "query": "Do the available documents conflict about bylaw amendment notice?",
+    "draft_baseline": false,
+    "expected_note": "Timing conflict. The system should cite both conflicting records when retrieved, identify the contradiction explicitly, prefer\nthe higher-authority/current authoritative source where authority can be established, and state uncertainty where\ndocument status is ambiguous."
+  },
+  {
+    "id": "06",
+    "topic": "Member-at-Large term",
+    "page": 7,
+    "relevant_ids": [
+      "BASE-06",
+      "SYN-CONFLICT-06"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-06",
+    "query": "Do the available documents conflict about member-at-large term?",
+    "draft_baseline": false,
+    "expected_note": "Term-length conflict. The system should cite both conflicting records when retrieved, identify the contradiction explicitly,\nprefer the higher-authority/current authoritative source where authority can be established, and state uncertainty where\ndocument status is ambiguous."
+  },
+  {
+    "id": "07",
+    "topic": "President term",
+    "page": 8,
+    "relevant_ids": [
+      "BASE-07",
+      "SYN-CONFLICT-07"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-07",
+    "query": "Do the available documents conflict about president term?",
+    "draft_baseline": false,
+    "expected_note": "Term-length conflict. The system should cite both conflicting records when retrieved, identify the contradiction explicitly,\nprefer the higher-authority/current authoritative source where authority can be established, and state uncertainty where\ndocument status is ambiguous."
+  },
+  {
+    "id": "08",
+    "topic": "Vice President eligibility",
+    "page": 9,
+    "relevant_ids": [
+      "BASE-08",
+      "SYN-CONFLICT-08"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-08",
+    "query": "Do the available documents conflict about vice president eligibility?",
+    "draft_baseline": false,
+    "expected_note": "Eligibility conflict. The system should cite both conflicting records when retrieved, identify the contradiction explicitly,\nprefer the higher-authority/current authoritative source where authority can be established, and state uncertainty where\ndocument status is ambiguous."
+  },
+  {
+    "id": "09",
+    "topic": "President-Elect eligibility",
+    "page": 10,
+    "relevant_ids": [
+      "BASE-09",
+      "SYN-CONFLICT-09"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-09",
+    "query": "Do the available documents conflict about president-elect eligibility?",
+    "draft_baseline": false,
+    "expected_note": "Qualification conflict. The system should cite both conflicting records when retrieved, identify the contradiction explicitly,\nprefer the higher-authority/current authoritative source where authority can be established, and state uncertainty where\ndocument status is ambiguous."
+  },
+  {
+    "id": "10",
+    "topic": "Petition nomination threshold",
+    "page": 11,
+    "relevant_ids": [
+      "BASE-10",
+      "SYN-CONFLICT-10"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-10",
+    "query": "Do the available documents conflict about petition nomination threshold?",
+    "draft_baseline": false,
+    "expected_note": "Threshold conflict. The system should cite both conflicting records when retrieved, identify the contradiction explicitly,\nprefer the higher-authority/current authoritative source where authority can be established, and state uncertainty where\ndocument status is ambiguous."
+  },
+  {
+    "id": "11",
+    "topic": "Technical Committee special session",
+    "page": 12,
+    "relevant_ids": [
+      "BASE-11",
+      "SYN-CONFLICT-11"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-11",
+    "query": "Do the available documents conflict about technical committee special session?",
+    "draft_baseline": false,
+    "expected_note": "Mandatory versus optional activity. The system should cite both conflicting records when retrieved, identify the\ncontradiction explicitly, prefer the higher-authority/current authoritative source where authority can be established, and\nstate uncertainty where document status is ambiguous."
+  },
+  {
+    "id": "12",
+    "topic": "TC Chair membership",
+    "page": 13,
+    "relevant_ids": [
+      "BASE-12",
+      "SYN-CONFLICT-12"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-12",
+    "query": "Do the available documents conflict about tc chair membership?",
+    "draft_baseline": false,
+    "expected_note": "Membership requirement conflict. The system should cite both conflicting records when retrieved, identify the\ncontradiction explicitly, prefer the higher-authority/current authoritative source where authority can be established, and\nstate uncertainty where document status is ambiguous."
+  },
+  {
+    "id": "13",
+    "topic": "TC activity reporting",
+    "page": 14,
+    "relevant_ids": [
+      "BASE-13",
+      "SYN-CONFLICT-13"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-13",
+    "query": "Do the available documents conflict about tc activity reporting?",
+    "draft_baseline": false,
+    "expected_note": "Reporting-frequency conflict. The system should cite both conflicting records when retrieved, identify the contradiction\nexplicitly, prefer the higher-authority/current authoritative source where authority can be established, and state\nuncertainty where document status is ambiguous."
+  },
+  {
+    "id": "14",
+    "topic": "TC dissolution inactivity period",
+    "page": 15,
+    "relevant_ids": [
+      "BASE-14",
+      "SYN-CONFLICT-14"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-14",
+    "query": "Do the available documents conflict about tc dissolution inactivity period?",
+    "draft_baseline": false,
+    "expected_note": "Inactivity-period conflict. The system should cite both conflicting records when retrieved, identify the contradiction\nexplicitly, prefer the higher-authority/current authoritative source where authority can be established, and state\nuncertainty where document status is ambiguous."
+  },
+  {
+    "id": "15",
+    "topic": "New TC approval",
+    "page": 16,
+    "relevant_ids": [
+      "BASE-15",
+      "SYN-CONFLICT-15"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-15",
+    "query": "Do the available documents conflict about new tc approval?",
+    "draft_baseline": false,
+    "expected_note": "Process-order conflict. The system should cite both conflicting records when retrieved, identify the contradiction explicitly,\nprefer the higher-authority/current authoritative source where authority can be established, and state uncertainty where\ndocument status is ambiguous."
+  },
+  {
+    "id": "16",
+    "topic": "Annual conference sponsorship",
+    "page": 17,
+    "relevant_ids": [
+      "BASE-16",
+      "SYN-CONFLICT-16"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-16",
+    "query": "Do the available documents conflict about annual conference sponsorship?",
+    "draft_baseline": false,
+    "expected_note": "Mandatory constitutional requirement versus synthetic exception. The system should cite both conflicting records when\nretrieved, identify the contradiction explicitly, prefer the higher-authority/current authoritative source where authority can\nbe established, and state uncertainty where document status is ambiguous."
+  },
+  {
+    "id": "17",
+    "topic": "SMCS dues approval",
+    "page": 18,
+    "relevant_ids": [
+      "BASE-17",
+      "SYN-CONFLICT-17"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-17",
+    "query": "Do the available documents conflict about smcs dues approval?",
+    "draft_baseline": true,
+    "expected_note": "Approval-threshold conflict; baseline itself is from a draft manual, so authority/status must be surfaced. The system\nshould cite both conflicting records when retrieved, identify the contradiction explicitly, prefer the higher-authority/current\nauthoritative source where authority can be established, and state uncertainty where document status is ambiguous."
+  },
+  {
+    "id": "18",
+    "topic": "Flagship conference rotation",
+    "page": 19,
+    "relevant_ids": [
+      "BASE-18",
+      "SYN-CONFLICT-18"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-18",
+    "query": "Do the available documents conflict about flagship conference rotation?",
+    "draft_baseline": true,
+    "expected_note": "Temporal/strategy conflict; baseline is draft operational material. The system should cite both conflicting records when\nretrieved, identify the contradiction explicitly, prefer the higher-authority/current authoritative source where authority can\nbe established, and state uncertainty where document status is ambiguous."
+  },
+  {
+    "id": "19",
+    "topic": "IEEE Life Member eligibility",
+    "page": 20,
+    "relevant_ids": [
+      "BASE-19",
+      "SYN-CONFLICT-19"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-19",
+    "query": "Do the available documents conflict about ieee life member eligibility?",
+    "draft_baseline": false,
+    "expected_note": "Eligibility-formula conflict. The system should cite both conflicting records when retrieved, identify the contradiction\nexplicitly, prefer the higher-authority/current authoritative source where authority can be established, and state\nuncertainty where document status is ambiguous."
+  },
+  {
+    "id": "20",
+    "topic": "Governance hierarchy",
+    "page": 21,
+    "relevant_ids": [
+      "BASE-20",
+      "SYN-CONFLICT-20"
+    ],
+    "distractor_id": "SYN-DISTRACTOR-20",
+    "query": "Do the available documents conflict about governance hierarchy?",
+    "draft_baseline": false,
+    "expected_note": "Direct authority/hierarchy conflict designed to test policy-auditor reasoning. The system should cite both conflicting\nrecords when retrieved, identify the contradiction explicitly, prefer the higher-authority/current authoritative source where\nauthority can be established, and state uncertainty where document status is ambiguous."
+  }
+]

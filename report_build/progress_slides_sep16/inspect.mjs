@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+import {PresentationFile,FileBlob} from '@oai/artifact-tool';
+const p=await PresentationFile.importPptx(await FileBlob.load('/Users/jueunyoo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-light-mode/assets/reference.pptx'));
+console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(p.slides)));
+console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(p.slides.items[0])));
+const l=JSON.parse(await (await p.slides.items[3].export({format:'layout'})).text());
+console.log(JSON.stringify(l.elements.map(e=>({id:e.aid,text:e.text,bbox:e.bbox,style:e.resolvedTextStyle})),null,2));
+await fs.writeFile('source4.png',new Uint8Array(await (await p.slides.items[3].export({format:'png',scale:1})).arrayBuffer()));
+console.log('SIZE',p.slideSize);
+await fs.writeFile('source.png',new Uint8Array(await (await p.export({format:'png',montage:true,scale:0.3})).arrayBuffer()));

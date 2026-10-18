@@ -102,7 +102,7 @@ Terminal 2:
 npm run dev --prefix frontend
 ```
 
-Open `http://localhost:3000`. To use another API origin, set `NEXT_PUBLIC_API_URL` before starting Next.js.
+Open `http://localhost:3000`. The web server proxies `/api/*` to the chatbot at `http://127.0.0.1:8000`, so the browser uses the same origin. Set `BACKEND_URL` before starting Next.js to point the proxy to another chatbot server. `NEXT_PUBLIC_API_URL` remains available for direct browser API access (requires backend CORS configuration). The page checks the connection every 15 seconds and shows when the chatbot is unavailable.
 
 ## Ask one chatbot question
 

@@ -56,6 +56,27 @@ def query_tokens(text: str) -> list[str]:
     return normalized
 
 
+def expand_hybrid_query(text: str) -> str:
+    """Auditable vocabulary expansion, only for hybrid modes (not ablations)."""
+    aliases = (
+        (r'\bgoverning board\b', 'board of governors bog voting'),
+        (r'\bminimum attendance\b', 'quorum'),
+        (r'\bdelegat\w* (?:their |a |the )?vote\b', 'proxy voting'),
+        (r'\b(?:stay|remain)\b', 'term'),
+        (r'\bprevious service\b', 'eligibility'),
+        (r'\bhow far ahead\b', 'notice'),
+        (r'\bemail\b', 'action without meeting'),
+        (r'\bcommittee leaders?\b', 'committee chairs'),
+        (r'\bassess\w*\b', 'performance evaluation'),
+        (r'\bshut down\b', 'discontinued dissolved'),
+        (r'\blife membership\b', 'life member'),
+        (r'\bsenior membership\b', 'senior member'),
+        (r'\bprofessional experience\b', 'professional practice'),
+    )
+    additions = [alias for pattern,alias in aliases if re.search(pattern,text,re.I)]
+    return text + (' ' + ' '.join(additions) if additions else '')
+
+
 def semantic_similarity(left: str, right: str) -> float:
     left_tokens, right_tokens = set(tokens(left)), set(tokens(right))
     jaccard = len(left_tokens & right_tokens) / max(1, len(left_tokens | right_tokens))
@@ -141,17 +162,18 @@ class SearchService:
         production = {doc.document_id for doc in self.registry.production_documents()}
         requested = production if document_ids is None else production & document_ids
         uses_vectors = mode in {"dense", "rrf", "hybrid", "hybrid_llm"}
-        vector_scores = self.embeddings.similarities(query) if uses_vectors else [0.0] * len(self.chunks)
-        bm25_scores = self._bm25_scores(query) if mode in {"bm25", "rrf"} else [0.0] * len(self.chunks)
-        score_rows = self._score_cache.get(query)
+        retrieval_query = expand_hybrid_query(query) if mode in {'hybrid','hybrid_llm'} else query
+        vector_scores = self.embeddings.similarities(retrieval_query) if uses_vectors else [0.0] * len(self.chunks)
+        bm25_scores = self._bm25_scores(retrieval_query) if mode in {"bm25", "rrf", "hybrid", "hybrid_llm"} else [0.0] * len(self.chunks)
+        score_rows = self._score_cache.get(retrieval_query)
         if score_rows is None:
-            score_rows = [self._scores(query, chunk) for chunk in self.chunks]
-            self._score_cache[query] = score_rows
-            self._score_cache.move_to_end(query)
+            score_rows = [self._scores(retrieval_query, chunk) for chunk in self.chunks]
+            self._score_cache[retrieval_query] = score_rows
+            self._score_cache.move_to_end(retrieval_query)
             while len(self._score_cache) > 128:
                 self._score_cache.popitem(last=False)
         else:
-            self._score_cache.move_to_end(query)
+            self._score_cache.move_to_end(retrieval_query)
         lexical_ranks = {index: rank for rank, index in enumerate(
             sorted(range(len(self.chunks)), key=lambda i: bm25_scores[i], reverse=True), start=1)}
         dense_ranks = {index: rank for rank, index in enumerate(
@@ -174,7 +196,7 @@ class SearchService:
             elif mode == "deterministic":
                 hybrid = rerank
             else:
-                hybrid = 0.48 * lexical + 0.42 * vector + 0.10 * rerank
+                hybrid = 0.35 * bm25_scores[index] + 0.35 * vector + 0.20 * lexical + 0.10 * rerank
             # SMCS-TAB is a legacy/draft governance label. Prefer the approved
             # Area Committee clauses when that label appears in an audit query.
             if (mode in {"hybrid", "hybrid_llm"} and "smcs-tab" in query.lower() and
@@ -248,6 +270,10 @@ class SearchService:
                 hybrid = vector
             elif mode == "rrf":
                 hybrid = rrf_scores[index]
+            if mode in {'hybrid', 'hybrid_llm'} and re.search(
+                    r'\b(?:does not state a binding|not a binding (?:rule|requirement)|for information only)\b', chunk_lower):
+                # Downweight explicitly non-normative summaries, not actual rules.
+                hybrid *= 0.2
             if chunk.document_id not in production:
                 included, reason = False, "excluded: document is not approved retrieval-enabled production content"
             elif chunk.document_id not in requested:

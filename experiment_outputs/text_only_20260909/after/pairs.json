@@ -1,0 +1,642 @@
+[
+  {
+    "case_id": "01",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_voting_threshold_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "01",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_voting_threshold_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "01",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "01",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "02",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_permission_prohibition_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "02",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_permission_prohibition_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "02",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "02",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "03",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_day_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "03",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_day_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "03",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "03",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "04",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_percent_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "04",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_percent_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "04",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "04",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "05",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_day_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "05",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_day_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "05",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "05",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "06",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_month_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "06",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_month_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "06",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "06",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "07",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_month_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "07",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_month_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "07",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "07",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "08",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_prior_service_exception",
+    "human_review": true
+  },
+  {
+    "case_id": "08",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_prior_service_exception",
+    "human_review": true
+  },
+  {
+    "case_id": "08",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "08",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "09",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_qualification_substitution",
+    "human_review": true
+  },
+  {
+    "case_id": "09",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_qualification_substitution",
+    "human_review": true
+  },
+  {
+    "case_id": "09",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "09",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "10",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_percent_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "10",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_percent_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "10",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "10",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "11",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_obligation_exception_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "11",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_obligation_exception_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "11",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "11",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "12",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_membership_exception_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "12",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_membership_exception_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "12",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "12",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "13",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_reporting_frequency_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "13",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_reporting_frequency_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "13",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "13",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "14",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_month_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "14",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_month_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "14",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "14",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "15",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_prerequisite_order_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "15",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_prerequisite_order_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "15",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "15",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "16",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_mandatory_activity_exception",
+    "human_review": true
+  },
+  {
+    "case_id": "16",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_mandatory_activity_exception",
+    "human_review": true
+  },
+  {
+    "case_id": "16",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "16",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "17",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_voting_threshold_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "17",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_voting_threshold_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "17",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "17",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "18",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_month_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "18",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_month_requirement_mismatch",
+    "human_review": true
+  },
+  {
+    "case_id": "18",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "18",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "19",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_eligibility_formula_exception",
+    "human_review": true
+  },
+  {
+    "case_id": "19",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_eligibility_formula_exception",
+    "human_review": true
+  },
+  {
+    "case_id": "19",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "19",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "20",
+    "variant": "cross",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_authority_override",
+    "human_review": true
+  },
+  {
+    "case_id": "20",
+    "variant": "internal",
+    "expected": true,
+    "detected": true,
+    "reason": "potential_authority_override",
+    "human_review": true
+  },
+  {
+    "case_id": "20",
+    "variant": "identical",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  },
+  {
+    "case_id": "20",
+    "variant": "distractor",
+    "expected": false,
+    "detected": false,
+    "reason": null,
+    "human_review": false
+  }
+]

@@ -1,0 +1,4 @@
+chunk_size_words,retrieval_method,cases,retrieval_recall_at_5,average_retrieval_latency_ms,chunks,embedding_model
+600,keyword,1,1.0,56.8561249965569,821,nomic-embed-text:latest
+600,dense,1,1.0,38.48183300578967,821,nomic-embed-text:latest
+600,hybrid,1,1.0,38.831458005006425,821,nomic-embed-text:latest

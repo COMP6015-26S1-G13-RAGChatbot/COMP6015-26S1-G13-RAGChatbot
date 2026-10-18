@@ -1,0 +1,857 @@
+[
+  {
+    "case_id": "01",
+    "query": "Do the available documents conflict about board of governors quorum?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "A committee briefing note discusses board of governors quorum in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. [1]",
+      "citations": [
+        {
+          "document_id": "SYN-DISTRACTOR-01",
+          "document_title": "TEST record SYN-DISTRACTOR-01",
+          "section": null,
+          "page": 2,
+          "evidence_text": "A committee briefing note discusses board of governors quorum in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.42,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 82.81,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "02",
+    "query": "Do the available documents conflict about proxy voting?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "SMCS Constitution Article VII states that proxy voting is not allowed. [1]",
+      "citations": [
+        {
+          "document_id": "BASE-02",
+          "document_title": "TEST record BASE-02",
+          "section": null,
+          "page": 3,
+          "evidence_text": "SMCS Constitution Article VII states that proxy voting is not allowed.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.53,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 72.52,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "03",
+    "query": "Do the available documents conflict about bog meeting notice?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "The ExCom also meets at least once each year, usually about six months before the BoG meeting. [1]",
+      "citations": [
+        {
+          "document_id": "SMCS_RAG_Derived_Governance_Test_Corpus.pdf",
+          "document_title": "SMCS_RAG_Derived_Governance_Test_Corpus.pdf",
+          "section": null,
+          "page": 5,
+          "evidence_text": "The ExCom also meets at least once each year, usually about six months before the BoG meeting.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.49,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 84.88,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "04",
+    "query": "Do the available documents conflict about constitution amendment initiation?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "Record 017: Constitution Amendment Initiation Source: SMCS Constitution, Article XI Record type: canonical governance summary Authority note: derived from uploaded source; verify against original for authoritative use. [1]",
+      "citations": [
+        {
+          "document_id": "SMCS_RAG_Derived_Governance_Test_Corpus.pdf",
+          "document_title": "SMCS_RAG_Derived_Governance_Test_Corpus.pdf",
+          "section": null,
+          "page": 4,
+          "evidence_text": "Record 017: Constitution Amendment Initiation Source: SMCS Constitution, Article XI Record type: canonical governance summary Authority note: derived from uploaded source; verify against original for authoritative use.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.49,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 82.23,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "05",
+    "query": "Do the available documents conflict about bylaw amendment notice?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "A committee briefing note discusses bylaw amendment notice in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. [1]",
+      "citations": [
+        {
+          "document_id": "SYN-DISTRACTOR-05",
+          "document_title": "TEST record SYN-DISTRACTOR-05",
+          "section": null,
+          "page": 6,
+          "evidence_text": "A committee briefing note discusses bylaw amendment notice in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.43,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 81.51,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "06",
+    "query": "Do the available documents conflict about member-at-large term?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term. [1]",
+      "citations": [
+        {
+          "document_id": "BASE-06",
+          "document_title": "TEST record BASE-06",
+          "section": null,
+          "page": 7,
+          "evidence_text": "SMCS Constitution Article V states that a Member-at-Large serves a three-year term.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.56,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 87.72,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "07",
+    "query": "Do the available documents conflict about president term?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "SMCS Bylaws Article I states that the President serves a two-calendar-year term. [1]",
+      "citations": [
+        {
+          "document_id": "BASE-07",
+          "document_title": "TEST record BASE-07",
+          "section": null,
+          "page": 8,
+          "evidence_text": "SMCS Bylaws Article I states that the President serves a two-calendar-year term.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.44,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 72.99,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "08",
+    "query": "Do the available documents conflict about vice president eligibility?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "A committee briefing note discusses vice president eligibility in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. [1]",
+      "citations": [
+        {
+          "document_id": "SYN-DISTRACTOR-08",
+          "document_title": "TEST record SYN-DISTRACTOR-08",
+          "section": null,
+          "page": 9,
+          "evidence_text": "A committee briefing note discusses vice president eligibility in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.47,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 80.5,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "09",
+    "query": "Do the available documents conflict about president-elect eligibility?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "A committee briefing note discusses president-elect eligibility in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. [1]",
+      "citations": [
+        {
+          "document_id": "SYN-DISTRACTOR-09",
+          "document_title": "TEST record SYN-DISTRACTOR-09",
+          "section": null,
+          "page": 10,
+          "evidence_text": "A committee briefing note discusses president-elect eligibility in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.48,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 76.96,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "10",
+    "query": "Do the available documents conflict about petition nomination threshold?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "A committee briefing note discusses petition nomination threshold in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. [1]",
+      "citations": [
+        {
+          "document_id": "SYN-DISTRACTOR-10",
+          "document_title": "TEST record SYN-DISTRACTOR-10",
+          "section": null,
+          "page": 11,
+          "evidence_text": "A committee briefing note discusses petition nomination threshold in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.48,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 88.61,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "11",
+    "query": "Do the available documents conflict about technical committee special session?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "The retrieved documents contain conflicting rules with equal configured authority. The hierarchy cannot select a controlling source. Both references are retained for comparison, and an authorised governance reviewer must determine which rule applies in context.",
+      "citations": [
+        {
+          "document_id": "BASE-11",
+          "document_title": "TEST record BASE-11",
+          "section": null,
+          "page": 12,
+          "evidence_text": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        {
+          "document_id": "BASE-14",
+          "document_title": "TEST record BASE-14",
+          "section": null,
+          "page": 15,
+          "evidence_text": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "possible",
+      "conflicts": [
+        {
+          "topic": "Do the available documents conflict about technical committee special session?",
+          "lower_authority_document": "TEST record BASE-11",
+          "higher_authority_document": null,
+          "lower_authority_evidence": {
+            "document_id": "BASE-11",
+            "document_title": "TEST record BASE-11",
+            "section": null,
+            "page": 12,
+            "evidence_text": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+            "authority_score": 90,
+            "approval_status": "approved",
+            "version": "experiment-only"
+          },
+          "higher_authority_evidence": null,
+          "applied_rule": "Equal-authority documents cannot be resolved by the configured hierarchy.",
+          "conflict_scope": "cross_document",
+          "conflicting_evidence": [
+            {
+              "document_id": "BASE-11",
+              "document_title": "TEST record BASE-11",
+              "section": null,
+              "page": 12,
+              "evidence_text": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+              "authority_score": 90,
+              "approval_status": "approved",
+              "version": "experiment-only"
+            },
+            {
+              "document_id": "BASE-14",
+              "document_title": "TEST record BASE-14",
+              "section": null,
+              "page": 15,
+              "evidence_text": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+              "authority_score": 90,
+              "approval_status": "approved",
+              "version": "experiment-only"
+            }
+          ],
+          "authority_scores": {
+            "TEST record BASE-11": 90,
+            "TEST record BASE-14": 90
+          },
+          "conflicting_normative_terms": [
+            "may",
+            "must"
+          ],
+          "interpretations": [
+            "TEST record BASE-11 states: SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+            "TEST record BASE-14 states: SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan."
+          ],
+          "resolution_basis": "Not resolved by hierarchy: the conflicting documents have equal authority scores.",
+          "human_review_required": true
+        }
+      ],
+      "confidence": 0.5,
+      "abstained": true,
+      "abstention_reason": "Equal-authority documents contain an unresolved conflict.",
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 96.78,
+      "conflict_scope": "cross_document",
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [
+        {
+          "document_id": "BASE-11",
+          "document_title": "TEST record BASE-11",
+          "section": null,
+          "page": 12,
+          "evidence_text": "SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        },
+        {
+          "document_id": "BASE-14",
+          "document_title": "TEST record BASE-14",
+          "section": null,
+          "page": 15,
+          "evidence_text": "SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "authority_scores": {
+        "TEST record BASE-11": 90,
+        "TEST record BASE-14": 90
+      },
+      "conflicting_normative_terms": [
+        "may",
+        "must"
+      ],
+      "interpretations": [
+        "TEST record BASE-11 states: SMCS Technical Committee Manual states that each TC must propose at least one special session at the annual SMC conference.",
+        "TEST record BASE-14 states: SMCS Technical Committee Manual says a TC may be discontinued if inactive for at least one year with no credible revival plan."
+      ],
+      "resolution_basis": "Not resolved by hierarchy: the conflicting documents have equal authority scores.",
+      "human_review_required": true
+    }
+  },
+  {
+    "case_id": "12",
+    "query": "Do the available documents conflict about tc chair membership?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "A committee briefing note discusses tc chair membership in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. [1]",
+      "citations": [
+        {
+          "document_id": "SYN-DISTRACTOR-12",
+          "document_title": "TEST record SYN-DISTRACTOR-12",
+          "section": null,
+          "page": 13,
+          "evidence_text": "A committee briefing note discusses tc chair membership in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.46,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 84.99,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "13",
+    "query": "Do the available documents conflict about tc activity reporting?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "A committee briefing note discusses tc activity reporting in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. [1]",
+      "citations": [
+        {
+          "document_id": "SYN-DISTRACTOR-13",
+          "document_title": "TEST record SYN-DISTRACTOR-13",
+          "section": null,
+          "page": 14,
+          "evidence_text": "A committee briefing note discusses tc activity reporting in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.47,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 110.0,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "14",
+    "query": "Do the available documents conflict about tc dissolution inactivity period?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "Synthetic TC Lifecycle Procedure TCLP-3 (2025) permits automatic dissolution after six months of inactivity. [1]",
+      "citations": [
+        {
+          "document_id": "SYN-CONFLICT-14",
+          "document_title": "TEST record SYN-CONFLICT-14",
+          "section": null,
+          "page": 15,
+          "evidence_text": "Synthetic TC Lifecycle Procedure TCLP-3 (2025) permits automatic dissolution after six months of inactivity.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.62,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 71.41,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "15",
+    "query": "Do the available documents conflict about new tc approval?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "A committee briefing note discusses new tc approval in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception. [1]",
+      "citations": [
+        {
+          "document_id": "SYN-DISTRACTOR-15",
+          "document_title": "TEST record SYN-DISTRACTOR-15",
+          "section": null,
+          "page": 16,
+          "evidence_text": "A committee briefing note discusses new tc approval in general terms but does not state a binding threshold, eligibility rule, approval requirement, or exception.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.51,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 95.23,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "16",
+    "query": "Do the available documents conflict about annual conference sponsorship?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "Synthetic Cost-Control Directive CCD-5 (2026) says the Society may skip all major conference sponsorship for a year whenever reserves fall below an internal target. [1]",
+      "citations": [
+        {
+          "document_id": "SYN-CONFLICT-16",
+          "document_title": "TEST record SYN-CONFLICT-16",
+          "section": null,
+          "page": 17,
+          "evidence_text": "Synthetic Cost-Control Directive CCD-5 (2026) says the Society may skip all major conference sponsorship for a year whenever reserves fall below an internal target.",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.46,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 94.98,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "17",
+    "query": "Do the available documents conflict about smcs dues approval?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members. [1]",
+      "citations": [
+        {
+          "document_id": "BASE-17",
+          "document_title": "TEST record BASE-17",
+          "section": null,
+          "page": 18,
+          "evidence_text": "Draft SMCS Operational Manual V5 states that a change in Society dues requires approval by two-thirds of all voting BoG members.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.68,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 81.85,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "18",
+    "query": "Do the available documents conflict about flagship conference rotation?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "Record 047: Flagship Conference Rotation Source: Draft [1]",
+      "citations": [
+        {
+          "document_id": "SMCS_RAG_Derived_Governance_Test_Corpus.pdf",
+          "document_title": "SMCS_RAG_Derived_Governance_Test_Corpus.pdf",
+          "section": null,
+          "page": 8,
+          "evidence_text": "Record 047: Flagship Conference Rotation Source: Draft",
+          "authority_score": 50,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.54,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 84.53,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "19",
+    "query": "Do the available documents conflict about ieee life member eligibility?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100. [1]",
+      "citations": [
+        {
+          "document_id": "BASE-19",
+          "document_title": "TEST record BASE-19",
+          "section": null,
+          "page": 20,
+          "evidence_text": "IEEE Bylaws state that Life Member status requires age 65 and age plus years of IEEE membership equal to or greater than 100.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.53,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 101.19,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  },
+  {
+    "case_id": "20",
+    "query": "Do the available documents conflict about governance hierarchy?",
+    "target_conflict_detected": false,
+    "nonempty_citations_verified": true,
+    "response": {
+      "answer": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents. [1]",
+      "citations": [
+        {
+          "document_id": "BASE-20",
+          "document_title": "TEST record BASE-20",
+          "section": null,
+          "page": 21,
+          "evidence_text": "IEEE governance provisions describe a hierarchy in which organizational-unit manuals and policy statements must conform to higher-level IEEE governing documents.",
+          "authority_score": 90,
+          "approval_status": "approved",
+          "version": "experiment-only"
+        }
+      ],
+      "conflict_status": "none",
+      "conflicts": [],
+      "confidence": 0.61,
+      "abstained": false,
+      "abstention_reason": null,
+      "mode": "hybrid",
+      "requested_mode": "hybrid",
+      "fallback_reason": null,
+      "latency_ms": 68.77,
+      "conflict_scope": null,
+      "higher_authority_evidence": null,
+      "conflicting_evidence": [],
+      "authority_scores": {},
+      "conflicting_normative_terms": [],
+      "interpretations": [],
+      "resolution_basis": null,
+      "human_review_required": false
+    }
+  }
+]

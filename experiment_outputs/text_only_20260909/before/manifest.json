@@ -1,0 +1,18 @@
+{
+  "sources": {
+    "SMCS_RAG_Derived_Governance_Test_Corpus.pdf": "0f02a68add06e61b6ff1e48416a3adaa6a1446f2649e5a3349838d0b13eda7d4",
+    "SMCS_RAG_Synthetic_Conflict_Stress_Test_Corpus.pdf": "bbbf557d8327478d8d9e30e7ccf11375ffc2d14dc9995e757bedef95c01aedc4"
+  },
+  "ocr_used": false,
+  "financial_manual_included": false,
+  "development_only": true,
+  "chunks": 117,
+  "model": "local_lsa",
+  "stage": "before",
+  "code_hashes": {
+    "experiments/text_only_benchmark.py": "4a89d046b2b9083f3d01b1dc1cbedf855eb138572facf75d5c2ae8855d1b8c58",
+    "backend/services/search_service.py": "bd3e7214adb9ba9152013ef55a14c117d8451936a159d8a89446399dacb9dd13",
+    "backend/services/rag_service.py": "aec10394b4323fa81b1b4bdbb2460cadffa857606ff37635f649555902240dcf",
+    "backend/services/policy_claim_service.py": "c25ec0d138f1378618c49e3334205185ac3f71151760be4d11e65b7ee9cc1b2d"
+  }
+}

@@ -1,0 +1,578 @@
+[
+  {
+    "id": "Q001",
+    "query": "What does the governance corpus state about smcs identity and objectives?",
+    "relevant_ids": [
+      "DER-001"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q002",
+    "query": "What does the governance corpus state about smcs field of interest?",
+    "relevant_ids": [
+      "DER-002"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q003",
+    "query": "What does the governance corpus state about smcs membership?",
+    "relevant_ids": [
+      "DER-003"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q004",
+    "query": "What does the governance corpus state about smcs finances?",
+    "relevant_ids": [
+      "DER-004"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q005",
+    "query": "What does the governance corpus state about board of governors composition?",
+    "relevant_ids": [
+      "DER-005"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q006",
+    "query": "What does the governance corpus state about member-at-large term?",
+    "relevant_ids": [
+      "DER-006"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q007",
+    "query": "What does the governance corpus state about smcs officers?",
+    "relevant_ids": [
+      "DER-007"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q008",
+    "query": "What does the governance corpus state about executive committee?",
+    "relevant_ids": [
+      "DER-008"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q009",
+    "query": "What does the governance corpus state about secretary responsibilities?",
+    "relevant_ids": [
+      "DER-009"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q010",
+    "query": "What does the governance corpus state about treasurer responsibilities?",
+    "relevant_ids": [
+      "DER-010"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q011",
+    "query": "What does the governance corpus state about annual and five-year planning?",
+    "relevant_ids": [
+      "DER-011"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q012",
+    "query": "What does the governance corpus state about bog quorum?",
+    "relevant_ids": [
+      "DER-012"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q013",
+    "query": "What does the governance corpus state about bog voting?",
+    "relevant_ids": [
+      "DER-013"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q014",
+    "query": "What does the governance corpus state about smcs meetings and conferences?",
+    "relevant_ids": [
+      "DER-014"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q015",
+    "query": "What does the governance corpus state about smcs publications?",
+    "relevant_ids": [
+      "DER-015"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q016",
+    "query": "What does the governance corpus state about chapters and committees?",
+    "relevant_ids": [
+      "DER-016"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q017",
+    "query": "What does the governance corpus state about constitution amendment initiation?",
+    "relevant_ids": [
+      "DER-017"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q018",
+    "query": "What does the governance corpus state about bylaw amendment?",
+    "relevant_ids": [
+      "DER-018"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q019",
+    "query": "What does the governance corpus state about nominations committee?",
+    "relevant_ids": [
+      "DER-019"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q020",
+    "query": "What does the governance corpus state about candidate eligibility?",
+    "relevant_ids": [
+      "DER-020"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q021",
+    "query": "What does the governance corpus state about petition nomination?",
+    "relevant_ids": [
+      "DER-021"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q022",
+    "query": "What does the governance corpus state about officer terms?",
+    "relevant_ids": [
+      "DER-022"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q023",
+    "query": "What does the governance corpus state about bog annual meeting?",
+    "relevant_ids": [
+      "DER-023"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q024",
+    "query": "What does the governance corpus state about bog meeting notice?",
+    "relevant_ids": [
+      "DER-024"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q025",
+    "query": "What does the governance corpus state about telecommunication meetings?",
+    "relevant_ids": [
+      "DER-025"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q026",
+    "query": "What does the governance corpus state about action without meeting?",
+    "relevant_ids": [
+      "DER-026"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q027",
+    "query": "What does the governance corpus state about organization and planning\ncommittee?",
+    "relevant_ids": [
+      "DER-027"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q028",
+    "query": "What does the governance corpus state about technical area committees?",
+    "relevant_ids": [
+      "DER-028"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q029",
+    "query": "What does the governance corpus state about publications committee?",
+    "relevant_ids": [
+      "DER-029"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q030",
+    "query": "What does the governance corpus state about conferences and meetings\ncommittee?",
+    "relevant_ids": [
+      "DER-030"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q031",
+    "query": "What does the governance corpus state about membership and student activities\ncommittee?",
+    "relevant_ids": [
+      "DER-031"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q032",
+    "query": "What does the governance corpus state about finance committee?",
+    "relevant_ids": [
+      "DER-032"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q033",
+    "query": "What does the governance corpus state about awards committee?",
+    "relevant_ids": [
+      "DER-033"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q034",
+    "query": "What does the governance corpus state about fellow evaluation committee?",
+    "relevant_ids": [
+      "DER-034"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q035",
+    "query": "What does the governance corpus state about ad hoc committees?",
+    "relevant_ids": [
+      "DER-035"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q036",
+    "query": "What does the governance corpus state about technical area vp responsibilities?",
+    "relevant_ids": [
+      "DER-036"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q037",
+    "query": "What does the governance corpus state about area avp responsibilities?",
+    "relevant_ids": [
+      "DER-037"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q038",
+    "query": "What does the governance corpus state about technical committee activity?",
+    "relevant_ids": [
+      "DER-038"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q039",
+    "query": "What does the governance corpus state about tc chair requirements?",
+    "relevant_ids": [
+      "DER-039"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q040",
+    "query": "What does the governance corpus state about tc performance evaluation?",
+    "relevant_ids": [
+      "DER-040"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q041",
+    "query": "What does the governance corpus state about creating a new tc?",
+    "relevant_ids": [
+      "DER-041"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q042",
+    "query": "What does the governance corpus state about dissolving a tc?",
+    "relevant_ids": [
+      "DER-042"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q043",
+    "query": "What does the governance corpus state about major tc changes?",
+    "relevant_ids": [
+      "DER-043"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q044",
+    "query": "What does the governance corpus state about smcs annual dues?",
+    "relevant_ids": [
+      "DER-044"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q045",
+    "query": "What does the governance corpus state about member discipline?",
+    "relevant_ids": [
+      "DER-045"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q046",
+    "query": "What does the governance corpus state about distinguished lecturer program?",
+    "relevant_ids": [
+      "DER-046"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q047",
+    "query": "What does the governance corpus state about flagship conference rotation?",
+    "relevant_ids": [
+      "DER-047"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q048",
+    "query": "What does the governance corpus state about financially sponsored conferences?",
+    "relevant_ids": [
+      "DER-048"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q049",
+    "query": "What does the governance corpus state about technically co-sponsored\nconferences?",
+    "relevant_ids": [
+      "DER-049"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q050",
+    "query": "What does the governance corpus state about conference proposal review?",
+    "relevant_ids": [
+      "DER-050"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q051",
+    "query": "What does the governance corpus state about conference budget planning?",
+    "relevant_ids": [
+      "DER-051"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q052",
+    "query": "What does the governance corpus state about ieee governance hierarchy?",
+    "relevant_ids": [
+      "DER-052"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q053",
+    "query": "What does the governance corpus state about ieee organizational units?",
+    "relevant_ids": [
+      "DER-053"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q054",
+    "query": "What does the governance corpus state about ieee life member?",
+    "relevant_ids": [
+      "DER-054"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q055",
+    "query": "What does the governance corpus state about ieee senior member?",
+    "relevant_ids": [
+      "DER-055"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q056",
+    "query": "What does the governance corpus state about ieee member obligations?",
+    "relevant_ids": [
+      "DER-056"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "Q057",
+    "query": "What does the governance corpus state about ieee finance committee?",
+    "relevant_ids": [
+      "DER-057"
+    ],
+    "family": "template"
+  },
+  {
+    "id": "P005",
+    "query": "How many people can cast a vote on the Society governing board?",
+    "relevant_ids": [
+      "DER-005"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P006",
+    "query": "How long does an elected member at large stay on the board?",
+    "relevant_ids": [
+      "DER-006"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P012",
+    "query": "Can proxies help reach the minimum attendance for a board meeting?",
+    "relevant_ids": [
+      "DER-012"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P013",
+    "query": "Can an absent board member delegate their vote to someone else?",
+    "relevant_ids": [
+      "DER-013"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P017",
+    "query": "What proportion of members can initiate a change to the constitution?",
+    "relevant_ids": [
+      "DER-017"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P020",
+    "query": "What previous service is needed to run for Vice President?",
+    "relevant_ids": [
+      "DER-020"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P022",
+    "query": "How long can a Vice President remain continuously in the same office?",
+    "relevant_ids": [
+      "DER-022"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P024",
+    "query": "How far ahead must board members be told when and where a meeting will take place?",
+    "relevant_ids": [
+      "DER-024"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P026",
+    "query": "Can the board decide by email instead of holding a meeting?",
+    "relevant_ids": [
+      "DER-026"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P039",
+    "query": "Do technical committee leaders need to belong to the Society?",
+    "relevant_ids": [
+      "DER-039"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P040",
+    "query": "What factors are reviewed when assessing a technical committee each year?",
+    "relevant_ids": [
+      "DER-040"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P041",
+    "query": "Who reviews a proposed technical committee before it starts operating?",
+    "relevant_ids": [
+      "DER-041"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P042",
+    "query": "When can an inactive technical committee be shut down?",
+    "relevant_ids": [
+      "DER-042"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P054",
+    "query": "How do age and length of membership determine life membership?",
+    "relevant_ids": [
+      "DER-054"
+    ],
+    "family": "paraphrase"
+  },
+  {
+    "id": "P055",
+    "query": "How much professional experience is required for senior membership?",
+    "relevant_ids": [
+      "DER-055"
+    ],
+    "family": "paraphrase"
+  }
+]

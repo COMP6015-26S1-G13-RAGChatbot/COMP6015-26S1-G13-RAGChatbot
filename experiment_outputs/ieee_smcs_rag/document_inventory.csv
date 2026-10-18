@@ -1,0 +1,7 @@
+document_id,document,format,units,usage,approval,retrieval_enabled,indexed
+smcs-operations-manual-v2-corrected,Corrected Operations Manual,pdf,123,production,approved,True,True
+smcs-technical-manual-2023,SMCS Technical Manual,pdf,6,production,approved,True,True
+smcs-constitution-bylaws-2023,SMCS Constitution and Bylaws,pdf,19,production,approved,True,True
+ieee-constitution-bylaws-2024,IEEE Constitution and Bylaws,pdf,673,production,approved,True,True
+smcs-operations-manual-v2-old,Old Operations Manual V5,pdf,125,audit_input,superseded,False,False
+smcs-operations-manual-draft,Draft Operations Manual V5,docx,1,pending,pending,False,False

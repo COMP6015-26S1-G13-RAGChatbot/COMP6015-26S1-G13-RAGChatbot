@@ -1,0 +1,51 @@
+E. Other Required Approvals
+1) IEEE Suppliers
+
+a) Prior to providing any goods or services to IEEE, suppliers shall be registered
+and approved by means of the Supplier Management System.
+
+b) This process is managed by the Procurement Operations Department and is
+supported and administered by staff. The Supplier Management System shall be
+the primary secure portal and repository for the collection, maintenance, and
+retention of supplier tax and other sensitive business-related information.
+Further clarification is documented on the Procurement Operations website
+section of the IEEE intranet.
+
+2) Technology Related
+
+a) Contracts that involve the purchase of Technology Related Goods and Services
+(as defined in FOM 9, Section A) require approval by the IT Tech
+Standardization and Management team. For questions please contact:
+ittsm@ieee.org.
+
+b) Contracts that involve PII require approval by IT Security.
+3) Independent Contractors
+
+a) Any individual, sole proprietor, or single owner LLC, shall be reviewed and
+approved as an independent contractor by the IEEE Legal & Compliance
+Department prior to the start of services and contract execution.
+
+b) This process is managed by the Legal & Compliance Department. Further
+clarification is documented on the Legal & Compliance website section of the
+IEEE intranet.
+
+4) Purchase Orders
+
+a) As part of internal controls for all purchases of goods and services with an
+aggregate purchase value of USD1,000 and over require an authorized
+purchase order (PO) before work begins or goods are shipped. IEEE OUs/staff
+must not commence services or process orders until they receive a formal PO.
+IEEE OUs eligible to participate in the Concentration Banking program, as
+defined in FOM 3.A.2, are generally exempt from the PO requirement.
+
+b) This process is managed by the Procurement Operations Department and
+supported and administered by staff. Further clarification is documented on the
+Procurement Operations website section of the IEEE intranet.
+
+F. Vetting Suppliers
+
+IEEE screens individuals and entities against publicly available databases globally to
+ensure that those vendors we choose as an organization do not have any potential legal
+or reputational risks. New suppliers will be vetted as they are submitted through the
+
+24

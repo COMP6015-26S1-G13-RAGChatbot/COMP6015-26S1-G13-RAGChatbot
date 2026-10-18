@@ -17,6 +17,7 @@ from backend.services.rag_service import RAGService
 from backend.services.registry_service import RegistryService
 from backend.services.search_service import SearchService
 from backend.services.response_cache import TTLCache
+from backend.admin import install_admin
 
 
 logger = logging.getLogger("rag.api")
@@ -53,6 +54,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="IEEE SMCS Authority-aware RAG API", version="0.3.0", lifespan=lifespan)
+install_admin(app)
 app.add_middleware(CORSMiddleware, allow_origins=list(Config.CORS_ORIGINS),
                    allow_methods=["GET", "POST"], allow_headers=["Content-Type", "X-Request-ID"],
                    expose_headers=["X-Request-ID", "X-Cache", "Server-Timing"])

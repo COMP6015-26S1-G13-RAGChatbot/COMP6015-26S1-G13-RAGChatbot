@@ -1,0 +1,49 @@
+B. Accounting Method
+
+Accounting methods shall be specified in the IEEE Finance Operations Manual
+(IEEE Policies, Section 11.3.B).
+
+1. Accrual Method
+
+In preparing its financial statements, IEEE uses estimates and assumptions that affect
+the reported amounts of liabilities and disclosure of contingent liabilities, in
+conformance with generally accepted accounting principles. Actual results could differ
+from those estimates. Total Assets less Total Liabilities results in Net Assets. Liabilities
+include such items as Accounts Payable, Accrued Liabilities and Loans Payable.
+
+IEEE utilizes the accrual method of accounting. It is IEEE policy to accrue significant
+items during the year, if possible. At year-end unbilled items, above an agreed upon
+threshold, shall be accrued as a matter of course.
+
+All contracts, agreements, pledges, and Memorandums of Understanding create
+liabilities for IEEE. Such items, above USD25,000, shall be reviewed by subject matter
+experts prior to final approval and execution. This procedure is described in detail in
+FOM.9.
+
+Definitions
+
+Accounts Payable are balances owed to others for goods, supplies, or services
+purchased on account. They arise because of the time lag between the receipt of
+services or acquisition of title to assets and the payment thereof.
+
+Accrued Liabilities are balances due for services rendered or materials received for
+which payment has not been made. During each year, the Accounting Department
+shall accrue for significant items. At year-end, unbilled items above an agreed
+threshold shall be accrued.
+
+Loans Payable are written promises by IEEE to pay a certain sum of money ona
+specified future date and may arise from sales, financing, or other transactions.
+
+FOM.4 — EXPENDITURE OF UNRESTRICTED NET ASSETS
+
+IEEE Unrestricted Net Assets are defined as the total unrestricted accumulated
+surpluses of all IEEE Organizational Units. The IEEE Board of Directors has
+fiduciary responsibility for, and the right to direct and control, all IEEE Net Assets
+(IEEE Policies, Section 11.4).
+
+A. Investment Returns from IEEE Unrestricted Net Assets
+Investment returns from Unrestricted Net Assets may be allocated by the IEEE
+Board of Directors to the IEEE Organizational Units with stewardship of
+
+unrestricted net assets (IEEE Policies, Section 11.4.B).
+11
