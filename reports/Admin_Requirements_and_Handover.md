@@ -2,6 +2,8 @@
 
 Prepared for team review on 18 October 2026.
 
+**Update:** Document approval/rejection, version activation, search exclusion, index rebuilding, and release restoration have now been added locally. The guide `Admin_Document_Lifecycle_Guide.md` supersedes the original pending-only scope and FR4.1 status below. Meet deployment integration and individual accounts remain pending. The remaining sections preserve the initial handover record.
+
 ## Scope and deployment status
 
 The local repository now includes a small administrator console at `/admin` on the FastAPI server. It provides protected document status, pending PDF submissions, downloads, aggregate service counters, and an upload audit trail. It does not alter the chatbot's retrieval algorithm or replace the selected BGE/ChromaDB/Llama implementation.

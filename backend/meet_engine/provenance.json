@@ -1,0 +1,18 @@
+{
+  "source_commit": "cedfa0de15c8ec2a63d5330b000b6a2c744d7d58",
+  "source_directory": "Final-Testing/src",
+  "original_sha256": {
+    "rag_chat.py": "964438ca91241b54eaa3f2fcbceff6d6feee846efabae1f19a63ea64ee52ff26",
+    "conflict_detection.py": "92b8ba1f9afb3dea5a1cb09de2a300f91c39eaf584ec1f883aa0aae42a123b8d",
+    "clean_text.py": "3978bc1f171af2e1a83303f8bde20360d27d4c4fb97422602fa3a59b430f6d5d",
+    "chunk_docs.py": "e7965fd5e1139d7966372839d4101e349d1fad87e0a163057d2071fb43738b20"
+  },
+  "integration_changes": [
+    "package-relative import",
+    "configurable Chroma path and Ollama endpoint/model",
+    "CPU/offline embedding configuration",
+    "expose final selected citations",
+    "clear previous-query state",
+    "suppress CLI transcripts"
+  ]
+}

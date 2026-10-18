@@ -1,0 +1,15 @@
+.git
+.env*
+.admin_data
+venv
+.venv
+**/node_modules
+**/.next
+**/__pycache__
+chroma_db
+RAG_data
+data
+experiment_outputs
+report_build
+reports
+tests

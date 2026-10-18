@@ -1,6 +1,8 @@
 from contextlib import asynccontextmanager
 import logging
 import time
+import os
+from types import SimpleNamespace
 from uuid import uuid4
 
 from fastapi import FastAPI, HTTPException, Request, Response
@@ -17,7 +19,7 @@ from backend.services.rag_service import RAGService
 from backend.services.registry_service import RegistryService
 from backend.services.search_service import SearchService
 from backend.services.response_cache import TTLCache
-from backend.admin import install_admin
+from backend.admin import install_admin, storage
 
 
 logger = logging.getLogger("rag.api")
@@ -46,6 +48,11 @@ async def lifespan(app: FastAPI):
         max_entries=Config.CHAT_CACHE_MAX_ENTRIES,
         ttl_seconds=Config.CHAT_CACHE_TTL_SECONDS,
     )
+    app.state.runtime = SimpleNamespace(**{name: getattr(app.state, name) for name in
+        ('registry', 'search', 'rag', 'audit', 'evaluation', 'chat_cache')})
+    if len(os.environ.get('ADMIN_ACCESS_TOKEN', '')) >= 32 or (storage() / 'releases' / 'current.json').exists():
+        from backend.services.admin_lifecycle import install_local_lifecycle
+        install_local_lifecycle(app, app.state.runtime, storage() / 'releases')
     app.state.ready = True
     logger.info("service_graph_ready documents=%d chunks=%d startup_ms=%.1f",
                 len(registry.records), len(search.chunks), (time.perf_counter() - started) * 1000)
@@ -63,6 +70,7 @@ app.mount("/documents/corpus", StaticFiles(directory=Config.DATA_DIR / "corpus")
 
 @app.middleware("http")
 async def request_context(request: Request, call_next):
+    request.state.runtime = getattr(request.app.state, 'runtime', request.app.state)
     request_id = request.headers.get("X-Request-ID", str(uuid4()))[:128]
     started = time.perf_counter()
     try:
@@ -83,7 +91,7 @@ def health(request: Request):
     """Backward-compatible readiness endpoint consumed by the frontend."""
     if not getattr(request.app.state, "ready", False):
         raise HTTPException(status_code=503, detail="Service graph is not ready")
-    search = request.app.state.search
+    search = request.state.runtime.search
     return {"status": "ok", "default_mode": "deterministic", "development_mode": Config.DEVELOPMENT_MODE,
             "embedding": search.embeddings.configuration}
 
@@ -97,32 +105,32 @@ def liveness():
 def readiness(request: Request):
     if not getattr(request.app.state, "ready", False):
         raise HTTPException(status_code=503, detail="Service graph is not ready")
-    registry, search = request.app.state.registry, request.app.state.search
+    registry, search = request.state.runtime.registry, request.state.runtime.search
     production = registry.production_documents()
     if not production or not search.chunks:
         raise HTTPException(status_code=503, detail="Production corpus is empty")
     return {"status": "ready", "documents": len(production), "chunks": len(search.chunks),
             "embedding": search.embeddings.configuration,
-            "chat_cache_entries": len(request.app.state.chat_cache)}
+            "chat_cache_entries": len(request.state.runtime.chat_cache)}
 
 
 @app.get("/api/documents", response_model=list[DocumentRecord])
 def documents(request: Request):
-    return request.app.state.registry.list_documents()
+    return [row.model_copy(update={'source_path': ''}) for row in request.state.runtime.registry.list_documents()]
 
 
 @app.post("/api/chat", response_model=ChatResponse)
 def chat(request: ChatRequest, http_request: Request, response: Response):
     cache_key = f"{request.mode}:{' '.join(request.question.casefold().split())}"
-    cached = http_request.app.state.chat_cache.get(cache_key)
+    cached = http_request.state.runtime.chat_cache.get(cache_key)
     if cached is not None:
         response.headers["X-Cache"] = "HIT"
         response.headers["Server-Timing"] = "cache;desc=hit;dur=0"
         return cached
     started = time.perf_counter()
-    result = http_request.app.state.rag.answer(request.question, request.mode)
+    result = http_request.state.runtime.rag.answer(request.question, request.mode)
     duration_ms = (time.perf_counter() - started) * 1000
-    http_request.app.state.chat_cache.set(cache_key, result)
+    http_request.state.runtime.chat_cache.set(cache_key, result)
     response.headers["X-Cache"] = "MISS"
     response.headers["Server-Timing"] = f"rag;desc=retrieve-and-answer;dur={duration_ms:.1f}"
     return result
@@ -131,7 +139,7 @@ def chat(request: ChatRequest, http_request: Request, response: Response):
 @app.post("/api/audit", response_model=AuditResponse)
 def audit(request: AuditRequest, http_request: Request):
     try:
-        return http_request.app.state.audit.audit(request.text, request.document_id, request.mode)
+        return http_request.state.runtime.audit.audit(request.text, request.document_id, request.mode)
     except (KeyError, ValueError) as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from None
 
@@ -140,21 +148,21 @@ def audit(request: AuditRequest, http_request: Request):
 def evaluation(request: Request):
     if not Config.ENABLE_EVALUATION_API:
         raise HTTPException(status_code=404, detail="Not found")
-    return request.app.state.evaluation.evaluate()
+    return request.state.runtime.evaluation.evaluate()
 
 
 @app.post("/api/evaluation/compare", response_model=ComparisonResponse)
 def comparison(request: Request):
     if not Config.ENABLE_EVALUATION_API:
         raise HTTPException(status_code=404, detail="Not found")
-    return request.app.state.evaluation.compare()
+    return request.state.runtime.evaluation.compare()
 
 
 @app.post("/api/debug/retrieval", response_model=RetrievalDebugResponse, include_in_schema=Config.DEVELOPMENT_MODE)
 def retrieval_debug(request: RetrievalDebugRequest, http_request: Request):
     if not Config.DEVELOPMENT_MODE:
         raise HTTPException(status_code=404, detail="Not found")
-    rows = http_request.app.state.search.debug_search(request.query, k=10,
+    rows = http_request.state.runtime.search.debug_search(request.query, k=10,
         document_ids=set(request.document_ids) if request.document_ids else None, mode=request.mode)
     candidates = [RetrievalDebugCandidate(
         chunk_id=item["chunk"].chunk_id, document_id=item["chunk"].document_id,
@@ -175,4 +183,4 @@ def ask(request: dict, http_request: Request):
     question = request.get("question") or request.get("query")
     if not isinstance(question, str) or len(question.strip()) < 2:
         raise HTTPException(status_code=422, detail="question is required")
-    return http_request.app.state.rag.answer(question, "deterministic")
+    return http_request.state.runtime.rag.answer(question, "deterministic")

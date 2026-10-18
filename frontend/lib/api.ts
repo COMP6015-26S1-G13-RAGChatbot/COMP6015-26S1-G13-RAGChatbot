@@ -1,9 +1,9 @@
 export const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
 export type RAGMode = "deterministic" | "bm25" | "dense" | "rrf" | "hybrid" | "hybrid_llm";
 
-export type Citation = { document_id: string; document_title: string; section: string | null; page: number | null; evidence_text: string; authority_score: number | null; approval_status: string | null; version: string | null };
+export type Citation = { document_id: string; document_title: string; section: string | null; page: number | null; evidence_text: string; authority_score: number | null; approval_status: string | null; version: string | null; source_url?: string };
 export type ConflictDetails = { conflict_status: "none" | "possible" | "confirmed" | "ambiguous_internal_conflict"; conflict_scope: "cross_document" | "within_document" | null; higher_authority_evidence: Citation | null; conflicting_evidence: Citation[]; authority_scores: Record<string, number>; conflicting_normative_terms: string[]; interpretations: string[]; resolution_basis: string | null; human_review_required: boolean };
-export type ChatResult = ConflictDetails & { answer: string; citations: Citation[]; conflicts: { applied_rule: string }[]; confidence: number; abstained: boolean; abstention_reason: string | null; mode: RAGMode; requested_mode: RAGMode; fallback_reason: string | null; latency_ms: number };
+export type ChatResult = ConflictDetails & { answer: string; citations: Citation[]; conflicts: { applied_rule: string }[]; confidence: number | null; review_notice?: string | null; abstained: boolean; abstention_reason: string | null; mode: RAGMode; requested_mode: RAGMode; fallback_reason: string | null; latency_ms: number };
 export type DocumentRecord = { document_id: string; title: string; version: string; document_type: string; approval_status: string; authority_level: number; usage: string; retrieval_enabled: boolean };
 export type AuditResult = ConflictDetails & { issue_type: string | null; issue_subtype: string | null; audited_text: string; authoritative_evidence: Citation[]; explanation: string; citation: Citation | null; suggested_correction: string | null; confidence: number; abstention_reason: string | null };
 export type EvaluationResult = {
@@ -17,7 +17,7 @@ export type EvaluationResult = {
   mean_reciprocal_rank: number; ndcg_at_10: number; average_latency_ms: number;
 };
 export type ComparisonResult = { development_benchmark: boolean; embedding_configuration: Record<string, string>; llm_configuration: Record<string, string | boolean>; modes: EvaluationResult[] };
-export type HealthResult = { status: string; default_mode: RAGMode; development_mode: boolean; embedding: Record<string, string> };
+export type HealthResult = { status: string; default_mode: RAGMode; development_mode: boolean; embedding: Record<string, string>; engine_label?: string; capabilities?: { audit: boolean; evaluation: boolean; admin: boolean } };
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${API_BASE_URL}${path}`, init);

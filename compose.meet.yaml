@@ -1,0 +1,26 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.meet
+    environment:
+      ADMIN_ACCESS_TOKEN: ${ADMIN_ACCESS_TOKEN:?Set a random administrator token}
+      ADMIN_STORAGE_DIR: /data
+      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_MODEL: llama3
+      WEB_FRONTEND_URL: ${WEB_FRONTEND_URL:-http://localhost:3000}
+    volumes:
+      - smcs_data:/data
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      - ollama
+    restart: unless-stopped
+volumes:
+  ollama_models:
+  smcs_data:

@@ -7,15 +7,18 @@ import hashlib
 import io
 import json
 import os
+import logging
 from pathlib import Path
 import secrets
 from threading import RLock
 from uuid import uuid4
+from typing import Literal
 
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from pypdf import PdfReader
+from backend.services.admin_lifecycle import atomic_json
 
 MAX_PDF_BYTES = 8 * 1024 * 1024
 MAX_UPLOADS = 100
@@ -26,6 +29,64 @@ class PendingPDF(BaseModel):
     title: str = Field(min_length=1, max_length=180)
     version: str = Field(min_length=1, max_length=80)
     content_base64: str = Field(max_length=((MAX_PDF_BYTES + 2) // 3) * 4)
+
+
+class ReviewDecision(BaseModel):
+    decision: Literal['approved', 'rejected']
+    reason: str = Field(min_length=5, max_length=1000)
+    target_document_id: str | None = Field(default=None, max_length=200)
+
+
+class ChangeReason(BaseModel):
+    reason: str = Field(min_length=5, max_length=1000)
+
+    @field_validator('reason')
+    @classmethod
+    def meaningful_reason(cls, value):
+        if len(value.strip()) < 5:
+            raise ValueError('Enter a reason of at least five characters')
+        return value.strip()
+
+
+class RetrievalDecision(ChangeReason):
+    enabled: bool
+
+
+def lifecycle(request):
+    service = getattr(request.app.state, 'document_lifecycle', None)
+    if not service:
+        raise HTTPException(503, 'Document lifecycle adapter is not connected')
+    return service
+
+
+def upload_record(identifier):
+    if len(identifier) != 32 or any(c not in '0123456789abcdef' for c in identifier):
+        raise HTTPException(404, 'Not found')
+    path = storage() / (identifier + '.json')
+    if not path.exists():
+        raise HTTPException(404, 'Upload not found')
+    return path, json.loads(path.read_text())
+
+
+def record_action(event, identifier, reason):
+    try:
+        with (storage() / 'audit.jsonl').open('a') as stream:
+            stream.write(json.dumps({'event': event, 'id': identifier, 'reason': reason,
+                                     'at': datetime.now(timezone.utc).isoformat()}) + '\n')
+    except OSError:
+        # Published releases retain their reason and timestamp even if this
+        # secondary log is unavailable. Do not report a successful switch as failed.
+        logging.getLogger(__name__).exception('Admin action log unavailable for %s', event)
+
+
+def run_change(operation):
+    try:
+        return operation()
+    except (ValueError, FileNotFoundError) as exc:
+        raise HTTPException(422, str(exc)) from None
+    except Exception:
+        logging.getLogger(__name__).exception('Administrator index operation failed')
+        raise HTTPException(503, 'Index update failed; the previous release remains active. Check server logs.') from None
 
 
 class AdminState:
@@ -90,11 +151,70 @@ def overview(request: Request):
     else:
         documents = []
     with state.lock:
+        manager = getattr(request.app.state, 'document_lifecycle', None)
+        chunk_provider = getattr(request.app.state, 'admin_chunk_count_provider', None)
         return {"started_at": state.started_at, "requests": dict(state.requests),
                 "errors": dict(state.errors), "documents": documents,
-                "indexed_chunks": len(search.chunks) if search else None,
+                "indexed_chunks": chunk_provider() if chunk_provider else len(search.chunks) if search else None,
                 "pending_uploads": pending_records(storage()),
-                "search_activation": "Not connected; pending uploads are never indexed automatically"}
+                "lifecycle_enabled": bool(manager),
+                "index_status": manager.status if manager else {'state': 'not_connected'},
+                "active_release": manager.current()['release_id'] if manager else None,
+                "releases": manager.history() if manager else [],
+                "search_activation": "Review, then activate to build and publish a new index" if manager else
+                    "Not connected; pending uploads are never indexed automatically"}
+
+
+@router.post('/api/admin/uploads/{identifier}/review', dependencies=[Depends(require_admin)])
+def review_upload(identifier: str, decision: ReviewDecision, request: Request):
+    if not decision.reason.strip() or len(decision.reason.strip()) < 5:
+        raise HTTPException(422, 'Enter a review reason of at least five characters')
+    with request.app.state.admin.lock:
+        path, record = upload_record(identifier)
+        if record['approval_status'] != 'pending':
+            raise HTTPException(409, 'This upload has already been reviewed')
+        if decision.decision == 'approved':
+            manager = lifecycle(request)
+            run_change(lambda: manager.target(manager.current()['records'], decision.target_document_id))
+            record['target_document_id'] = decision.target_document_id
+        record.update(approval_status=decision.decision, review_reason=decision.reason.strip(),
+                      reviewed_at=datetime.now(timezone.utc).isoformat())
+        # Existing authority is inherited on activation; the request cannot set it.
+        atomic_json(path, record)
+        record_action('upload_' + decision.decision, identifier, decision.reason.strip())
+    return record
+
+
+@router.post('/api/admin/uploads/{identifier}/activate', dependencies=[Depends(require_admin)])
+def activate_upload(identifier: str, data: ChangeReason, request: Request):
+    _, record = upload_record(identifier)
+    manager = lifecycle(request)
+    result = run_change(lambda: manager.activate(record.get('target_document_id'), record,
+                                                storage() / (identifier + '.pdf'), data.reason))
+    record_action('version_activated', identifier, data.reason)
+    return result
+
+
+@router.post('/api/admin/documents/{identifier}/retrieval', dependencies=[Depends(require_admin)])
+def toggle_retrieval(identifier: str, data: RetrievalDecision, request: Request):
+    manager = lifecycle(request)
+    result = run_change(lambda: manager.toggle(identifier, data.enabled, data.reason))
+    record_action('retrieval_enabled' if data.enabled else 'retrieval_disabled', identifier, data.reason)
+    return result
+
+
+@router.post('/api/admin/index/rebuild', dependencies=[Depends(require_admin)])
+def rebuild_index(data: ChangeReason, request: Request):
+    result = run_change(lambda: lifecycle(request).change(data.reason))
+    record_action('index_rebuilt', result['release_id'], data.reason)
+    return result
+
+
+@router.post('/api/admin/releases/{identifier}/restore', dependencies=[Depends(require_admin)])
+def restore_release(identifier: str, data: ChangeReason, request: Request):
+    result = run_change(lambda: lifecycle(request).change(data.reason, restore=identifier))
+    record_action('release_restored', identifier, data.reason)
+    return result
 
 
 @router.post("/api/admin/uploads", dependencies=[Depends(require_admin)], status_code=201)
