@@ -461,6 +461,21 @@ app = FastAPI(title="IEEE SMCS Governance Assistant", lifespan=lifespan)
 
 if admin_console is not None:
     admin_console.install_admin(app)
+else:
+    @app.get("/admin", include_in_schema=False)
+    def admin_unavailable():
+        # Explain instead of a bare 404 when the console could not load.
+        from fastapi.responses import HTMLResponse
+        from html import escape
+        return HTMLResponse(
+            "<!doctype html><meta charset='utf-8'><title>Admin console unavailable</title>"
+            "<body style='font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:48px auto;padding:0 16px'>"
+            "<h1 style='font-size:24px'>Admin console unavailable</h1>"
+            f"<p>The console could not load: <strong>{escape(ADMIN_IMPORT_ERROR or 'unknown error')}</strong>.</p>"
+            "<p>Stop the server (Ctrl + C), then in the project folder with the virtual environment active run:</p>"
+            "<pre style='background:#eef2f6;padding:10px'>python -m pip install pypdf\npython web\\server.py</pre>"
+            "<p><a href='/'>Back to chatbot</a></p></body>",
+            status_code=503, headers={"Cache-Control": "no-store"})
 
 
 class ChatRequest(BaseModel):
