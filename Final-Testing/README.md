@@ -91,6 +91,62 @@ Settings (set before starting the server, e.g. `$env:RAG_ALLOW_SIGNUP="0"`):
 | `RAG_COOKIE_SECURE=1` | Mark the session cookie HTTPS-only; use when serving over HTTPS |
 | `RAG_USERS_DB=path` | Keep the accounts database somewhere else |
 
+### Administrator console
+
+The document administration console from the `feat/admin-login` branch is
+built in at **http://localhost:8000/admin**. Its code is in `web/admin/`
+and is kept as on that branch (only the page styling, its import lines, and
+a font permission were changed). It is separate from user sign-in and is
+unlocked with an administrator token.
+
+![Administrator console](docs/screenshots/admin-console.png)
+
+**Enable it** (PowerShell, in the project folder, venv active):
+
+```powershell
+python -m pip install pypdf
+$env:ADMIN_ACCESS_TOKEN = python -c "import secrets; print(secrets.token_urlsafe(48))"
+echo $env:ADMIN_ACCESS_TOKEN     # copy this; you paste it into the console
+python web\server.py
+```
+
+The token must be at least 32 characters. Keep it private: never put it in
+GitHub, chat or screenshots. Set it again each time you open a new
+terminal (or use the same value each time). Without it, `/admin` opens but
+stays locked.
+
+**What it does**
+
+- Lists the documents in the index, with version, status and authority.
+- **Submit a PDF for review**: saved as *pending*; never searched.
+- **Approve / Reject** with a reason. Approving does not change search yet.
+- **Activate version**: builds a new index with the new PDF replacing the
+  chosen document, checks it, then switches the chatbot to it. If anything
+  fails, the previous index stays active. Citations then link to the new PDF.
+- **Exclude from search / Enable search** for a document.
+- **Rebuild current index** and **Restore** an earlier release.
+- Service counters and a log of administrator actions.
+
+Every change needs a reason and creates a new *release*; nothing is
+overwritten. Questions wait while an index is being rebuilt.
+
+**How it connects to the chatbot**
+
+- On the first start with a token, the server writes the document list to
+  `.admin_data/inventory/inventory.json`, using the same authority values as
+  `src/parse_pdf.py`. All PDFs with extractable text are searchable, which
+  matches the existing `chroma_db`. `financial-ops-manual.pdf` is a scanned
+  document with no text layer, so it is listed but not searchable (it is not
+  in the original index either).
+- The chatbot keeps using the original `chroma_db` until an administrator
+  activates, excludes, rebuilds or restores something. From then on it uses
+  the active release, also after a restart.
+- Data is stored in `.admin_data/` next to the project (not inside `web/`,
+  so updating the web folder keeps it). It is ignored by git. Back it up and
+  never delete `.admin_data/releases` while it is in use.
+- Limits (from the original design): one shared administrator token rather
+  than individual accounts; one server process.
+
 ### Using it in another project folder
 
 Copy the `web/` folder into the folder that holds your RAG files (for
@@ -118,6 +174,9 @@ $env:RAG_DEMO_MODE="1"; python web\server.py
 
 | Problem | Fix |
 | --- | --- |
+| `/admin` says "Admin access is not configured" | Set `ADMIN_ACCESS_TOKEN` (32+ characters) before starting the server |
+| "Admin console: unavailable (pypdf …)" at start-up | `python -m pip install pypdf` |
+| "Another index operation is running" | Wait for the current rebuild or question to finish, then try again |
 | Forgot a password | `python web\auth.py passwd <username>` sets a new one |
 | "Too many failed attempts" | Wait 60 seconds, then try again |
 | "The assistant is still loading" | The models are still loading. Wait for `Pipeline ready` in the terminal; questions now wait automatically. |
@@ -137,6 +196,8 @@ Check for other package conflicts with `python -m pip check`.
 | `web/server.py` | FastAPI app: `/api/chat`, `/api/health`, `/api/documents`, sign-in routes, serves PDFs under `/files/` to signed-in users |
 | `web/auth.py` | Accounts and sessions (SQLite, PBKDF2 password hashes); also the account command-line tool |
 | `web/static/login.html`, `login.js` | Sign-in and create-account page |
+| `web/admin/` | Administrator console from the `feat/admin-login` branch (`admin.py`, `admin_lifecycle.py`, `meet_admin_adapter.py`, restyled `admin_console.html`) |
+| `web/admin_integration.py` | Connects the console to this chatbot's engine and documents |
 | `web/static/index.html` | Page layout |
 | `web/static/styles.css` | Styling, light/dark themes, mobile layout |
 | `web/static/app.js` | Chat logic, conversation history (saved in the browser), source and conflict cards |

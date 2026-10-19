@@ -18,6 +18,10 @@ Sign-in is required by default (accounts are stored in web/users.db).
 RAG_ALLOW_SIGNUP=0 hides the "Create account" option, so only accounts
 made with `python web/auth.py add <name>` can sign in. RAG_AUTH=0 turns
 sign-in off entirely.
+
+The administrator console (web/admin, from the feat/admin-login branch) is
+at /admin. Set ADMIN_ACCESS_TOKEN to a random value of 32+ characters to
+unlock it; see the README for details.
 """
 
 import contextlib
@@ -82,6 +86,35 @@ _auth = importlib.util.module_from_spec(_auth_spec)
 _auth_spec.loader.exec_module(_auth)
 SESSION_SECONDS, AuthError, UserStore = _auth.SESSION_SECONDS, _auth.AuthError, _auth.UserStore
 
+
+def load_package(name, folder):
+    spec = importlib.util.spec_from_file_location(
+        name, folder / "__init__.py", submodule_search_locations=[str(folder)]
+    )
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+# Administrator console. Keep its private data next to the project (not inside
+# web/) so replacing the web folder does not delete document releases.
+os.environ.setdefault("ADMIN_STORAGE_DIR", str(PROJECT_DIR / ".admin_data"))
+ADMIN_TOKEN_SET = len(os.environ.get("ADMIN_ACCESS_TOKEN", "")) >= 32
+admin_console = admin_adapter = admin_lifecycle_module = admin_integration = None
+ADMIN_IMPORT_ERROR = None
+try:
+    load_package("smcs_web_admin", WEB_DIR / "admin")
+    admin_console = importlib.import_module("smcs_web_admin.admin")
+    admin_adapter = importlib.import_module("smcs_web_admin.meet_admin_adapter")
+    admin_lifecycle_module = importlib.import_module("smcs_web_admin.admin_lifecycle")
+    _spec = importlib.util.spec_from_file_location(
+        "smcs_admin_integration", WEB_DIR / "admin_integration.py")
+    admin_integration = importlib.util.module_from_spec(_spec)
+    _spec.loader.exec_module(admin_integration)
+except ImportError as exc:
+    ADMIN_IMPORT_ERROR = f"{exc.name or exc} is not installed"
+
 print(f"Python:         {sys.executable}")
 print(f"Project folder: {PROJECT_DIR}")
 print(f"rag_chat.py:    {SRC_DIR / 'rag_chat.py'}"
@@ -94,6 +127,11 @@ print("Sign-in:        "
       + ((f"on ({USERS_DB.name}"
           + (", sign-up open)" if ALLOW_SIGNUP else ", sign-up closed)"))
          if AUTH_ENABLED else "off (RAG_AUTH=0)"))
+print("Admin console:  "
+      + (f"unavailable ({ADMIN_IMPORT_ERROR}; run: python -m pip install pypdf)"
+         if ADMIN_IMPORT_ERROR else
+         "/admin (unlocked with ADMIN_ACCESS_TOKEN)" if ADMIN_TOKEN_SET else
+         "/admin (locked: set ADMIN_ACCESS_TOKEN to use it)"))
 
 
 # ============================================================
@@ -134,6 +172,13 @@ def describe_source(source, page=None, source_type=None):
     info = DOCUMENTS.get(name.lower(), {})
     url = info.get("url")
 
+    # After an admin activates a new version, link to that release's PDF.
+    manager = getattr(globals().get("pipeline"), "lifecycle", None)
+    if manager:
+        row = admin_integration.release_record_for(manager, name)
+        if row:
+            url = "/api/sources/" + quote(row["document_id"], safe="")
+
     if url and page not in (None, "", -1):
         url = f"{url}#page={page}"
 
@@ -169,8 +214,9 @@ class RagPipeline:
         self._lock = threading.Lock()
         self._module = None
         self.error = None
+        self.lifecycle = None
 
-    def load(self):
+    def load(self, app=None):
         print("\nLoading the RAG pipeline (embedding model + vector database)...")
         print("The first start can take a few minutes while the model downloads.\n")
         started = time.perf_counter()
@@ -201,11 +247,45 @@ class RagPipeline:
             print(f"\nPipeline failed to load: {self.error}\n")
             return
 
+        # Connect the admin console first, so "ready" means fully ready.
+        if app is not None:
+            self.connect_admin(app, rag_chat)
         self._module = rag_chat
         print(
             f"\nPipeline ready in {time.perf_counter() - started:.0f}s. "
             "Open http://localhost:8000\n"
         )
+
+    def connect_admin(self, app, engine):
+        """Give the admin console's document lifecycle access to the engine.
+
+        Until an administrator activates, excludes, rebuilds or restores
+        something, the engine keeps using the original chroma_db.
+        """
+        if admin_adapter is None or not ADMIN_TOKEN_SET:
+            return
+        try:
+            import chunk_docs
+            import clean_text
+            import parse_pdf
+
+            folder = admin_console.storage()
+            # Not in the storage root: the console reads every *.json there
+            # as an uploaded-PDF record.
+            inventory_file = folder / "inventory" / "inventory.json"
+            inventory_file.parent.mkdir(mode=0o700, exist_ok=True)
+            inventory, created = admin_integration.load_inventory(
+                inventory_file, DATA_DIR, parse_pdf,
+                admin_lifecycle_module.atomic_json)
+            self.lifecycle = admin_adapter.install_meet_lifecycle(
+                app, engine, inventory, clean_text.clean_markdown,
+                chunk_docs.chunk_documents, folder / "releases")
+            print(f"Admin console connected: {len(inventory)} documents"
+                  + (f" (inventory created at {inventory_file})" if created else ""))
+        except Exception as exc:
+            traceback.print_exc()
+            print(f"\nAdmin document management not connected: {type(exc).__name__}: {exc}"
+                  "\nThe chatbot works normally; the console can still be opened.\n")
 
     @property
     def ready(self):
@@ -229,8 +309,10 @@ class RagPipeline:
         trace = io.StringIO()
 
         # rag_chat keeps per-query state in module globals, so queries
-        # must run one at a time.
-        with self._lock:
+        # must run one at a time. With the admin console connected, they
+        # also share its lock so an index switch never overlaps a question.
+        lifecycle_lock = self.lifecycle.lock if self.lifecycle else contextlib.nullcontext()
+        with lifecycle_lock, self._lock:
             module.print_citations = capture_citations
             module.print_conflict_report = capture_conflicts
             try:
@@ -286,10 +368,23 @@ class RagPipeline:
 class DemoPipeline:
     ready = False
     error = None
+    lifecycle = None
 
-    def load(self):
+    def load(self, app=None):
         # RAG_DEMO_LOAD_DELAY simulates a slow model load for testing.
         time.sleep(float(os.environ.get("RAG_DEMO_LOAD_DELAY", "0")))
+        # No engine in demo mode: list the inventory in the admin console
+        # read-only; document actions stay disabled.
+        if app is not None and admin_integration is not None:
+            try:
+                import parse_pdf
+                rows = admin_integration.build_inventory(DATA_DIR, parse_pdf)
+                app.state.admin_document_provider = lambda: [
+                    {key: row[key] for key in ("document_id", "title", "version", "approval_status",
+                                               "usage", "retrieval_enabled", "authority_level")}
+                    for row in rows]
+            except Exception as exc:
+                print(f"Admin console demo inventory unavailable: {exc}")
         self.ready = True
 
     def ask(self, question):
@@ -358,11 +453,14 @@ STARTED_AT = time.perf_counter()
 @contextlib.asynccontextmanager
 async def lifespan(app):
     # Load models in the background so the page is reachable immediately.
-    threading.Thread(target=pipeline.load, daemon=True).start()
+    threading.Thread(target=pipeline.load, args=(app,), daemon=True).start()
     yield
 
 
 app = FastAPI(title="IEEE SMCS Governance Assistant", lifespan=lifespan)
+
+if admin_console is not None:
+    admin_console.install_admin(app)
 
 
 class ChatRequest(BaseModel):
@@ -466,10 +564,29 @@ def health(user: str = Depends(require_user)):
     }
 
 
+def release_documents(manager):
+    """Searchable documents in the active admin release, for the sidebar."""
+    rows = []
+    for row in manager.current()["records"]:
+        if not (row["usage"] == "production" and row["approval_status"] == "approved"
+                and row["retrieval_enabled"]):
+            continue
+        meta = row.get("source_metadata", {})
+        category = meta.get("source_type", "unknown")
+        rows.append({
+            "name": meta.get("source", row["title"]),
+            "category": category,
+            "label": CATEGORY_LABELS.get(category, category.title()),
+            "url": "/api/sources/" + quote(row["document_id"], safe=""),
+        })
+    return rows
+
+
 @app.get("/api/documents")
 def documents(user: str = Depends(require_user)):
+    manager = getattr(pipeline, "lifecycle", None)
     return sorted(
-        DOCUMENTS.values(),
+        release_documents(manager) if manager else DOCUMENTS.values(),
         key=lambda d: (
             list(CATEGORY_LABELS).index(d["category"])
             if d["category"] in CATEGORY_LABELS else 99,
@@ -498,6 +615,19 @@ def chat(request: ChatRequest, user: str = Depends(require_user)):
 
     result["latency_ms"] = round((time.perf_counter() - started) * 1000)
     return result
+
+
+@app.get("/api/sources/{document_id}")
+def release_source(document_id: str, user: str = Depends(require_user)):
+    # The PDF version in the active admin release (may differ from data/).
+    manager = getattr(pipeline, "lifecycle", None)
+    row = next((r for r in manager.current()["records"] if r["document_id"] == document_id
+                and r["usage"] == "production" and r["approval_status"] == "approved"),
+               None) if manager else None
+    if not row or not Path(row["source_path"]).is_file():
+        raise HTTPException(404, "File not found.")
+    return FileResponse(row["source_path"], media_type="application/pdf",
+                        headers={"Cache-Control": "private, no-store"})
 
 
 @app.get("/files/{file_path:path}")

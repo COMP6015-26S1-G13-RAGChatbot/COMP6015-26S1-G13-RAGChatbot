@@ -31,3 +31,6 @@ __pycache__/
 .DS_Store
 # Web front end accounts database
 users.db
+
+# Administrator console data (uploads, releases, audit log)
+.admin_data/
