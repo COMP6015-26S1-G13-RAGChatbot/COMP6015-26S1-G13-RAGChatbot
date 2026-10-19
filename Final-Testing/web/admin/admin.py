@@ -127,7 +127,7 @@ def pending_records(folder):
 
 @router.get("/admin", response_class=HTMLResponse, include_in_schema=False)
 def console():
-    return HTMLResponse(Path(__file__).with_name("admin_console.html").read_text(), headers={
+    return HTMLResponse(Path(__file__).with_name("admin_console.html").read_text(encoding="utf-8"), headers={
         "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff",
         "Referrer-Policy": "no-referrer",
         "Content-Security-Policy": "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
