@@ -1,6 +1,14 @@
 
 # IEEE/SMCS Governance RAG Chatbot
 
+> **Final version:** the delivered system is in [`Final-Testing/`](Final-Testing/README.md):
+> the RAG pipeline (`src/`, local Llama 3 via Ollama, BGE embeddings, ChromaDB),
+> the governance PDFs (`data/`), the 50-question evaluation (`evaluation/`), and the
+> web interface with user sign-in and administrator console (`web/`).
+> Setup and run instructions are in [`Final-Testing/README.md`](Final-Testing/README.md).
+> The sections below describe the original project plan; `backend/`, `frontend/` and
+> `tests/` contain earlier prototypes and the RAGAS notebooks.
+
 > **Target:** Human-Level Reliability (HLR) $\ge$ 90%  
 > **Methodology:** Iterative Prototyping within an Agile Framework
 
