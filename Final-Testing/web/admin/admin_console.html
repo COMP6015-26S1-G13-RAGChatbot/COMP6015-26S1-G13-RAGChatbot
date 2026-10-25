@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SMCS document administration</title>
+<style>
+/* Styled to match the chatbot (IBM Plex, solid IEEE blue). Layout only:
+   element IDs and the console script below are unchanged. Dark mode follows
+   the system setting (the console deliberately avoids browser storage). */
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400 600;font-display:swap;src:url("/static/fonts/plex-sans.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Serif";font-style:normal;font-weight:600;font-display:swap;src:url("/static/fonts/plex-serif-600.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url("/static/fonts/plex-mono-400.woff2") format("woff2")}
+:root{--bg:#f3f6f9;--surface:#fff;--surface-2:#e8eef4;--border:#d5dee7;--border-strong:#b5c3d0;--text:#13212d;--text-2:#3b4a57;--muted:#687886;--accent:#00629b;--accent-hover:#004d7a;--accent-soft:#d6e7f2;--on-accent:#fff;--bar:#00629b;--error:#a3352b;--sans:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;--serif:"IBM Plex Serif",Georgia,serif;--mono:"IBM Plex Mono",Consolas,monospace;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1923;--surface:#16232f;--surface-2:#1e2d3b;--border:#283a4a;--border-strong:#3c5366;--text:#e6edf3;--text-2:#b3c1cd;--muted:#8396a6;--accent:#4da3dd;--accent-hover:#74b8e6;--accent-soft:#173247;--on-accent:#08131c;--bar:#004a75;--error:#e08a80;color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+.topbar{display:flex;align-items:center;gap:12px;padding:12px 24px;background:var(--bar);color:#fff}
+.monogram{display:grid;place-items:center;width:34px;height:34px;border-radius:4px;background:#fff;color:#00629b;font-size:11px;font-weight:600;letter-spacing:.04em;flex-shrink:0}
+.brand-name{font-weight:600;font-size:14.5px;line-height:1.25}
+.brand-sub{font-size:12px;color:rgba(255,255,255,.75)}
+.topbar a{margin-left:auto;color:#fff;font-size:13.5px;text-decoration:none;padding:5px 10px;border:1px solid rgba(255,255,255,.35);border-radius:4px}
+.topbar a:hover{background:rgba(255,255,255,.12)}
+main{max-width:1120px;margin:auto;padding:28px 24px 48px}
+.kicker{margin:0 0 4px;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+h1{margin:0 0 6px;font:600 28px/1.2 var(--serif)}
+main>p{max-width:80ch;color:var(--text-2);margin:0 0 18px}
+p{max-width:80ch}
+h2{margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid var(--accent);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+section{margin-top:18px;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:4px}
+section p{color:var(--text-2);font-size:14px;margin:8px 0}
+#access{max-width:520px;padding:18px;background:var(--surface);border:1px solid var(--border);border-radius:4px}
+label{display:block;margin:14px 0 5px;font-size:13px;font-weight:600;color:var(--text-2)}
+#access label{margin-top:0}
+input,select,button{font:inherit;color:inherit}
+input,select{padding:8px 10px;border:1px solid var(--border-strong);border-radius:4px;background:var(--surface)}
+input{width:440px;max-width:100%;height:38px}
+input[type=file]{display:block;height:auto;padding:6px}
+input:focus,select:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+select{display:block;max-width:260px;margin-top:6px;font-size:13.5px}
+button{cursor:pointer;margin:12px 8px 0 0;padding:8px 16px;border:1px solid var(--accent);border-radius:4px;background:var(--accent);color:var(--on-accent);font-weight:600;font-size:14px}
+button:hover:not(:disabled){background:var(--accent-hover);border-color:var(--accent-hover)}
+button:disabled{opacity:.5;cursor:wait}
+button.secondary{background:var(--surface);color:var(--accent);font-weight:500}
+button.secondary:hover:not(:disabled){background:var(--accent-soft);color:var(--accent)}
+td button{margin:4px 6px 4px 0;padding:4px 10px;font-size:13px}
+td select{margin:4px 0 2px}
+small{display:block;margin-top:6px;color:var(--muted);font-size:12.5px}
+.scroll{overflow:auto;border:1px solid var(--border);border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;background:var(--surface)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{background:var(--surface-2);color:var(--text-2);font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+#summary,#indexStatus{font-family:var(--mono);font-size:12.5px;color:var(--text-2);overflow-wrap:anywhere}
+#message{min-height:24px;margin:14px 0 0;font-weight:600;color:var(--accent);overflow-wrap:anywhere}
+#message.error{color:var(--error)}
+.error{color:var(--error)}
+#dashboard>button:first-child{margin-left:0}
+#audit{margin:8px 0 0;padding-left:18px;font-family:var(--mono);font-size:12.5px;color:var(--text-2)}
+#audit li{margin-bottom:4px;overflow-wrap:anywhere}
+a{color:var(--accent)}
+input:focus-visible,button:focus-visible,a:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:600px){.topbar{padding:10px 14px}.brand-sub{display:none}main{padding:20px 14px 40px}h1{font-size:24px}input{width:100%}section{padding:14px}}
+</style></head><body><header class="topbar"><span class="monogram" aria-hidden="true">SMC</span><div><div class="brand-name">Governance Assistant</div><div class="brand-sub">IEEE SMC Society · Administration</div></div><a href="/">← Back to chatbot</a></header><main>
+<p class="kicker">Administration</p><h1>Document administration</h1><p>Review document status, submit PDFs for review, and inspect basic service activity.</p>
+<div id="access"><label for="token">Administrator access token</label><input id="token" type="password" autocomplete="off" spellcheck="false"><small>Provided by your deployment operator. The token stays in this page’s memory and is cleared on refresh.</small><button id="connect">Connect</button></div>
+<p id="message" role="status" aria-live="polite"></p>
+<div id="dashboard" hidden><button id="refresh">Refresh</button><button id="lock" class="secondary">Lock console</button>
+<section><h2>Service activity</h2><p id="summary"></p><small>Counts cover this server process since startup. They do not contain questions or conversation text and reset on restart.</small></section>
+<section><h2>Registered documents</h2><div class="scroll"><table><thead><tr><th>Document</th><th>Version</th><th>Status</th><th>Usage</th><th>Retrieval enabled</th><th>Authority</th><th>Search actions</th></tr></thead><tbody id="documents"></tbody></table></div></section>
+<section><h2>Submit a PDF for review</h2><p>Files start as pending. Approve a replacement for a registered document, then activate it. The current index stays active until the new one is built successfully.</p>
+<form id="upload"><label for="title">Document title</label><input id="title" maxlength="180" required><label for="version">Version</label><input id="version" maxlength="80" required><label for="file">PDF file</label><input id="file" type="file" accept="application/pdf,.pdf" required><small>Up to 8 MiB and 500 pages. Encrypted PDFs are not accepted. Only upload documents you are authorised to share.</small><button id="submit" type="submit">Submit for review</button></form></section>
+<section><h2>Submitted document versions</h2><div class="scroll"><table><thead><tr><th>Title and version</th><th>Uploaded UTC</th><th>Pages</th><th>Status</th><th>Review and activation</th></tr></thead><tbody id="pending"></tbody></table></div></section>
+<section id="lifecycle"><h2>Index and version history</h2><p id="indexStatus"></p><button id="rebuild">Rebuild current index</button><p>Restore a previous release to recover its document versions and search settings. Every change requires a reason. Document authority is inherited from the registered source.</p><div class="scroll"><table><thead><tr><th>Created UTC</th><th>Reason</th><th>Release</th><th>Action</th></tr></thead><tbody id="releases"></tbody></table></div></section><section><h2>Recent administrator actions</h2><small>Upload events use a shared administrator identity. Individual accounts and per-user attribution are not implemented.</small><ul id="audit"></ul></section></div>
+</main><script>
+'use strict';let accessToken='',overviewData=null,busy=false;const el=id=>document.getElementById(id);
+function message(text,error=false){el('message').textContent=text;el('message').className=error?'error':'';}
+async function api(path,options={}){const response=await fetch('/api/admin/'+path,{...options,cache:'no-store',headers:{'Authorization':'Bearer '+accessToken,...options.headers}});if(!response.ok){let detail;try{detail=(await response.json()).detail;}catch{detail='Request failed';}if(response.status===401||response.status===503&&String(detail).includes('configured'))lock();throw Error(typeof detail==='string'?detail:'Invalid request');}return response;}
+function cell(row,value){const td=document.createElement('td');td.textContent=String(value??'—');row.append(td);return td;}
+function button(parent,label,action,disabled=false){const b=document.createElement('button');b.textContent=label;b.className='secondary';b.disabled=disabled||busy;b.onclick=action;parent.append(b);return b;}
+function reasonFor(action){const value=window.prompt(action+' — enter a reason (at least 5 characters):');if(value===null)return null;if(value.trim().length<5){message('Please enter a reason of at least five characters',true);return null;}return value.trim();}
+async function change(path,payload,label){if(busy)return;const reason=reasonFor(label);if(!reason)return;const reviewing=path.endsWith('/review');if(!window.confirm(label+(reviewing?'? This saves the review without changing search.':'? A new index is built before live search changes.')))return;busy=true;document.querySelectorAll('#dashboard button').forEach(b=>b.disabled=true);message(reviewing?'Saving document review…':'Working. The current index stays available while the replacement is built…');try{await api(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...payload,reason})});message(label+' completed');}catch(e){message(e.message,true);}finally{busy=false;if(accessToken){try{await refresh();}catch(e){message(e.message,true);}}el('refresh').disabled=false;el('lock').disabled=false;el('submit').disabled=false;}}
+function lock(){accessToken='';overviewData=null;el('token').value='';el('dashboard').hidden=true;el('access').hidden=false;for(const id of ['documents','pending','audit','releases'])el(id).replaceChildren();el('summary').textContent='';el('upload').reset();}
+async function refresh(){const data=await(await api('overview')).json();overviewData=data;el('documents').replaceChildren();for(const doc of data.documents){const row=document.createElement('tr');for(const v of [doc.title,doc.version,doc.approval_status,doc.usage,doc.retrieval_enabled?'Yes':'No',doc.authority_level])cell(row,v);const actions=cell(row,'');if(doc.usage==='production'&&doc.approval_status==='approved')button(actions,doc.retrieval_enabled?'Exclude from search':'Enable search',()=>change('documents/'+encodeURIComponent(doc.document_id)+'/retrieval',{enabled:!doc.retrieval_enabled},doc.retrieval_enabled?'Exclude document from search':'Enable document in search'),!data.lifecycle_enabled);else actions.textContent='Not eligible';el('documents').append(row);}if(!data.documents.length){const r=document.createElement('tr');cell(r,'No document provider connected').colSpan=7;el('documents').append(r);}
+const requests=Object.entries(data.requests).map(([route,count])=>route+': '+count).join(' · ')||'No chat or audit requests recorded';const errors=Object.values(data.errors).reduce((a,b)=>a+b,0);el('summary').textContent='Started '+data.started_at+' · Indexed chunks: '+(data.indexed_chunks??'Not connected')+' · '+requests+' · HTTP errors: '+errors;
+el('pending').replaceChildren();for(const doc of data.pending_uploads){const row=document.createElement('tr');cell(row,doc.title+' ('+doc.version+')');cell(row,doc.uploaded_at);cell(row,doc.pages);cell(row,doc.approval_status+(doc.review_reason?' — '+doc.review_reason:''));const actions=cell(row,'');button(actions,'Download',async()=>{try{const res=await api('uploads/'+encodeURIComponent(doc.id)+'/download');const url=URL.createObjectURL(await res.blob());const a=document.createElement('a');a.href=url;a.download='version-'+doc.id+'.pdf';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch(e){message(e.message,true);}});
+if(doc.approval_status==='pending'){const select=document.createElement('select');select.setAttribute('aria-label','Registered document replaced by '+doc.title);const empty=document.createElement('option');empty.value='';empty.textContent='Choose document to replace';select.append(empty);for(const target of data.documents.filter(d=>d.usage==='production'&&d.approval_status==='approved')){const option=document.createElement('option');option.value=target.document_id;option.textContent=target.title;select.append(option);}actions.append(select);button(actions,'Approve',()=>{if(!select.value){message('Choose the registered document this version replaces',true);return;}change('uploads/'+doc.id+'/review',{decision:'approved',target_document_id:select.value},'Approve this version for '+select.options[select.selectedIndex].text);},!data.lifecycle_enabled);button(actions,'Reject',()=>change('uploads/'+doc.id+'/review',{decision:'rejected'},'Reject this submission'));}
+if(doc.approval_status==='approved')button(actions,'Activate version',()=>change('uploads/'+doc.id+'/activate',{},'Activate version '+doc.version),!data.lifecycle_enabled);el('pending').append(row);}if(!data.pending_uploads.length){const r=document.createElement('tr');cell(r,'No submitted versions').colSpan=5;el('pending').append(r);}
+el('indexStatus').textContent=data.lifecycle_enabled?'Index state: '+data.index_status.state+' · Active release: '+data.active_release+(data.index_status.error?' · '+data.index_status.error:''):'Document lifecycle adapter is not connected';el('rebuild').disabled=!data.lifecycle_enabled||busy;el('releases').replaceChildren();for(const release of data.releases||[]){const row=document.createElement('tr');cell(row,release.created_at);cell(row,release.reason);cell(row,release.release_id.slice(0,12)+(release.active?' (active)':''));const action=cell(row,'');if(!release.active)button(action,'Restore',()=>change('releases/'+release.release_id+'/restore',{},'Restore document versions and search settings'));el('releases').append(row);}
+const audit=await(await api('audit')).json();el('audit').replaceChildren();for(const event of audit.reverse()){const item=document.createElement('li');item.textContent=event.at+' — '+event.event+' — '+event.id+(event.reason?' — '+event.reason:'');el('audit').append(item);}if(!audit.length){const item=document.createElement('li');item.textContent='No actions recorded';el('audit').append(item);}}
+el('connect').onclick=async()=>{el('connect').disabled=true;try{accessToken=el('token').value.trim();await refresh();el('token').value='';el('dashboard').hidden=false;el('access').hidden=true;message('Connected');}catch(e){lock();message(e.message,true);}finally{el('connect').disabled=false;}};
+el('refresh').onclick=async()=>{try{await refresh();message('Updated');}catch(e){message(e.message,true);}};el('lock').onclick=()=>{lock();message('Console locked');};el('rebuild').onclick=()=>change('index/rebuild',{},'Rebuild the current index');
+el('upload').onsubmit=async event=>{event.preventDefault();if(busy)return;const file=el('file').files[0];if(!file)return;if(file.size>8*1024*1024){message('PDF exceeds the 8 MiB limit',true);return;}el('submit').disabled=true;message('Checking and uploading PDF…');try{const content=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',')[1]);reader.onerror=()=>reject(Error('Cannot read file'));reader.readAsDataURL(file);});await api('uploads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({title:el('title').value.trim(),version:el('version').value.trim(),content_base64:content})});el('upload').reset();await refresh();message('PDF saved as pending. Review and approval are required before activation.');}catch(e){message(e.message,true);}finally{el('submit').disabled=false;}};
+</script></body></html>

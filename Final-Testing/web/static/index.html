@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMCS Governance Assistant</title>
+  <meta name="description" content="Ask questions about IEEE SMC Society governance documents, with cited sources and conflict detection.">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2300629b'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='11' font-weight='700' fill='white' text-anchor='middle'%3ESMC%3C/text%3E%3C/svg%3E">
+  <script>
+    // Apply saved theme before paint to avoid a flash.
+    var pref = "system";
+    try { pref = localStorage.getItem("smcs-theme") || "system"; } catch (e) {}
+    var t = pref === "system"
+      ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+      : pref;
+    document.documentElement.setAttribute("data-theme", t);
+  </script>
+</head>
+<body>
+  <div class="app">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="monogram" aria-hidden="true">SMC</span>
+        <div class="brand-text">
+          <div class="brand-name">Governance Assistant</div>
+          <div class="brand-sub">IEEE SMC Society</div>
+        </div>
+        <button class="icon-btn sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+
+      <button class="new-chat" id="newChat">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        New conversation
+      </button>
+
+      <div class="sidebar-section">
+        <div class="section-label">Recent</div>
+        <ul class="history" id="history"></ul>
+      </div>
+
+      <div class="sidebar-section docs-section">
+        <div class="section-label">Documents</div>
+        <ul class="doc-list" id="docList"></ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="account" id="account" hidden>
+          <div class="account-text">
+            <div class="account-label">Signed in as</div>
+            <div class="account-name" id="accountName"></div>
+          </div>
+          <button class="sign-out" id="signOut">Sign out</button>
+        </div>
+        <div class="status" id="status">
+          <span class="status-dot"></span>
+          <span class="status-text">Connecting…</span>
+        </div>
+      </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <!-- ===================== MAIN ===================== -->
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open sidebar">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div class="topbar-title" id="chatTitle">New conversation</div>
+        <div class="theme-switch" id="themeSwitch" role="radiogroup" aria-label="Colour theme">
+          <button role="radio" data-theme-value="light">Light</button>
+          <button role="radio" data-theme-value="dark">Dark</button>
+          <button role="radio" data-theme-value="system" title="Follow the system setting">Auto</button>
+        </div>
+      </header>
+
+      <section class="thread" id="thread" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <p class="kicker">IEEE Systems, Man, and Cybernetics Society</p>
+          <h1>Governance documents assistant</h1>
+          <p class="lede">Ask about the Society's constitution, bylaws and operations manuals. Answers are taken only from those documents and list the page they came from. Where two documents disagree, the answer shows which one takes precedence. If the documents don't cover a question, it says so.</p>
+          <p class="corpus" id="corpus"></p>
+
+          <h2 class="welcome-heading">Example questions</h2>
+          <div class="suggestions" id="suggestions"></div>
+        </div>
+      </section>
+
+      <footer class="composer-wrap">
+        <form class="composer" id="composer">
+          <textarea id="input" rows="1" placeholder="Type your question" aria-label="Your question" maxlength="2000"></textarea>
+          <button type="submit" class="send" id="send" disabled>Ask</button>
+        </form>
+        <div class="composer-hint">
+          <span><kbd>Enter</kbd> to send, <kbd>Shift</kbd> + <kbd>Enter</kbd> for a new line</span>
+          <span>Check answers against the cited page before relying on them.</span>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

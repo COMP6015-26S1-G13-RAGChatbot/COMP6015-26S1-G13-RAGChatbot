@@ -1,0 +1,22 @@
+{
+    "total_questions": 50,
+    "answer_level_pass_rate": 96.0,
+    "full_pipeline_pass_rate": 76.0,
+    "answer_accuracy": 96.0,
+    "factual_answer_accuracy": 100.0,
+    "conflict_answer_accuracy": 86.67,
+    "out_of_scope_answer_accuracy": 100.0,
+    "abstention_accuracy": 100.0,
+    "incorrect_in_scope_abstentions": 0,
+    "retrieval_source_accuracy": 97.37,
+    "retrieval_page_accuracy": 93.55,
+    "citation_source_accuracy": 94.74,
+    "citation_page_accuracy": 74.19,
+    "conflict_detection_accuracy": 90.0,
+    "authority_resolution_accuracy": 91.67,
+    "average_semantic_similarity": 0.8228,
+    "average_factual_similarity": 0.806,
+    "average_conflict_similarity": 0.7327,
+    "errors": 0,
+    "total_duration_seconds": 548.25
+}
