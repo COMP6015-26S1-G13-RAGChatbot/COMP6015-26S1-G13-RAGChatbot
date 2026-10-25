@@ -2,6 +2,8 @@
 .env
 .env.local
 .env.*.local
+.env.txt
+*.env.txt
 
 # Python
 venv/
@@ -27,3 +29,8 @@ chroma_db/
 app.log
 __pycache__/
 .DS_Store
+# Web front end accounts database
+users.db
+
+# Administrator console data (uploads, releases, audit log)
+.admin_data/

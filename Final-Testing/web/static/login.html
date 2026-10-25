@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · SMCS Governance Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2300629b'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='11' font-weight='700' fill='white' text-anchor='middle'%3ESMC%3C/text%3E%3C/svg%3E">
+  <script>
+    var pref = "system";
+    try { pref = localStorage.getItem("smcs-theme") || "system"; } catch (e) {}
+    var t = pref === "system"
+      ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+      : pref;
+    document.documentElement.setAttribute("data-theme", t);
+  </script>
+</head>
+<body>
+  <div class="auth-page">
+
+    <aside class="auth-brand">
+      <div class="brand">
+        <span class="monogram" aria-hidden="true">SMC</span>
+        <div class="brand-text">
+          <div class="brand-name">Governance Assistant</div>
+          <div class="brand-sub">IEEE SMC Society</div>
+        </div>
+      </div>
+      <p class="auth-blurb">Answers to questions about the Society's constitution, bylaws and operations manuals, with the page each answer came from.</p>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <div class="auth-tabs" id="tabs" role="tablist">
+          <button role="tab" id="tabSignin" aria-selected="true">Sign in</button>
+          <button role="tab" id="tabSignup" aria-selected="false">Create account</button>
+        </div>
+
+        <form id="authForm" novalidate>
+          <h1 id="formTitle">Sign in</h1>
+
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username"
+                 autocapitalize="none" spellcheck="false" maxlength="32" required autofocus>
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password"
+                 maxlength="256" required>
+
+          <div id="confirmRow" hidden>
+            <label for="confirm">Repeat password</label>
+            <input id="confirm" name="confirm" type="password" autocomplete="new-password" maxlength="256">
+          </div>
+
+          <p class="field-hint" id="hint" hidden>Username: 3–32 letters, numbers, dots, hyphens or underscores. Password: at least 8 characters.</p>
+
+          <p class="form-error" id="error" role="alert" hidden></p>
+
+          <button type="submit" class="auth-submit" id="submit">Sign in</button>
+        </form>
+
+        <p class="auth-note" id="closedNote" hidden>New accounts are created by the administrator.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/login.js"></script>
+</body>
+</html>

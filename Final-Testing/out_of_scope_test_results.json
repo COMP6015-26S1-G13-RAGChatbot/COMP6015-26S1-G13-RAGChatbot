@@ -1,0 +1,97 @@
+[
+  {
+    "id": "Q01",
+    "question": "How does Kubernetes implement Horizontal Pod Autoscaling for container orchestration?",
+    "expected": "The answer was not found in the provided documents.",
+    "actual": "The answer was not found in the provided documents.",
+    "sources": [
+      "draft Operational Manual V5.pdf",
+      "SMC-Constitution-Bylaws-August-2023-web.pdf"
+    ]
+  },
+  {
+    "id": "Q02",
+    "question": "Can you explain the transformer attention mechanism used in GPT-4?",
+    "expected": "The answer was not found in the provided documents.",
+    "actual": "The answer was not found in the provided documents.",
+    "sources": [
+      "draft Operational Manual V5.pdf"
+    ]
+  },
+  {
+    "id": "Q03",
+    "question": "What are the mathematical foundations behind RSA encryption algorithms?",
+    "expected": "The answer was not found in the provided documents.",
+    "actual": "The answer was not found in the provided documents.",
+    "sources": [
+      "ieee-constitution-and-bylaws.pdf",
+      "SMC-Constitution-Bylaws-August-2023-web.pdf"
+    ]
+  },
+  {
+    "id": "Q04",
+    "question": "How does reinforcement learning from human feedback improve large language models?",
+    "expected": "The answer was not found in the provided documents.",
+    "actual": "The answer was not found in the provided documents.",
+    "sources": [
+      "draft Operational Manual V5.pdf"
+    ]
+  },
+  {
+    "id": "Q05",
+    "question": "Describe the thermal limitations of exascale computing systems.",
+    "expected": "The answer was not found in the provided documents.",
+    "actual": "The answer was not found in the provided documents.",
+    "sources": [
+      "draft Operational Manual V5.pdf",
+      "SMCS-Techncal-Manual-2023-08-01.pdf",
+      "SMC-Constitution-Bylaws-August-2023-web.pdf"
+    ]
+  },
+  {
+    "id": "Q06",
+    "question": "How does blockchain sharding improve Ethereum scalability?",
+    "expected": "The answer was not found in the provided documents.",
+    "actual": "The answer was not found in the provided documents.",
+    "sources": [
+      "draft Operational Manual V5.pdf"
+    ]
+  },
+  {
+    "id": "Q07",
+    "question": "Explain the role of LoRA fine-tuning in large language model optimization.",
+    "expected": "The answer was not found in the provided documents.",
+    "actual": "The answer was not found in the provided documents.",
+    "sources": [
+      "draft Operational Manual V5.pdf"
+    ]
+  },
+  {
+    "id": "Q08",
+    "question": "How do multi-agent reinforcement learning systems coordinate cooperative behaviour?",
+    "expected": "The answer was not found in the provided documents.",
+    "actual": "The answer was not found in the provided documents.",
+    "sources": [
+      "draft Operational Manual V5.pdf"
+    ]
+  },
+  {
+    "id": "Q09",
+    "question": "What techniques are used in quantum error correction using surface codes?",
+    "expected": "The answer was not found in the provided documents.",
+    "actual": "The answer was not found in the provided documents.",
+    "sources": [
+      "draft Operational Manual V5.pdf"
+    ]
+  },
+  {
+    "id": "Q10",
+    "question": "How does adaptive control improve autonomous spacecraft navigation systems?",
+    "expected": "The answer was not found in the provided documents.",
+    "actual": "The answer was notally found in the provided documents.",
+    "sources": [
+      "draft Operational Manual V5.pdf",
+      "SMCS-Techncal-Manual-2023-08-01.pdf"
+    ]
+  }
+]

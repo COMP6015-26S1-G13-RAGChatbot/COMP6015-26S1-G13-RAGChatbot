@@ -1,0 +1,18 @@
+{
+    "total_questions": 50,
+    "overall_pass_count": 17,
+    "overall_pass_rate": 34.0,
+    "answer_accuracy": 40.0,
+    "factual_answer_accuracy": 36.0,
+    "conflict_question_answer_accuracy": 6.67,
+    "out_of_scope_accuracy": 100.0,
+    "abstention_accuracy": 70.0,
+    "retrieval_source_accuracy": 97.37,
+    "retrieval_page_accuracy": 90.32,
+    "citation_source_accuracy": 86.84,
+    "citation_page_accuracy": 64.52,
+    "conflict_detection_accuracy": 84.0,
+    "authority_resolution_accuracy": 60.0,
+    "errors": 0,
+    "total_duration_seconds": 551.3
+}
