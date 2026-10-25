@@ -1,0 +1,112 @@
+SMCS GOVERNANCE ASSISTANT - WEB FRONT END, USER SIGN-IN AND ADMIN CONSOLE
+==========================================================================
+
+WHAT'S IN THIS PACKAGE
+----------------------
+web/
+  server.py            Web server: connects the website to rag_chat.py
+  auth.py              User accounts and sign-in (also the account tool)
+  admin/               Administrator console (from the feat/admin-login branch)
+  admin_integration.py Connects the admin console to the chatbot
+  static/
+    index.html         Chat page
+    app.js             Chat page logic
+    login.html         Sign-in / create-account page
+    login.js           Sign-in page logic
+    styles.css         All styling (blue design, light/dark themes, mobile)
+    fonts/             IBM Plex fonts (bundled, works offline; OFL licence)
+
+
+INSTALL (first time)
+--------------------
+1. Extract this ZIP into your RAG folder, so you have:
+      E:\RAG\web\server.py
+      E:\RAG\rag_chat.py        (or E:\RAG\src\rag_chat.py)
+      E:\RAG\chroma_db\
+      E:\RAG\data\
+
+   If you already have a web folder there with accounts in it, copy
+   web\users.db somewhere safe first and put it back afterwards.
+
+2. Open PowerShell in E:\RAG and activate your virtual environment:
+      venv\Scripts\activate
+
+3. Install the web packages (once):
+      python -m pip install fastapi uvicorn pypdf
+
+
+RUN
+---
+1. Start Ollama (open the Ollama app, or run: ollama serve).
+2. In PowerShell, in E:\RAG, with (venv) active:
+      python web\server.py
+3. Wait for "Pipeline ready" in the terminal.
+4. Open http://localhost:8000 in your browser.
+5. First time: click "Create account", choose a username and password.
+6. Ask questions. Use "Sign out" at the bottom left when finished.
+
+Stop the server with Ctrl + C in the terminal.
+If the page looks old after an update, press Ctrl + F5 in the browser.
+
+
+MANAGING ACCOUNTS (in E:\RAG, with venv active)
+-----------------------------------------------
+   python web\auth.py add alice      create an account
+   python web\auth.py passwd alice   reset a forgotten password
+   python web\auth.py remove alice   delete an account
+   python web\auth.py list           list all accounts
+
+Accounts are saved in web\users.db. Never upload that file to GitHub.
+
+
+ADMINISTRATOR CONSOLE (http://localhost:8000/admin)
+---------------------------------------------------
+Upload new PDF versions, approve/reject them, activate them (rebuilds the
+search index), exclude documents from search, and restore earlier versions.
+
+1. In PowerShell (E:\RAG, venv active), create a token and start the server:
+      $env:ADMIN_ACCESS_TOKEN = python -c "import secrets; print(secrets.token_urlsafe(48))"
+      echo $env:ADMIN_ACCESS_TOKEN
+      python web\server.py
+2. Copy the printed token. Open http://localhost:8000/admin, paste it, Connect.
+3. Use "Lock console" when finished.
+
+- Keep the token private (not on GitHub, chat or screenshots).
+- A new PowerShell window needs the token set again before starting.
+- Admin data is saved in E:\RAG\.admin_data. Back it up; never delete
+  .admin_data\releases while it is in use.
+- Questions wait while an index is being rebuilt.
+
+
+OPTIONAL SETTINGS (type before starting the server)
+---------------------------------------------------
+   $env:RAG_ALLOW_SIGNUP="0"   hide "Create account" (only accounts made
+                               with auth.py add can sign in)
+   $env:RAG_AUTH="0"           turn sign-in off completely
+   $env:RAG_DEMO_MODE="1"      preview the website without Ollama
+   $env:PORT="8001"            use another port
+
+
+COMMON PROBLEMS
+---------------
+"Missing packages" / "Could not import chromadb"
+    You started the server with a different Python. Activate the venv
+    and start it with: python web\server.py
+
+"_ExtendedAttributes" error
+    python -m pip install -r requirements-lock.txt
+
+"Too many failed attempts"
+    Wait 60 seconds and try again.
+
+Forgot a password
+    python web\auth.py passwd <username>
+
+"/admin" says "Admin access is not configured"
+    Set ADMIN_ACCESS_TOKEN (see above) before starting the server.
+
+"Admin console: unavailable (pypdf ...)" when the server starts
+    python -m pip install pypdf
+
+"Address already in use"
+    $env:PORT="8001"; python web\server.py   then open http://localhost:8001
